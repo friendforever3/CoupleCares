@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Couple Cares Tabbar-->
+        <scene sceneID="Osv-S5-Jbg">
+            <objects>
+                <tabBarController storyboardIdentifier="CoupleCaresTabbar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cYJ-fa-s9g" customClass="CoupleCaresTabbar" customModule="CoupleCares" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Qw-hU-eOY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jYv-ng-CoZ" kind="relationship" relationship="viewControllers" id="VhZ-Uu-Edi"/>
+                        <segue destination="s1N-uU-b6F" kind="relationship" relationship="viewControllers" id="9dc-wV-RbV"/>
+                        <segue destination="as7-qu-ka7" kind="relationship" relationship="viewControllers" id="Nhe-cO-k8Y"/>
+                        <segue destination="XTn-cz-7xS" kind="relationship" relationship="viewControllers" id="aBR-mC-UFH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TU0-2u-vdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-967" y="-90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DKG-eu-gYL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jYv-ng-CoZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Discovery" selectedImage="Discovery-1" id="wi1-jz-7t9">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bz3-ep-hGf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h3F-jn-05N" kind="relationship" relationship="rootViewController" id="Ml8-KB-OGs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpj-UA-ce7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="-478"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="2O8-I1-xzd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="h3F-jn-05N" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JyK-WL-Qkt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lN-pf-RUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528" y="-478"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u2j-ly-VFb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s1N-uU-b6F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="hearts" selectedImage="hearts-1" id="hqm-iv-FGe">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GUc-Wk-Ym8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uIF-CZ-B7q" kind="relationship" relationship="rootViewController" id="5lY-YY-fEb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVV-gV-POt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="194"/>
+        </scene>
+        <!--LikesTopPick-->
+        <scene sceneID="WIL-3Y-b6i">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LikesTopPick" id="uIF-CZ-B7q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uAd-xR-avQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahi-A4-2vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="194"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y5d-37-KgB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="XTn-cz-7xS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Chat" selectedImage="Chat" id="Sna-AE-Rjs">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ks0-aZ-vhW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UrQ-7b-G2x" kind="relationship" relationship="rootViewController" id="QYQ-T1-ozz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufk-gO-5FO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="1560"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="3l5-vN-FFk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Message" id="UrQ-7b-G2x" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PLh-xZ-HJ4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gA6-l6-EtQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="1560"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uVg-a3-dcV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="as7-qu-ka7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Document" selectedImage="Document" id="mXL-sS-iie">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pOA-Ka-6Xr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7iB-zz-ctN" kind="relationship" relationship="rootViewController" id="IhJ-Z4-X7G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqJ-bo-ere" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="883"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="fKQ-Eu-8iY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="7iB-zz-ctN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q0z-xp-byf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U90-GG-TKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="883"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Chat" width="24" height="24"/>
+        <image name="Discovery" width="24" height="24"/>
+        <image name="Discovery-1" width="24" height="24"/>
+        <image name="Document" width="21" height="24"/>
+        <image name="hearts" width="32" height="26"/>
+        <image name="hearts-1" width="32" height="26"/>
+    </resources>
+</document>
