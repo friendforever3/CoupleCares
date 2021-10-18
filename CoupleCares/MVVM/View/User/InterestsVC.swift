@@ -19,6 +19,15 @@ class InterestsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnBackAction(_ sender: Any) {
+        self.popVc()
+    }
+    
+    @IBAction func btnContinueAction(_ sender: Any) {
+        let vc = PhotoVC.getVC(.Main)
+        self.push(vc)
+    }
+    
 }
 
 extension InterestsVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{

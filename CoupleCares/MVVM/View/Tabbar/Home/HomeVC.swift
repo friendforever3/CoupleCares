@@ -8,6 +8,9 @@
 import UIKit
 import Shuffle_iOS
 
+
+
+
 class HomeVC: UIViewController {
 
     @IBOutlet weak var vwCard: SwipeCardStack!
@@ -25,6 +28,39 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         vwCard.dataSource = self
         vwCard.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    
+    @IBAction func btnLikeAction(_ sender: Any) {
+        let vc = MatchVC.getVC(.Home)
+        self.push(vc)
+    }
+    
+    @IBAction func btnAddAction(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
+        let vc = SubscriptionTypeVC.getVC(.Home)
+        vc.delegate = self
+        
+        vc.view.backgroundColor = .black.withAlphaComponent(0.5)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        nav.view.backgroundColor = .black.withAlphaComponent(0.5)
+        nav.setNavigationBarHidden(true, animated: false)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+}
+
+
+//MARK: Protocol Controller delegate
+extension HomeVC : ControllerDeleagte{
+    func didCloseDelegate() {
+        self.viewWillAppear(true)
     }
     
 }
@@ -56,6 +92,7 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 
   func didSwipeAllCards(_ cardStack: SwipeCardStack) {
     print("Swiped all cards!")
+      
   }
 
   func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
@@ -70,6 +107,8 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 
   func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
     print("Card tapped")
+      let vc = OtherProfileVC.getVC(.Home)
+      self.push(vc)
   }
 
 //  func didTapButton(button: TinderButton) {

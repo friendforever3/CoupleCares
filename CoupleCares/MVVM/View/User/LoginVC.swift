@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func btnLoginAction(_ sender: Any) {
-        let vc = CoupleCaresTabbar.getVC(.CoupleCares)
+        let vc = MobileNumVC.getVC(.Main)
         self.push(vc)
     }
     

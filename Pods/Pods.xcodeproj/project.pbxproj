@@ -1,0 +1,1086 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0004725A81B24C9724FF59003A582C27 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57FC3D18C239DECD8A072967BD9E7B /* SwipeView.swift */; };
+		06C7AABA62962B4D465BE80652442C93 /* CardAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A547CAF5C93115C28CBC77F316888 /* CardAnimationOptions.swift */; };
+		07A88B4C1D23BEA2CFE213F64489138F /* TapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8279A3EBD88032EB03F6A2F01BAC9 /* TapGestureRecognizer.swift */; };
+		09D16D4AE31859A69AECB9FDE44BA877 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D856416E628B4BE2FBB51171B4636E /* CGPoint+Extensions.swift */; };
+		0D31A4B5EB697C93EFA2FD74B0FCD2C9 /* ScalingCarousel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F29500ABF084B82DA5831B18F2CDBC33 /* ScalingCarousel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15404C20E9D1B0E3EC83EF35E157AD0D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E5C0778B67AB8B038990BB0597E58 /* UIView+Extensions.swift */; };
+		2254657647EE46AC112857C5643A5E17 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885D2349F212E236EEA977E956C7CF07 /* StringUtils.swift */; };
+		22BDD5C6208A8F22DA9BE721B3CF8CD3 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B582B2B4909974F816A8997AF6EAA8 /* ScalingCarouselCell.swift */; };
+		23EF0BFF7BD34F4E68B01C4508846CE9 /* Pods-CoupleCares-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFF94108F85A9790EA8262C6E41ADADC /* Pods-CoupleCares-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C15023BEA93D61E15E32A86ACE2AA37 /* CountryPickerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6D6ECE9B8EAC07E4B9D181CF1A8138E /* CountryPickerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31836D75582AAAE1F18A8D73AAD4831D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		335921E6A2D58B4D5869676851FD34B4 /* SwipeCardStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A779AE43434A78E874C9C4B7A46B8CC /* SwipeCardStackDelegate.swift */; };
+		3F7A96AA11CD2262577F97E8B2E0154F /* CountryViewTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0EEAA0099C6A60D0A6628CF0D5D04 /* CountryViewTheme.swift */; };
+		4019CDECA2979BE7508340C565B5C0D3 /* CardStackStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F58D34744C7C4D75495B52634334BC /* CardStackStateManager.swift */; };
+		46FA3994970FB1E2A2AE195754F6DA09 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389BC667205D038223A4A1B6C8E9949 /* Array+Extensions.swift */; };
+		485D3FFAD4D88E53FB1CD633F0FB06C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		54030902C202234E1AD0D757E79B63E3 /* CardStackAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E307BAE10117986F9318F4AB4D43A68 /* CardStackAnimator.swift */; };
+		552CF1BD7CE2A8213133DADBD01E65C6 /* CardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EAE1C64F185586F76D68D790E6346 /* CardAnimator.swift */; };
+		615597EE37CE3951F74A3F89D8085DD9 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934DC6FA03CDA55E726BF66CD1D0C79A /* Flags.xcassets */; };
+		61B8195A2A9C88EDEC0E5B796667D06D /* SwipeCardStackDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F97E30FB1F4036F70BD7B12C6117E8 /* SwipeCardStackDataSource.swift */; };
+		64F9279B93FEC6038CD8B2036A665AEE /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39870A942014C40E445926C4DDACFE57 /* Animator.swift */; };
+		66E91EBAB7A6E1830B20C0EEF6E5106F /* SwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505A3073059012E6A6111A6B19C44C27 /* SwipeCard.swift */; };
+		74CF40AB937EB1FA73ABADBEBD866D6B /* Shuffle-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39BFD50B78A59E55E219A389513259BB /* Shuffle-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80695B754AD9B776A97C3BAFBD21A6ED /* Pods-CoupleCares-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E72DCCCE1086C3ED07C4CD4A9FEFC688 /* Pods-CoupleCares-dummy.m */; };
+		83C9899D012CBF9976E540BB86FCB1E4 /* CountryPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8281B2F3055452684B7E81EF50E2E40E /* CountryPicker.bundle */; };
+		85D9316BFDC018B3323E870A81CA82FB /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7A1503BFFA4E4FAB7FFE9C7031F97 /* CGVector+Extensions.swift */; };
+		98C1FA921F8ADBEAD4704DD70D5EAEFE /* CountryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CF7214D7F54106E509B2497B54F53D /* CountryView.xib */; };
+		9C14577815A0868893010715B3A0C14B /* CountryPickerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F78F0F3DEB7421A4E7FD588E313DDB /* CountryPickerSwift-dummy.m */; };
+		A275F89C6848DABFC323A6D531F944A4 /* CardStackAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933CAF1E533D899CA861F2E2FD4D9EC6 /* CardStackAnimationOptions.swift */; };
+		A56C2CED79E4BE117796F302DD638D58 /* Shuffle-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA23CD7789F00A82C27A76DD7EB3F028 /* Shuffle-iOS-dummy.m */; };
+		AD81BC5E5F8CB535A1FD3D9B5746DDAB /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B621915D19D4EE13B301AD2C49368C5 /* SwipeDirection.swift */; };
+		B41FDC7695086E596CF1EA5995D4BE91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B7C4E7F64A42CE08BE5D5D7FB23ADEF6 /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C46C5D57E2C94EDB5FED423A11FA3E /* ScalingCarouselLayout.swift */; };
+		BFF2C2AF0119E5252908D432B727A0E4 /* SwipeCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D611BC5FB74B29A9E7D267231E9C2E74 /* SwipeCardStack.swift */; };
+		C1DB9DD3FAD600DFD49EF43CD6D5973A /* PanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36319EAAFE5A76217EEAF262207224 /* PanGestureRecognizer.swift */; };
+		D0288F6CCDA843A32C3EE9C8729883CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		D3FCB5E2465AE999BE4457903A9C4B1E /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ACF2DF4FE4B91F7102D6782C92D8F8 /* CountryView.swift */; };
+		D506EEA15970BFD77B164FC9D4113DAF /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4044BC4639100DF4D3809B7B61F013 /* ScalingCarouselView.swift */; };
+		EA92C0C93A09CC295F35C842188B3B74 /* ScalingCarousel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF3135D016572EA5C9EE1D9AB55CC99 /* ScalingCarousel-dummy.m */; };
+		FAB0B048C3BD340A97F2F8CA3A9349D1 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E22D349A395D50DA3C54A19228BD1D9 /* CountryPicker.swift */; };
+		FAE578EA38D734E9959068AC5CC89BEA /* SwipeCardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EC6FFAFA582596DDC9E861DEFC079 /* SwipeCardDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DF7E43A7E7530DA64233134A8808500 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66814C3CD82F965BA3B2704535DEA19;
+			remoteInfo = CountryPickerSwift;
+		};
+		4C40D493BAEFDA144B8C9CB1EA8C5E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CE4608D13EB4E75FE6B40D38210294E;
+			remoteInfo = "Shuffle-iOS";
+		};
+		A60B0042CBA1D5A6A036B0093F5D59B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7050FECE58DF970CF84F4FE403CA67D9;
+			remoteInfo = ScalingCarousel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0389BC667205D038223A4A1B6C8E9949 /* Array+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Sources/Shuffle/Classes/Internal/Array+Extensions.swift"; sourceTree = "<group>"; };
+		04FB255195A01915941348F2EC29BFC9 /* Shuffle-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Shuffle-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		099A50D7FE751D474984E89E7B07D6DA /* Pods-CoupleCares-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoupleCares-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0A779AE43434A78E874C9C4B7A46B8CC /* SwipeCardStackDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCardStackDelegate.swift; path = Sources/Shuffle/Classes/SwipeCardStack/SwipeCardStackDelegate.swift; sourceTree = "<group>"; };
+		0E36319EAAFE5A76217EEAF262207224 /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanGestureRecognizer.swift; path = Sources/Shuffle/Classes/Internal/PanGestureRecognizer.swift; sourceTree = "<group>"; };
+		0E635926D70766CC3D54D0ABBAD34D39 /* Pods-CoupleCares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoupleCares.release.xcconfig"; sourceTree = "<group>"; };
+		115216DAC153E1172257FA063BE6DD24 /* Pods-CoupleCares-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoupleCares-Info.plist"; sourceTree = "<group>"; };
+		14CF7214D7F54106E509B2497B54F53D /* CountryView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CountryView.xib; path = CountryPicker/Classes/CountryView.xib; sourceTree = "<group>"; };
+		19A6C7DFA8FF65942160D96F2A00F3B3 /* Pods-CoupleCares */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CoupleCares"; path = Pods_CoupleCares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4044BC4639100DF4D3809B7B61F013 /* ScalingCarouselView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselView.swift; path = Sources/ScalingCarousel/ScalingCarouselView.swift; sourceTree = "<group>"; };
+		1B621915D19D4EE13B301AD2C49368C5 /* SwipeDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeDirection.swift; path = Sources/Shuffle/Classes/SwipeDirection.swift; sourceTree = "<group>"; };
+		24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ScalingCarousel; path = ScalingCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8C6640A3C8F0E43ED8B477DFA89735 /* ScalingCarousel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScalingCarousel-prefix.pch"; sourceTree = "<group>"; };
+		39870A942014C40E445926C4DDACFE57 /* Animator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Sources/Shuffle/Classes/Internal/Animator.swift; sourceTree = "<group>"; };
+		399947FA51F8DED37BE580D01121BB2B /* Pods-CoupleCares-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoupleCares-acknowledgements.plist"; sourceTree = "<group>"; };
+		39BFD50B78A59E55E219A389513259BB /* Shuffle-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shuffle-iOS-umbrella.h"; sourceTree = "<group>"; };
+		3E307BAE10117986F9318F4AB4D43A68 /* CardStackAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardStackAnimator.swift; path = Sources/Shuffle/Classes/SwipeCardStack/CardStackAnimator.swift; sourceTree = "<group>"; };
+		40AED7E10815CBED809D885C418FB35F /* Shuffle-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Shuffle-iOS-Info.plist"; sourceTree = "<group>"; };
+		468A7C93B839AC14757C53542D55A859 /* ScalingCarousel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ScalingCarousel-Info.plist"; sourceTree = "<group>"; };
+		46F58D34744C7C4D75495B52634334BC /* CardStackStateManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardStackStateManager.swift; path = Sources/Shuffle/Classes/SwipeCardStack/CardStackStateManager.swift; sourceTree = "<group>"; };
+		475CDF8FCB53C617F324684D3D0077A3 /* CountryPickerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CountryPickerSwift.modulemap; sourceTree = "<group>"; };
+		505A3073059012E6A6111A6B19C44C27 /* SwipeCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCard.swift; path = Sources/Shuffle/Classes/SwipeCard/SwipeCard.swift; sourceTree = "<group>"; };
+		560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CountryPickerSwift; path = CountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56935D2432C0BDA022C65B965499AD0E /* Pods-CoupleCares-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoupleCares-frameworks.sh"; sourceTree = "<group>"; };
+		594EAE1C64F185586F76D68D790E6346 /* CardAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardAnimator.swift; path = Sources/Shuffle/Classes/SwipeCard/CardAnimator.swift; sourceTree = "<group>"; };
+		59F78F0F3DEB7421A4E7FD588E313DDB /* CountryPickerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CountryPickerSwift-dummy.m"; sourceTree = "<group>"; };
+		61B7A1503BFFA4E4FAB7FFE9C7031F97 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGVector+Extensions.swift"; path = "Sources/Shuffle/Classes/Internal/CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		6F8ABAD6A8694C51F6B11863C14C5891 /* ScalingCarousel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScalingCarousel.release.xcconfig; sourceTree = "<group>"; };
+		72F32AA359C9D7B312EECE15B752BEDE /* Pods-CoupleCares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoupleCares.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7E4A547CAF5C93115C28CBC77F316888 /* CardAnimationOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardAnimationOptions.swift; path = Sources/Shuffle/Classes/SwipeCard/CardAnimationOptions.swift; sourceTree = "<group>"; };
+		81ACF2DF4FE4B91F7102D6782C92D8F8 /* CountryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryView.swift; path = CountryPicker/Classes/CountryView.swift; sourceTree = "<group>"; };
+		8281B2F3055452684B7E81EF50E2E40E /* CountryPicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CountryPicker.bundle; path = CountryPicker/Assets/CountryPicker.bundle; sourceTree = "<group>"; };
+		885D2349F212E236EEA977E956C7CF07 /* StringUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = Sources/Shuffle/Classes/Internal/StringUtils.swift; sourceTree = "<group>"; };
+		88F97E30FB1F4036F70BD7B12C6117E8 /* SwipeCardStackDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCardStackDataSource.swift; path = Sources/Shuffle/Classes/SwipeCardStack/SwipeCardStackDataSource.swift; sourceTree = "<group>"; };
+		893BF02D147FEF958587F4B539C254BD /* Shuffle-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shuffle-iOS-prefix.pch"; sourceTree = "<group>"; };
+		8E22D349A395D50DA3C54A19228BD1D9 /* CountryPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryPicker.swift; path = CountryPicker/Classes/CountryPicker.swift; sourceTree = "<group>"; };
+		933CAF1E533D899CA861F2E2FD4D9EC6 /* CardStackAnimationOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardStackAnimationOptions.swift; path = Sources/Shuffle/Classes/SwipeCardStack/CardStackAnimationOptions.swift; sourceTree = "<group>"; };
+		934DC6FA03CDA55E726BF66CD1D0C79A /* Flags.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Flags.xcassets; path = CountryPicker/Classes/Flags.xcassets; sourceTree = "<group>"; };
+		93B0EEAA0099C6A60D0A6628CF0D5D04 /* CountryViewTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryViewTheme.swift; path = CountryPicker/Classes/CountryViewTheme.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A537D029EC3CD289EB8395C02BA20F3B /* CountryPickerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.release.xcconfig; sourceTree = "<group>"; };
+		A6D6ECE9B8EAC07E4B9D181CF1A8138E /* CountryPickerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-umbrella.h"; sourceTree = "<group>"; };
+		AA23CD7789F00A82C27A76DD7EB3F028 /* Shuffle-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Shuffle-iOS-dummy.m"; sourceTree = "<group>"; };
+		BB57FC3D18C239DECD8A072967BD9E7B /* SwipeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeView.swift; path = Sources/Shuffle/Classes/SwipeCard/SwipeView.swift; sourceTree = "<group>"; };
+		C05E80F4EB68E55985CD0B22FBA0EC3D /* CountryPickerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CountryPickerSwift-prefix.pch"; sourceTree = "<group>"; };
+		C1B582B2B4909974F816A8997AF6EAA8 /* ScalingCarouselCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselCell.swift; path = Sources/ScalingCarousel/ScalingCarouselCell.swift; sourceTree = "<group>"; };
+		C8C46C5D57E2C94EDB5FED423A11FA3E /* ScalingCarouselLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScalingCarouselLayout.swift; path = Sources/ScalingCarousel/ScalingCarouselLayout.swift; sourceTree = "<group>"; };
+		C9D856416E628B4BE2FBB51171B4636E /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extensions.swift"; path = "Sources/Shuffle/Classes/Internal/CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		CC3EC6FFAFA582596DDC9E861DEFC079 /* SwipeCardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCardDelegate.swift; path = Sources/Shuffle/Classes/SwipeCard/SwipeCardDelegate.swift; sourceTree = "<group>"; };
+		D611BC5FB74B29A9E7D267231E9C2E74 /* SwipeCardStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCardStack.swift; path = Sources/Shuffle/Classes/SwipeCardStack/SwipeCardStack.swift; sourceTree = "<group>"; };
+		D690E0FCB3D8D520C42CE79ECA3EFE0D /* Shuffle-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Shuffle-iOS.modulemap"; sourceTree = "<group>"; };
+		DFF94108F85A9790EA8262C6E41ADADC /* Pods-CoupleCares-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoupleCares-umbrella.h"; sourceTree = "<group>"; };
+		E27E5C0778B67AB8B038990BB0597E58 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Sources/Shuffle/Classes/Internal/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E72DCCCE1086C3ED07C4CD4A9FEFC688 /* Pods-CoupleCares-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoupleCares-dummy.m"; sourceTree = "<group>"; };
+		EF6D82A590C3AFFDB84FB22D5172CC1B /* Shuffle-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Shuffle-iOS"; path = Shuffle_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFD0E062FFC8DD647757EE092D9FF2D9 /* ScalingCarousel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ScalingCarousel.modulemap; sourceTree = "<group>"; };
+		F1F438AEAAE32213D12617C6DA7AC0EF /* CountryPickerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CountryPickerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		F29500ABF084B82DA5831B18F2CDBC33 /* ScalingCarousel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ScalingCarousel-umbrella.h"; sourceTree = "<group>"; };
+		F5C8279A3EBD88032EB03F6A2F01BAC9 /* TapGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TapGestureRecognizer.swift; path = Sources/Shuffle/Classes/Internal/TapGestureRecognizer.swift; sourceTree = "<group>"; };
+		F8A76C3FA0704689F4B358D4A225BEFC /* ScalingCarousel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ScalingCarousel.debug.xcconfig; sourceTree = "<group>"; };
+		FAF3135D016572EA5C9EE1D9AB55CC99 /* ScalingCarousel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ScalingCarousel-dummy.m"; sourceTree = "<group>"; };
+		FB21FAE7CE1D9C74D346D2E06DE455DE /* Shuffle-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Shuffle-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		FD68F874BE12F2EA5C28CED389B68EE1 /* Pods-CoupleCares.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoupleCares.modulemap"; sourceTree = "<group>"; };
+		FE305B655DE9883F245917AFB57B9C0F /* CountryPickerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CountryPickerSwift-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E102CE6C1169AC9217F6D16A4920D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31836D75582AAAE1F18A8D73AAD4831D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EDE34524C84C45A9870D5BE34E7B9C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485D3FFAD4D88E53FB1CD633F0FB06C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		540561D8FC3512350A68B9E1C9460611 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0288F6CCDA843A32C3EE9C8729883CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98107068E2B7F2702129DB14C00E6718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41FDC7695086E596CF1EA5995D4BE91 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		299418B87EF648B1E9378B6E4C46388B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B51A4EEB4777B15BA10C54EE56AC19E /* Pods-CoupleCares */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4E35DB2D59208BB72556CD47657A3948 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8281B2F3055452684B7E81EF50E2E40E /* CountryPicker.bundle */,
+				14CF7214D7F54106E509B2497B54F53D /* CountryView.xib */,
+				934DC6FA03CDA55E726BF66CD1D0C79A /* Flags.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		638CD6388DB615664DA6B642D8B4A400 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				475CDF8FCB53C617F324684D3D0077A3 /* CountryPickerSwift.modulemap */,
+				59F78F0F3DEB7421A4E7FD588E313DDB /* CountryPickerSwift-dummy.m */,
+				FE305B655DE9883F245917AFB57B9C0F /* CountryPickerSwift-Info.plist */,
+				C05E80F4EB68E55985CD0B22FBA0EC3D /* CountryPickerSwift-prefix.pch */,
+				A6D6ECE9B8EAC07E4B9D181CF1A8138E /* CountryPickerSwift-umbrella.h */,
+				F1F438AEAAE32213D12617C6DA7AC0EF /* CountryPickerSwift.debug.xcconfig */,
+				A537D029EC3CD289EB8395C02BA20F3B /* CountryPickerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CountryPickerSwift";
+			sourceTree = "<group>";
+		};
+		66DADBFE869D3A07C8D49CB4BC8B8BE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B2B5F47D133ED66760C9CBF43F8D232 /* CountryPickerSwift */,
+				D0838CF2341AF4BA6D0BC6B7FF81776C /* ScalingCarousel */,
+				84DAF8A7924F933D5BAB1A53DD8AC963 /* Shuffle-iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6AE264E5EF475CBA2B04E8859815053C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D690E0FCB3D8D520C42CE79ECA3EFE0D /* Shuffle-iOS.modulemap */,
+				AA23CD7789F00A82C27A76DD7EB3F028 /* Shuffle-iOS-dummy.m */,
+				40AED7E10815CBED809D885C418FB35F /* Shuffle-iOS-Info.plist */,
+				893BF02D147FEF958587F4B539C254BD /* Shuffle-iOS-prefix.pch */,
+				39BFD50B78A59E55E219A389513259BB /* Shuffle-iOS-umbrella.h */,
+				04FB255195A01915941348F2EC29BFC9 /* Shuffle-iOS.debug.xcconfig */,
+				FB21FAE7CE1D9C74D346D2E06DE455DE /* Shuffle-iOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Shuffle-iOS";
+			sourceTree = "<group>";
+		};
+		6B2B5F47D133ED66760C9CBF43F8D232 /* CountryPickerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				8E22D349A395D50DA3C54A19228BD1D9 /* CountryPicker.swift */,
+				81ACF2DF4FE4B91F7102D6782C92D8F8 /* CountryView.swift */,
+				93B0EEAA0099C6A60D0A6628CF0D5D04 /* CountryViewTheme.swift */,
+				4E35DB2D59208BB72556CD47657A3948 /* Resources */,
+				638CD6388DB615664DA6B642D8B4A400 /* Support Files */,
+			);
+			name = CountryPickerSwift;
+			path = CountryPickerSwift;
+			sourceTree = "<group>";
+		};
+		6B51A4EEB4777B15BA10C54EE56AC19E /* Pods-CoupleCares */ = {
+			isa = PBXGroup;
+			children = (
+				FD68F874BE12F2EA5C28CED389B68EE1 /* Pods-CoupleCares.modulemap */,
+				099A50D7FE751D474984E89E7B07D6DA /* Pods-CoupleCares-acknowledgements.markdown */,
+				399947FA51F8DED37BE580D01121BB2B /* Pods-CoupleCares-acknowledgements.plist */,
+				E72DCCCE1086C3ED07C4CD4A9FEFC688 /* Pods-CoupleCares-dummy.m */,
+				56935D2432C0BDA022C65B965499AD0E /* Pods-CoupleCares-frameworks.sh */,
+				115216DAC153E1172257FA063BE6DD24 /* Pods-CoupleCares-Info.plist */,
+				DFF94108F85A9790EA8262C6E41ADADC /* Pods-CoupleCares-umbrella.h */,
+				72F32AA359C9D7B312EECE15B752BEDE /* Pods-CoupleCares.debug.xcconfig */,
+				0E635926D70766CC3D54D0ABBAD34D39 /* Pods-CoupleCares.release.xcconfig */,
+			);
+			name = "Pods-CoupleCares";
+			path = "Target Support Files/Pods-CoupleCares";
+			sourceTree = "<group>";
+		};
+		84DAF8A7924F933D5BAB1A53DD8AC963 /* Shuffle-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				39870A942014C40E445926C4DDACFE57 /* Animator.swift */,
+				0389BC667205D038223A4A1B6C8E9949 /* Array+Extensions.swift */,
+				7E4A547CAF5C93115C28CBC77F316888 /* CardAnimationOptions.swift */,
+				594EAE1C64F185586F76D68D790E6346 /* CardAnimator.swift */,
+				933CAF1E533D899CA861F2E2FD4D9EC6 /* CardStackAnimationOptions.swift */,
+				3E307BAE10117986F9318F4AB4D43A68 /* CardStackAnimator.swift */,
+				46F58D34744C7C4D75495B52634334BC /* CardStackStateManager.swift */,
+				C9D856416E628B4BE2FBB51171B4636E /* CGPoint+Extensions.swift */,
+				61B7A1503BFFA4E4FAB7FFE9C7031F97 /* CGVector+Extensions.swift */,
+				0E36319EAAFE5A76217EEAF262207224 /* PanGestureRecognizer.swift */,
+				885D2349F212E236EEA977E956C7CF07 /* StringUtils.swift */,
+				505A3073059012E6A6111A6B19C44C27 /* SwipeCard.swift */,
+				CC3EC6FFAFA582596DDC9E861DEFC079 /* SwipeCardDelegate.swift */,
+				D611BC5FB74B29A9E7D267231E9C2E74 /* SwipeCardStack.swift */,
+				88F97E30FB1F4036F70BD7B12C6117E8 /* SwipeCardStackDataSource.swift */,
+				0A779AE43434A78E874C9C4B7A46B8CC /* SwipeCardStackDelegate.swift */,
+				1B621915D19D4EE13B301AD2C49368C5 /* SwipeDirection.swift */,
+				BB57FC3D18C239DECD8A072967BD9E7B /* SwipeView.swift */,
+				F5C8279A3EBD88032EB03F6A2F01BAC9 /* TapGestureRecognizer.swift */,
+				E27E5C0778B67AB8B038990BB0597E58 /* UIView+Extensions.swift */,
+				6AE264E5EF475CBA2B04E8859815053C /* Support Files */,
+			);
+			name = "Shuffle-iOS";
+			path = "Shuffle-iOS";
+			sourceTree = "<group>";
+		};
+		9BC8C79E48CEA9020E1390BC59DF88A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */,
+				19A6C7DFA8FF65942160D96F2A00F3B3 /* Pods-CoupleCares */,
+				24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel */,
+				EF6D82A590C3AFFDB84FB22D5172CC1B /* Shuffle-iOS */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				66DADBFE869D3A07C8D49CB4BC8B8BE1 /* Pods */,
+				9BC8C79E48CEA9020E1390BC59DF88A6 /* Products */,
+				299418B87EF648B1E9378B6E4C46388B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D0838CF2341AF4BA6D0BC6B7FF81776C /* ScalingCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				C1B582B2B4909974F816A8997AF6EAA8 /* ScalingCarouselCell.swift */,
+				C8C46C5D57E2C94EDB5FED423A11FA3E /* ScalingCarouselLayout.swift */,
+				1A4044BC4639100DF4D3809B7B61F013 /* ScalingCarouselView.swift */,
+				F7BB03A694C7D3430411CD0E3C585FB5 /* Support Files */,
+			);
+			name = ScalingCarousel;
+			path = ScalingCarousel;
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7BB03A694C7D3430411CD0E3C585FB5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFD0E062FFC8DD647757EE092D9FF2D9 /* ScalingCarousel.modulemap */,
+				FAF3135D016572EA5C9EE1D9AB55CC99 /* ScalingCarousel-dummy.m */,
+				468A7C93B839AC14757C53542D55A859 /* ScalingCarousel-Info.plist */,
+				2A8C6640A3C8F0E43ED8B477DFA89735 /* ScalingCarousel-prefix.pch */,
+				F29500ABF084B82DA5831B18F2CDBC33 /* ScalingCarousel-umbrella.h */,
+				F8A76C3FA0704689F4B358D4A225BEFC /* ScalingCarousel.debug.xcconfig */,
+				6F8ABAD6A8694C51F6B11863C14C5891 /* ScalingCarousel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ScalingCarousel";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2A04EBAE335C3B14B73C90C86C1F3640 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23EF0BFF7BD34F4E68B01C4508846CE9 /* Pods-CoupleCares-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AE31AF557AC07266080E775F19EF37 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C15023BEA93D61E15E32A86ACE2AA37 /* CountryPickerSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9A73301CE0C68E7497C47E268065279 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74CF40AB937EB1FA73ABADBEBD866D6B /* Shuffle-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9231B4255EA6233939DCCDDA81695EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D31A4B5EB697C93EFA2FD74B0FCD2C9 /* ScalingCarousel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6CE4608D13EB4E75FE6B40D38210294E /* Shuffle-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35D57BD2DBA6D2B5467B4281A6B3A931 /* Build configuration list for PBXNativeTarget "Shuffle-iOS" */;
+			buildPhases = (
+				B9A73301CE0C68E7497C47E268065279 /* Headers */,
+				ACD1430F4958CA6AD442FC4B93A39D4F /* Sources */,
+				540561D8FC3512350A68B9E1C9460611 /* Frameworks */,
+				80E7F060AEF507A81DE404E64D2C6B7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Shuffle-iOS";
+			productName = Shuffle_iOS;
+			productReference = EF6D82A590C3AFFDB84FB22D5172CC1B /* Shuffle-iOS */;
+			productType = "com.apple.product-type.framework";
+		};
+		7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EDB84A81E6827C22A77B81A3DCA0784 /* Build configuration list for PBXNativeTarget "ScalingCarousel" */;
+			buildPhases = (
+				C9231B4255EA6233939DCCDDA81695EA /* Headers */,
+				7BEF8472DE83648A83AB507AF963E942 /* Sources */,
+				3EDE34524C84C45A9870D5BE34E7B9C0 /* Frameworks */,
+				8B031D16AFB50A432A62BAB8ACCD1231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScalingCarousel;
+			productName = ScalingCarousel;
+			productReference = 24E96286E41476A4E7F4D8742B9B16D7 /* ScalingCarousel */;
+			productType = "com.apple.product-type.framework";
+		};
+		8AB5B43824DBEFEDE8E90130F526A314 /* Pods-CoupleCares */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D54190A446FAF2EE53E041458A0A0DA /* Build configuration list for PBXNativeTarget "Pods-CoupleCares" */;
+			buildPhases = (
+				2A04EBAE335C3B14B73C90C86C1F3640 /* Headers */,
+				9711DBD76F601C5C129B6EE62464FE72 /* Sources */,
+				2E102CE6C1169AC9217F6D16A4920D33 /* Frameworks */,
+				495F930DB00DE4CF31B4C8F8A60DF001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08285D6FCEF9E5FFC6C937CCACDAB85D /* PBXTargetDependency */,
+				6A83594F660B471BD3D3D5F2092AACDC /* PBXTargetDependency */,
+				8B78AD3B8E98EDA9E1E3C6C2C526ED54 /* PBXTargetDependency */,
+			);
+			name = "Pods-CoupleCares";
+			productName = Pods_CoupleCares;
+			productReference = 19A6C7DFA8FF65942160D96F2A00F3B3 /* Pods-CoupleCares */;
+			productType = "com.apple.product-type.framework";
+		};
+		E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C903EB518308D9BA8FEDDAC7F6C5F78 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */;
+			buildPhases = (
+				66AE31AF557AC07266080E775F19EF37 /* Headers */,
+				C3D6C0CC3EE28F052BEEE8BB47EEF34E /* Sources */,
+				98107068E2B7F2702129DB14C00E6718 /* Frameworks */,
+				EEB1CF704D1B74B9A9B2F2AC303594C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CountryPickerSwift;
+			productName = CountryPicker;
+			productReference = 560AB06D68F470172307F5EF827DF4F2 /* CountryPickerSwift */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 9BC8C79E48CEA9020E1390BC59DF88A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */,
+				8AB5B43824DBEFEDE8E90130F526A314 /* Pods-CoupleCares */,
+				7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */,
+				6CE4608D13EB4E75FE6B40D38210294E /* Shuffle-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		495F930DB00DE4CF31B4C8F8A60DF001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E7F060AEF507A81DE404E64D2C6B7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B031D16AFB50A432A62BAB8ACCD1231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEB1CF704D1B74B9A9B2F2AC303594C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C9899D012CBF9976E540BB86FCB1E4 /* CountryPicker.bundle in Resources */,
+				98C1FA921F8ADBEAD4704DD70D5EAEFE /* CountryView.xib in Resources */,
+				615597EE37CE3951F74A3F89D8085DD9 /* Flags.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BEF8472DE83648A83AB507AF963E942 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA92C0C93A09CC295F35C842188B3B74 /* ScalingCarousel-dummy.m in Sources */,
+				22BDD5C6208A8F22DA9BE721B3CF8CD3 /* ScalingCarouselCell.swift in Sources */,
+				B7C4E7F64A42CE08BE5D5D7FB23ADEF6 /* ScalingCarouselLayout.swift in Sources */,
+				D506EEA15970BFD77B164FC9D4113DAF /* ScalingCarouselView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9711DBD76F601C5C129B6EE62464FE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80695B754AD9B776A97C3BAFBD21A6ED /* Pods-CoupleCares-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD1430F4958CA6AD442FC4B93A39D4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64F9279B93FEC6038CD8B2036A665AEE /* Animator.swift in Sources */,
+				46FA3994970FB1E2A2AE195754F6DA09 /* Array+Extensions.swift in Sources */,
+				06C7AABA62962B4D465BE80652442C93 /* CardAnimationOptions.swift in Sources */,
+				552CF1BD7CE2A8213133DADBD01E65C6 /* CardAnimator.swift in Sources */,
+				A275F89C6848DABFC323A6D531F944A4 /* CardStackAnimationOptions.swift in Sources */,
+				54030902C202234E1AD0D757E79B63E3 /* CardStackAnimator.swift in Sources */,
+				4019CDECA2979BE7508340C565B5C0D3 /* CardStackStateManager.swift in Sources */,
+				09D16D4AE31859A69AECB9FDE44BA877 /* CGPoint+Extensions.swift in Sources */,
+				85D9316BFDC018B3323E870A81CA82FB /* CGVector+Extensions.swift in Sources */,
+				C1DB9DD3FAD600DFD49EF43CD6D5973A /* PanGestureRecognizer.swift in Sources */,
+				A56C2CED79E4BE117796F302DD638D58 /* Shuffle-iOS-dummy.m in Sources */,
+				2254657647EE46AC112857C5643A5E17 /* StringUtils.swift in Sources */,
+				66E91EBAB7A6E1830B20C0EEF6E5106F /* SwipeCard.swift in Sources */,
+				FAE578EA38D734E9959068AC5CC89BEA /* SwipeCardDelegate.swift in Sources */,
+				BFF2C2AF0119E5252908D432B727A0E4 /* SwipeCardStack.swift in Sources */,
+				61B8195A2A9C88EDEC0E5B796667D06D /* SwipeCardStackDataSource.swift in Sources */,
+				335921E6A2D58B4D5869676851FD34B4 /* SwipeCardStackDelegate.swift in Sources */,
+				AD81BC5E5F8CB535A1FD3D9B5746DDAB /* SwipeDirection.swift in Sources */,
+				0004725A81B24C9724FF59003A582C27 /* SwipeView.swift in Sources */,
+				07A88B4C1D23BEA2CFE213F64489138F /* TapGestureRecognizer.swift in Sources */,
+				15404C20E9D1B0E3EC83EF35E157AD0D /* UIView+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D6C0CC3EE28F052BEEE8BB47EEF34E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB0B048C3BD340A97F2F8CA3A9349D1 /* CountryPicker.swift in Sources */,
+				9C14577815A0868893010715B3A0C14B /* CountryPickerSwift-dummy.m in Sources */,
+				D3FCB5E2465AE999BE4457903A9C4B1E /* CountryView.swift in Sources */,
+				3F7A96AA11CD2262577F97E8B2E0154F /* CountryViewTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08285D6FCEF9E5FFC6C937CCACDAB85D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CountryPickerSwift;
+			target = E66814C3CD82F965BA3B2704535DEA19 /* CountryPickerSwift */;
+			targetProxy = 3DF7E43A7E7530DA64233134A8808500 /* PBXContainerItemProxy */;
+		};
+		6A83594F660B471BD3D3D5F2092AACDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ScalingCarousel;
+			target = 7050FECE58DF970CF84F4FE403CA67D9 /* ScalingCarousel */;
+			targetProxy = A60B0042CBA1D5A6A036B0093F5D59B2 /* PBXContainerItemProxy */;
+		};
+		8B78AD3B8E98EDA9E1E3C6C2C526ED54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Shuffle-iOS";
+			target = 6CE4608D13EB4E75FE6B40D38210294E /* Shuffle-iOS */;
+			targetProxy = 4C40D493BAEFDA144B8C9CB1EA8C5E66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		083D6329062A868DED204FD984C26F5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8A76C3FA0704689F4B358D4A225BEFC /* ScalingCarousel.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScalingCarousel/ScalingCarousel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel.modulemap";
+				PRODUCT_MODULE_NAME = ScalingCarousel;
+				PRODUCT_NAME = ScalingCarousel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2AC391E0A96DE19114010F7F4C39775F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E635926D70766CC3D54D0ABBAD34D39 /* Pods-CoupleCares.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoupleCares/Pods-CoupleCares-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoupleCares/Pods-CoupleCares.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		651E856B42CFAB90328AFF09CB0BE863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F8ABAD6A8694C51F6B11863C14C5891 /* ScalingCarousel.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ScalingCarousel/ScalingCarousel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ScalingCarousel/ScalingCarousel.modulemap";
+				PRODUCT_MODULE_NAME = ScalingCarousel;
+				PRODUCT_NAME = ScalingCarousel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6EA0E4776AD61A138FDDF8892876385D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB21FAE7CE1D9C74D346D2E06DE455DE /* Shuffle-iOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Shuffle-iOS/Shuffle-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Shuffle-iOS/Shuffle-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Shuffle-iOS/Shuffle-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Shuffle_iOS;
+				PRODUCT_NAME = Shuffle_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8239EFAFDF8AA1604A7AB7E73557BD89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72F32AA359C9D7B312EECE15B752BEDE /* Pods-CoupleCares.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CoupleCares/Pods-CoupleCares-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoupleCares/Pods-CoupleCares.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		93A79A634C1122666151A52FD32FB908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04FB255195A01915941348F2EC29BFC9 /* Shuffle-iOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Shuffle-iOS/Shuffle-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Shuffle-iOS/Shuffle-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Shuffle-iOS/Shuffle-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Shuffle_iOS;
+				PRODUCT_NAME = Shuffle_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		961F2EFFEBE5F85FBC4F1622AB4CD89A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1F438AEAAE32213D12617C6DA7AC0EF /* CountryPickerSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E1E67FC9F7E1027379302D1E95996201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A537D029EC3CD289EB8395C02BA20F3B /* CountryPickerSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CountryPickerSwift/CountryPickerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CountryPickerSwift/CountryPickerSwift.modulemap";
+				PRODUCT_MODULE_NAME = CountryPicker;
+				PRODUCT_NAME = CountryPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35D57BD2DBA6D2B5467B4281A6B3A931 /* Build configuration list for PBXNativeTarget "Shuffle-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A79A634C1122666151A52FD32FB908 /* Debug */,
+				6EA0E4776AD61A138FDDF8892876385D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D54190A446FAF2EE53E041458A0A0DA /* Build configuration list for PBXNativeTarget "Pods-CoupleCares" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8239EFAFDF8AA1604A7AB7E73557BD89 /* Debug */,
+				2AC391E0A96DE19114010F7F4C39775F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EDB84A81E6827C22A77B81A3DCA0784 /* Build configuration list for PBXNativeTarget "ScalingCarousel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				083D6329062A868DED204FD984C26F5E /* Debug */,
+				651E856B42CFAB90328AFF09CB0BE863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C903EB518308D9BA8FEDDAC7F6C5F78 /* Build configuration list for PBXNativeTarget "CountryPickerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				961F2EFFEBE5F85FBC4F1622AB4CD89A /* Debug */,
+				E1E67FC9F7E1027379302D1E95996201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

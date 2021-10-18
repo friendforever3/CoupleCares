@@ -19,6 +19,16 @@ class FeedVC: UIViewController {
         feedTblVw.rowHeight = UITableView.automaticDimension
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func btnAddPostAction(_ sender: Any) {
+        let vc = CreatePostVC.getVC(.Feed)
+        self.push(vc)
+    }
+    
 }
 
 extension FeedVC : UITableViewDelegate,UITableViewDataSource{

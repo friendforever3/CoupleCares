@@ -353,7 +353,7 @@
                                     <constraint firstItem="csU-ag-OhX" firstAttribute="top" secondItem="IQo-Ux-NUB" secondAttribute="top" id="bBE-Vy-eUO"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Tt-bOR">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-Tt-bOR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG7-AE-nax">
@@ -437,7 +437,7 @@
     <resources>
         <image name="Rectangle 27" width="163" height="212"/>
         <image name="no_likes" width="161" height="117"/>
-        <image name="superlike" width="70" height="70"/>
+        <image name="superlike" width="85" height="85"/>
         <namedColor name="appOrange">
             <color red="0.96862745098039216" green="0.59607843137254901" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

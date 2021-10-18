@@ -7,5 +7,7 @@ target 'CoupleCares' do
 
   # Pods for CoupleCares
 pod 'Shuffle-iOS'
+pod 'CountryPickerSwift'
+pod "ScalingCarousel"
 
 end

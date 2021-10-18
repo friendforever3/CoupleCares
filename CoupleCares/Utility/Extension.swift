@@ -92,6 +92,8 @@ enum Storyboard: String {
     case Message = "Message"
     case LikesTopPick = "LikesTopPick"
     case Home = "Home"
+    case Profile = "Profile"
+    case Feed = "Feed"
 }
 
 

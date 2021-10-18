@@ -22,7 +22,14 @@ class PhotoVC: UIViewController {
         vwPhotoHeightConstraint.constant = 275
     }
     
-
+    @IBAction func btnBackAction(_ sender: Any) {
+        self.popVc()
+    }
+    @IBAction func btnContinueAction(_ sender: Any) {
+        let vc = LocationVC.getVC(.Main)
+        self.push(vc)
+    }
+    
 }
 
 
