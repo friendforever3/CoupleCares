@@ -1,3 +1,0 @@
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScalingCarousel.framework
-${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shuffle_iOS.framework

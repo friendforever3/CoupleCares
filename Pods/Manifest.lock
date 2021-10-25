@@ -1,24 +1,28 @@
 PODS:
   - CountryPickerSwift (1.8.2)
+  - IQKeyboardManager (6.5.6)
   - ScalingCarousel (3.2.0)
   - Shuffle-iOS (0.5.0)
 
 DEPENDENCIES:
   - CountryPickerSwift
+  - IQKeyboardManager
   - ScalingCarousel
   - Shuffle-iOS
 
 SPEC REPOS:
   trunk:
     - CountryPickerSwift
+    - IQKeyboardManager
     - ScalingCarousel
     - Shuffle-iOS
 
 SPEC CHECKSUMS:
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: 40e77deb0d55bc065d11b9882d4d7ce3bf1fa07e
+PODFILE CHECKSUM: 2f71eeba6e0c97ee229596f5e40d5ca994d3fc37
 
 COCOAPODS: 1.11.2

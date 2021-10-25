@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-CoupleCare-CoupleCareUITests/Pods-CoupleCare-CoupleCareUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework
+${BUILT_PRODUCTS_DIR}/Shuffle-iOS/Shuffle_iOS.framework
