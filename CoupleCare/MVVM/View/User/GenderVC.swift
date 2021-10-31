@@ -9,6 +9,27 @@ import UIKit
 
 class GenderVC: UIViewController {
 
+    @IBOutlet weak var vwMale: ViewCustom!
+    @IBOutlet weak var imgMale: UIImageView!
+    @IBOutlet weak var lblMale: UILabel!
+    @IBOutlet weak var vwFemale: ViewCustom!
+    @IBOutlet weak var imgFemale: UIImageView!
+    @IBOutlet weak var lblFemale: UILabel!
+    @IBOutlet weak var vwOther: ViewCustom!
+    @IBOutlet weak var imgOther: UIImageView!
+    @IBOutlet weak var lblOther: UILabel!
+    
+    @IBOutlet weak var vwMen: ViewCustom!
+    @IBOutlet weak var imgMen: UIImageView!
+    @IBOutlet weak var lblMen: UILabel!
+    @IBOutlet weak var vwWomen: ViewCustom!
+    @IBOutlet weak var imgWomen: UIImageView!
+    @IBOutlet weak var lblWomen: UILabel!
+    @IBOutlet weak var vwAll: ViewCustom!
+    @IBOutlet weak var imgAll: UIImageView!
+    @IBOutlet weak var lblAll: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,14 +45,149 @@ class GenderVC: UIViewController {
         self.push(vc)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnMaleAction(_ sender: Any) {
+        selectedVw(selected: vwMale)
     }
-    */
-
+    
+    @IBAction func btnFemaleAction(_ sender: Any) {
+        selectedVw(selected: vwFemale)
+    }
+    
+    @IBAction func btnOtherAction(_ sender: Any) {
+        selectedVw(selected: vwOther)
+    }
+    
+    @IBAction func btnMenAction(_ sender: Any) {
+        selectedInterestVw(selected: vwMen)
+    }
+    
+    @IBAction func btnWomenAction(_ sender: Any) {
+        selectedInterestVw(selected: vwWomen)
+    }
+    
+    @IBAction func btnAllAction(_ sender: Any) {
+        selectedInterestVw(selected: vwAll)
+    }
+    
+    func selectedVw(selected:ViewCustom){
+        
+        let vws = [vwMale,vwFemale,vwOther]
+        
+        for vw in vws{
+            
+            if vw == selected{
+                
+                vw?.backgroundColor = UIColor(named: "appOrange")
+                
+                if selected == vwMale{
+                    imgMale.image = UIImage(named: "male")
+                    lblMale.textColor = .white
+                }else if selected == vwFemale{
+                    imgFemale.image = UIImage(named: "female")
+                    lblFemale.textColor = .white
+                }else if selected == vwOther{
+                    imgOther.image = UIImage(named: "other")
+                    lblOther.textColor = .white
+                }
+                
+            }else{
+                vw?.backgroundColor = .white
+                vw?.borderColor = UIColor(named: "appOrange")
+                
+                if selected == vwMale{
+                    
+                    imgFemale.image = UIImage(named: "female2")
+                    lblFemale.textColor = UIColor(named: "txtColor")
+                    
+                    imgOther.image = UIImage(named: "other2")
+                    lblOther.textColor = UIColor(named: "txtColor")
+                    
+                }else if selected == vwFemale{
+                    
+                    imgMale.image = UIImage(named: "male2")
+                    lblMale.textColor = UIColor(named: "txtColor")
+                    
+                    imgOther.image = UIImage(named: "other2")
+                    lblOther.textColor = UIColor(named: "txtColor")
+                    
+                    
+                }else if selected == vwOther{
+                    
+                    imgFemale.image = UIImage(named: "female2")
+                    lblFemale.textColor = UIColor(named: "txtColor")
+                    
+                    imgMale.image = UIImage(named: "male2")
+                    lblMale.textColor = UIColor(named: "txtColor")
+                    
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    func selectedInterestVw(selected:ViewCustom){
+        
+        let vws = [vwMen,vwWomen,vwAll]
+        
+        for vw in vws{
+            
+            if vw == selected{
+                
+                vw?.backgroundColor = UIColor(named: "appOrange")
+                
+                if selected == vwMen{
+                    imgMen.image = UIImage(named: "male")
+                    lblMen.textColor = .white
+                }else if selected == vwWomen{
+                    imgWomen.image = UIImage(named: "female")
+                    lblWomen.textColor = .white
+                }else if selected == vwAll{
+                    imgAll.image = UIImage(named: "other")
+                    lblAll.textColor = .white
+                }
+                
+            }else{
+                vw?.backgroundColor = .white
+                vw?.borderColor = UIColor(named: "appOrange")
+                
+                if selected == vwMen{
+                    
+                    imgWomen.image = UIImage(named: "female2")
+                    lblWomen.textColor = UIColor(named: "txtColor")
+                    
+                    imgAll.image = UIImage(named: "other2")
+                    lblAll.textColor = UIColor(named: "txtColor")
+                    
+                }else if selected == vwWomen{
+                    
+                    imgMen.image = UIImage(named: "male2")
+                    lblMen.textColor = UIColor(named: "txtColor")
+                    
+                    imgAll.image = UIImage(named: "other2")
+                    lblAll.textColor = UIColor(named: "txtColor")
+                    
+                    
+                }else if selected == vwAll{
+                    
+                    imgWomen.image = UIImage(named: "female2")
+                    lblWomen.textColor = UIColor(named: "txtColor")
+                    
+                    imgMen.image = UIImage(named: "male2")
+                    lblMen.textColor = UIColor(named: "txtColor")
+                    
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
 }

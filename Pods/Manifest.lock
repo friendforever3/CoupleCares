@@ -1,12 +1,16 @@
 PODS:
   - CountryPickerSwift (1.8.2)
   - IQKeyboardManager (6.5.6)
+  - OpalImagePicker (3.0.0)
+  - RangeSeekSlider (1.8.0)
   - ScalingCarousel (3.2.0)
   - Shuffle-iOS (0.5.0)
 
 DEPENDENCIES:
   - CountryPickerSwift
   - IQKeyboardManager
+  - OpalImagePicker
+  - RangeSeekSlider
   - ScalingCarousel
   - Shuffle-iOS
 
@@ -14,15 +18,19 @@ SPEC REPOS:
   trunk:
     - CountryPickerSwift
     - IQKeyboardManager
+    - OpalImagePicker
+    - RangeSeekSlider
     - ScalingCarousel
     - Shuffle-iOS
 
 SPEC CHECKSUMS:
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: 2f71eeba6e0c97ee229596f5e40d5ca994d3fc37
+PODFILE CHECKSUM: 13d5f15449c46c33493bf2a413030ef9a9ac3f9e
 
 COCOAPODS: 1.11.2

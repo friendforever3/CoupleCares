@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Photos
 //import Kingfisher
 
 
@@ -122,6 +123,23 @@ class UtilityManager : NSObject{
     func logoutUserNumber(){
         UserDefaults.standard.removeObject(forKey: "userNumber")
     }
+    
+    func getAssetThumbnail(assets: [PHAsset]) -> [UIImage] {
+         var arrayOfImages = [UIImage]()
+         for asset in assets {
+             let manager = PHImageManager.default()
+             let option = PHImageRequestOptions()
+             var image = UIImage()
+             option.isSynchronous = true
+             manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                 image = result!
+                 arrayOfImages.append(image)
+             })
+         }
+
+         return arrayOfImages
+     }
+    
     
     /*
      func LoginUserDecodedDetail()->UserValidateLoginModel{

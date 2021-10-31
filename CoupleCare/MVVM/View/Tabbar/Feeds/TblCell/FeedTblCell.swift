@@ -13,6 +13,7 @@ class FeedTblCell: UITableViewCell {
     var btnComment : ((FeedTblCell)->Void)?
     var btnLike : ((FeedTblCell)->Void)?
     var btnOption : ((FeedTblCell)->Void)?
+    var btnOpenOtherProfile : ((FeedTblCell)->Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,9 @@ class FeedTblCell: UITableViewCell {
     
     @IBAction func btnOptionAction(_ sender: Any) {
         self.btnOption?(self)
+    }
+    @IBAction func btnOpenOtherProfileAction(_ sender: Any) {
+        self.btnOpenOtherProfile?(self)
     }
     
 }

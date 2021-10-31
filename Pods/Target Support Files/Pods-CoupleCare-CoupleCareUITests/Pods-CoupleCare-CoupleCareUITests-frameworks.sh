@@ -178,12 +178,16 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shuffle-iOS/Shuffle_iOS.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ScalingCarousel/ScalingCarousel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Shuffle-iOS/Shuffle_iOS.framework"
 fi

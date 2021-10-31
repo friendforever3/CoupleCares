@@ -10,6 +10,8 @@ pod 'Shuffle-iOS'
 pod 'CountryPickerSwift'
 pod "ScalingCarousel"
 pod 'IQKeyboardManager'
+pod 'RangeSeekSlider'
+pod 'OpalImagePicker'
 
   target 'CoupleCareTests' do
     inherit! :search_paths

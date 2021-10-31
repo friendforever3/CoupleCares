@@ -13,6 +13,8 @@ class InterestsVC: UIViewController {
     
     let textArray = ["Craft","Comedy","Cars","Cooking","Cycling","Dancing","Pets","Travelling","Singing"]
     
+    var selectedIndexPath = IndexPath()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,23 +40,39 @@ extension InterestsVC : UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InterestClcCell
+        
+        if selectedIndexPath == indexPath{
+            cell.backgroundColor = UIColor(named: "appOrange")
+            cell.layer.cornerRadius = 24
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor(named: "appOrange")?.cgColor
+            cell.lblInterest.text = textArray[indexPath.item]
+            cell.lblInterest.textColor = .white
+        }else{
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 24
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor(named: "appOrange")?.cgColor
         cell.lblInterest.text = textArray[indexPath.item]
-        
+            cell.lblInterest.textColor = UIColor(named: "txtColor")
+        }
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedIndexPath = indexPath
+        interestClcVw.reloadData()
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let label = UILabel(frame: CGRect.zero)
-            label.text = textArray[indexPath.item]
-            label.sizeToFit()
-           // return CGSize(width: (label.frame.width + 44), height: 48)
+        let label = UILabel(frame: CGRect.zero)
+        label.text = textArray[indexPath.item]
+        label.sizeToFit()
+        // return CGSize(width: (label.frame.width + 44), height: 48)
         return CGSize(width: ((interestClcVw.frame.size.width) / 3) - 10, height: 48)
-        }
+    }
     
 }

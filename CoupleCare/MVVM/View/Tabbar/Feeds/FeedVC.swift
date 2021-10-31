@@ -87,6 +87,15 @@ extension FeedVC : UITableViewDelegate,UITableViewDataSource{
         }
         
         
+        cell.btnOpenOtherProfile = {
+            btn in
+            
+            let vc = OtherProfileVC.getVC(.Home)
+            self.push(vc)
+            
+        }
+        
+        
         return cell
     }
     

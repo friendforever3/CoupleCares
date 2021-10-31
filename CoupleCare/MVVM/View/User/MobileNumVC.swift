@@ -28,9 +28,7 @@ class MobileNumVC: UIViewController {
         picker.showPhoneNumbers = true
         picker.setCountry(code!)
         
-        
         tfCode.inputView = picker
-        
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -42,15 +40,11 @@ class MobileNumVC: UIViewController {
         self.push(vc)
     }
     
-   
-
 }
 
 //MARK: Country Picker
 extension MobileNumVC : CountryPickerDelegate{
-    
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
         imgFlag.image = flag
     }
-    
 }

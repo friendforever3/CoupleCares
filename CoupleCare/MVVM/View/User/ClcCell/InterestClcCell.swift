@@ -9,6 +9,9 @@ import UIKit
 
 class InterestClcCell: UICollectionViewCell {
     
+    @IBOutlet weak var imgAddIcon: UIImageView!
+    @IBOutlet weak var imgUser: UIImageView!
+    @IBOutlet weak var btnDeleteImg: UIButton!
     @IBOutlet weak var lblInterest: UILabel!
     
     

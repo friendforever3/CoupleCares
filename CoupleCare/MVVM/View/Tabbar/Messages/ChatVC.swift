@@ -25,7 +25,7 @@ class ChatVC: UIViewController {
         
         chatTblVw.estimatedRowHeight = 86
         chatTblVw.rowHeight = UITableView.automaticDimension
-        vwMenuHeightConstraint.constant = 0
+      //  vwMenuHeightConstraint.constant = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +47,7 @@ class ChatVC: UIViewController {
         
         
         
-        vwMenuHeightConstraint.constant = 247
+        //vwMenuHeightConstraint.constant = 247
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         } completion: { _ in
@@ -57,7 +57,7 @@ class ChatVC: UIViewController {
     }
     @IBAction func btnCloseMenuAction(_ sender: Any) {
         vwBg.isHidden = true
-        vwMenuHeightConstraint.constant = 0
+       // vwMenuHeightConstraint.constant = 0
         UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         } completion: { _ in

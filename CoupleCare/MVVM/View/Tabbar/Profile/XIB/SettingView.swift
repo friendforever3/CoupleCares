@@ -19,4 +19,12 @@ class SettingView: UIView {
          }
          return share!
      }
+    
+   
+    @IBAction func btnUpgradePlanAction(_ sender: Any) {
+        let vc = PremiumPlanVC.getVC(.Home)
+        UIApplication.topViewController()?.push(vc)
+    }
+    
+    
 }
