@@ -12,6 +12,9 @@ pod "ScalingCarousel"
 pod 'IQKeyboardManager'
 pod 'RangeSeekSlider'
 pod 'OpalImagePicker'
+pod 'Alamofire'
+pod 'NVActivityIndicatorView' , '~> 4.7.0'
+
 
   target 'CoupleCareTests' do
     inherit! :search_paths

@@ -23,11 +23,36 @@ class BirthdayVC: UIViewController {
     @IBAction func btnBackAction(_ sender: Any) {
         self.popVc()
     }
+    
     @IBAction func btnContinueAction(_ sender: Any) {
+        if tfDOB.text?.isEmptyOrWhitespace() ?? false{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgDOB, control: ["OK"], topController: self)
+        }else{
+            RegisterModel.shared.DOB = tfDOB.text ?? ""
+            RegisterModel.shared.age = "\(calcAge(birthday: tfDOB.text ?? ""))"
+            print("age:-",RegisterModel.shared.age)
+            if RegisterModel.shared.age != ""{
+                pushToGender()
+            }
+        }
+    }
+    
+    func pushToGender(){
         let vc = GenderVC.getVC(.Main)
         self.push(vc)
     }
    
+    func calcAge(birthday: String) -> Int {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        let birthdayDate = dateFormater.date(from: birthday)
+        let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
+        let now = Date()
+        let calcAge = calendar.components(.year, from: birthdayDate ?? Date(), to: now, options: [])
+        let age = calcAge.year
+        return age ?? 0
+    }
+    
 }
 
 
@@ -56,16 +81,15 @@ func showDatePicker(){
 
  }
 
-  @objc func donedatePicker(){
+    @objc func donedatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        tfDOB.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
 
-   let formatter = DateFormatter()
-   formatter.dateFormat = "MM/dd/yyyy"
-      tfDOB.text = formatter.string(from: datePicker.date)
-   self.view.endEditing(true)
- }
-
- @objc func cancelDatePicker(){
-    self.view.endEditing(true)
-  }
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
 
 }

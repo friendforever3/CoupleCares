@@ -30,11 +30,19 @@ class PhotoVC: UIViewController {
     @IBAction func btnBackAction(_ sender: Any) {
         self.popVc()
     }
+    
     @IBAction func btnContinueAction(_ sender: Any) {
+        if RegisterModel.shared.images.count == 0{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgImage, control: ["OK"], topController: self)
+        }else{
+            pushToLoc()
+        }
+    }
+    
+    func pushToLoc(){
         let vc = LocationVC.getVC(.Main)
         self.push(vc)
     }
-    
 }
 
 
@@ -67,6 +75,7 @@ extension PhotoVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         let imagePicker = OpalImagePickerController()
         imagePicker.imagePickerDelegate = self
         imagePicker.maximumSelectionsAllowed = 6
+        imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
         imagePicker.view.backgroundColor = .white
         present(imagePicker, animated: true, completion: nil)
         
@@ -89,6 +98,12 @@ extension PhotoVC: OpalImagePickerControllerDelegate {
         //Save Images, update UI
        
         selectedPhots = UtilityManager.shared.getAssetThumbnail(assets: assets)
+        
+        for img in selectedPhots{
+            guard let data = img.jpegData(compressionQuality: 0.2)else {return}
+            RegisterModel.shared.images.append(data)
+        }
+        
         photoClcVw.reloadData()
         print(assets.count)
         //Dismiss Controller

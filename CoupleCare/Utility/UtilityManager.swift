@@ -43,6 +43,15 @@ class UtilityManager : NSObject{
         }
     }
     
+    
+    var userToken : String{
+        get{
+            UserDefaults.standard.string(forKey: "userToken") ?? ""
+        }set{
+            UserDefaults.standard.set(newValue, forKey: "userToken")
+        }
+    }
+    
     //MARK:-  Display alert with completion
     func displayAlertWithCompletion(title:String,message:String,control:[String],topController:UIViewController,completion:@escaping (String)->()){
         

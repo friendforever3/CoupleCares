@@ -9,6 +9,7 @@ import UIKit
 
 class NameVC: UIViewController {
 
+    @IBOutlet weak var tfFullName: TextFieldCustom!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,18 +20,18 @@ class NameVC: UIViewController {
     }
     
     @IBAction func btnContinueAction(_ sender: Any) {
+        if tfFullName.text?.isEmptyOrWhitespace() ?? false{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgFullName, control: ["OK"], topController: self)
+        }else{
+            RegisterModel.shared.fullName = tfFullName.text ?? ""
+            pushToBday()
+        }
+    }
+    
+    func pushToBday(){
         let vc = BirthdayVC.getVC(.Main)
         self.push(vc)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

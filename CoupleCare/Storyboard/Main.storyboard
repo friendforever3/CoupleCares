@@ -510,6 +510,7 @@
                     <connections>
                         <outlet property="imgFlag" destination="8fp-Pl-VSH" id="N1f-wO-vge"/>
                         <outlet property="tfCode" destination="FIB-v2-DL2" id="q6e-dg-Nei"/>
+                        <outlet property="tfMobileNo" destination="Eci-ve-Wjw" id="zY2-80-L59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsz-XR-h88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -528,7 +529,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vb3-I9-9BM" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                <rect key="frame" x="16" y="389.5" width="382" height="48"/>
+                                <rect key="frame" x="16" y="391" width="382" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSd-tH-78x">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
@@ -583,28 +584,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yp-OL-Voq">
-                                <rect key="frame" x="19" y="105.5" width="136.5" height="37.5"/>
+                                <rect key="frame" x="19" y="105.5" width="137" height="38.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="32"/>
                                 <color key="textColor" name="txtColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP send to +1202-555-0029" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WT-Kd-BRy">
-                                <rect key="frame" x="113.5" y="224" width="187.5" height="16.5"/>
+                                <rect key="frame" x="113" y="225" width="188" height="17"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <color key="textColor" name="txtColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-Ob-nSI">
-                                <rect key="frame" x="16" y="286.5" width="382" height="56"/>
+                                <rect key="frame" x="16" y="288" width="382" height="56"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcs-cY-UzB">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ5-jP-3x8" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="63" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kjr-Ej-xP0">
-                                                        <rect key="frame" x="2" y="2" width="59" height="52"/>
+                                                        <rect key="frame" x="2" y="2" width="79" height="52"/>
                                                         <color key="textColor" name="txtColor"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -630,10 +631,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Ze-W9t" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="80" y="0.0" width="62.5" height="56"/>
+                                                <rect key="frame" x="100" y="0.0" width="82.5" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HnO-E9-O0Q">
-                                                        <rect key="frame" x="2" y="2" width="58.5" height="52"/>
+                                                        <rect key="frame" x="2" y="2" width="78.5" height="52"/>
                                                         <color key="textColor" name="txtColor"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -659,10 +660,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gh9-Hh-oSa" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="159.5" y="0.0" width="63" height="56"/>
+                                                <rect key="frame" x="199.5" y="0.0" width="83" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbP-gR-6r6">
-                                                        <rect key="frame" x="2" y="2" width="59" height="52"/>
+                                                        <rect key="frame" x="2" y="2" width="79" height="52"/>
                                                         <color key="textColor" name="txtColor"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -688,10 +689,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoD-Ci-seV" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="239.5" y="0.0" width="62.5" height="56"/>
+                                                <rect key="frame" x="299.5" y="0.0" width="82.5" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-WX-glQ">
-                                                        <rect key="frame" x="2" y="2" width="58.5" height="52"/>
+                                                        <rect key="frame" x="2" y="2" width="78.5" height="52"/>
                                                         <color key="textColor" name="txtColor"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -716,11 +717,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-do-lop" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="319" y="0.0" width="63" height="56"/>
+                                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-do-lop" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
+                                                <rect key="frame" x="382" y="0.0" width="4" height="56"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-Tm-nWx">
-                                                        <rect key="frame" x="2" y="2" width="59" height="52"/>
+                                                        <rect key="frame" x="2" y="2" width="0.0" height="52"/>
                                                         <color key="textColor" name="txtColor"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -787,7 +788,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZV-LW-AKt">
-                                <rect key="frame" x="129" y="483.5" width="156.5" height="17"/>
+                                <rect key="frame" x="129" y="485" width="156.5" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Didn’t recieved? ">
                                         <attributes>
@@ -805,11 +806,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDt-qq-weq">
-                                <rect key="frame" x="129" y="483.5" width="156.5" height="40"/>
+                                <rect key="frame" x="129" y="485" width="156.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Uom-Da-d5a"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="btnResendOtpAction:" destination="YkQ-Ku-rYs" eventType="touchUpInside" id="GKc-hd-aiQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tfb-GN-tWz"/>
@@ -839,6 +843,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblOtpMobile" destination="4WT-Kd-BRy" id="xXW-SN-ems"/>
                         <outlet property="tfFifth" destination="cJ5-Tm-nWx" id="sfl-zN-1NW"/>
                         <outlet property="tfForth" destination="aCF-WX-glQ" id="wC9-0P-cQE"/>
                         <outlet property="tfThird" destination="vbP-gR-6r6" id="Yxf-rT-XDd"/>
@@ -1051,6 +1056,9 @@
                             <constraint firstItem="WeN-5J-FUg" firstAttribute="top" secondItem="cfU-kz-RXo" secondAttribute="top" id="tM0-qJ-XiQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tfFullName" destination="g3h-LU-DRn" id="toJ-KT-Azf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWg-jR-nJU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2519,6 +2527,9 @@
         </designable>
         <designable name="FIB-v2-DL2">
             <size key="intrinsicContentSize" width="4" height="18.5"/>
+        </designable>
+        <designable name="ME3-xh-7Yf">
+            <size key="intrinsicContentSize" width="101" height="122"/>
         </designable>
         <designable name="Odl-h9-jhh">
             <size key="intrinsicContentSize" width="108.5" height="21"/>

@@ -14,15 +14,24 @@ class OTPVC: UIViewController {
     @IBOutlet weak var tfThird: UITextField!
     @IBOutlet weak var tfForth: UITextField!
     @IBOutlet weak var tfFifth: UITextField!
+    @IBOutlet weak var lblOtpMobile: UILabel!
     
     var otpString = String()
     
+    var mobileNo : String = ""
+    var dailCode : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         setDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.lblOtpMobile.text = "OTP send to \(dailCode)\(mobileNo)"
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -30,19 +39,14 @@ class OTPVC: UIViewController {
     }
     
     @IBAction func btnSubmitAction(_ sender: Any) {
-        let vc = NameVC.getVC(.Main)
-        self.push(vc)
+        self.verifyOTP()
+       //self.pushToName()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnResendOtpAction(_ sender: Any) {
+        self.resendOTP()
     }
-    */
+    
 
 }
 
@@ -107,6 +111,44 @@ extension OTPVC: UITextFieldDelegate{
         }else{
             
         }
+    }
+    
+}
+
+
+//MARK: API
+extension OTPVC{
+    
+    func verifyOTP(){
+        
+        let otp = (tfone.text ?? "") + (tfTwo.text ?? "") + (tfThird.text ?? "") + (tfForth.text ?? "")
+        
+        UserVM.shared.verifyOTP(mobileNo: mobileNo, countryCode: dailCode, OTP: otp){ [weak self] (success, msg) in
+            if success{
+                
+                UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
+                    self?.pushToName()
+                }
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+    func resendOTP(){
+        UserVM.shared.resendOTP(mobileNo: mobileNo, countryCode: dailCode) { [weak self] (success, msg) in
+            if success{
+                UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
+                }
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+    func pushToName(){
+        let vc = NameVC.getVC(.Main)
+        self.push(vc)
     }
     
 }

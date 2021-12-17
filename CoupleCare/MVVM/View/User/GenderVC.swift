@@ -29,6 +29,8 @@ class GenderVC: UIViewController {
     @IBOutlet weak var imgAll: UIImageView!
     @IBOutlet weak var lblAll: UILabel!
     
+    var genderSelected : String = ""
+    var interestSelected : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,32 +43,51 @@ class GenderVC: UIViewController {
     }
     
     @IBAction func btnContinueAction(_ sender: Any) {
+        if genderSelected == ""{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgGender, control: ["OK"], topController: self)
+        }else if interestSelected == ""{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgInterestedIn, control: ["OK"], topController: self)
+        }else{
+            RegisterModel.shared.gender = genderSelected
+            RegisterModel.shared.interestedIn = interestSelected
+            pushToInterest()
+        }
+    }
+    
+    //1 == male 2 == female 3 == other
+    func pushToInterest(){
         let vc = InterestsVC.getVC(.Main)
         self.push(vc)
     }
     
     @IBAction func btnMaleAction(_ sender: Any) {
         selectedVw(selected: vwMale)
+        genderSelected = "1"
     }
     
     @IBAction func btnFemaleAction(_ sender: Any) {
         selectedVw(selected: vwFemale)
+        genderSelected = "2"
     }
     
     @IBAction func btnOtherAction(_ sender: Any) {
         selectedVw(selected: vwOther)
+        genderSelected = "3"
     }
-    
+    //1 == male 2 == female 3 == all
     @IBAction func btnMenAction(_ sender: Any) {
         selectedInterestVw(selected: vwMen)
+        interestSelected = "1"
     }
     
     @IBAction func btnWomenAction(_ sender: Any) {
         selectedInterestVw(selected: vwWomen)
+        interestSelected = "2"
     }
     
     @IBAction func btnAllAction(_ sender: Any) {
         selectedInterestVw(selected: vwAll)
+        interestSelected = "3"
     }
     
     func selectedVw(selected:ViewCustom){
