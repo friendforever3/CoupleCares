@@ -8,10 +8,6 @@
 import UIKit
 import ScalingCarousel
 
-protocol ControllerDeleagte{
-    func didCloseDelegate()
-}
-
 class SubscriptionTypeVC: UIViewController {
 
     @IBOutlet weak var clcVw: ScalingCarouselView!

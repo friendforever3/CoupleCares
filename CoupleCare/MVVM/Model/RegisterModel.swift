@@ -24,6 +24,7 @@ class RegisterModel : NSObject{
     var interestedIn : String = ""
     var interests = [String]()
     var images = [Data]()
+    var selectedImages = [UIImage]()
     var lat : String = ""
     var long : String = ""
     

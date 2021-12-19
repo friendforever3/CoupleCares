@@ -126,9 +126,12 @@ extension OTPVC{
         UserVM.shared.verifyOTP(mobileNo: mobileNo, countryCode: dailCode, OTP: otp){ [weak self] (success, msg) in
             if success{
                 
-                UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
+                if UtilityManager.shared.userDecodedDetail().isRegistered{
+                    self?.pushToHome()
+                }else{
                     self?.pushToName()
                 }
+            
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }
@@ -148,6 +151,11 @@ extension OTPVC{
     
     func pushToName(){
         let vc = NameVC.getVC(.Main)
+        self.push(vc)
+    }
+    
+    func pushToHome(){
+        let vc = CoupleCaresTabbar.getVC(.CoupleCares)
         self.push(vc)
     }
     

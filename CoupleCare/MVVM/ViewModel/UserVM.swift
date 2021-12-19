@@ -37,6 +37,13 @@ class UserVM: NSObject {
         serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kVerifyotp, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
             
             if response["statusCode"] as? Int == 200{
+                
+                if let data = response["data"] as? [String:Any]{
+                    let obj = UserModel()
+                    obj.setData(dict: data)
+                    UtilityManager.shared.userDataEncode(obj)
+                }
+                
                 completion(true,response["message"] as? String ?? "")
             }else{
                 completion(false,response["message"] as? String ?? "")
@@ -82,19 +89,15 @@ class UserVM: NSObject {
         uploadDataToServerHandler(url: APIConstant.kSandvboxBaseUrl + APIConstant.kRegister, param: param, imgData: RegisterModel.shared.images, fileName: "images") { (response) in
             
             print("respinse Register:-",response)
-            
             if response?["statusCode"] as? Int == 200{
-                
                 completion(true,response?["message"] as? String ?? "")
             }else{
                 completion(false,response?["message"] as? String ?? "")
             }
-            
-            
         }
-        
-        
     }
+    
+    
     
     
     //MARK: Get Interest List

@@ -68,6 +68,7 @@ func showDatePicker(){
         // Fallback on earlier versions
     }
    //ToolBar
+    self.datePicker.maximumDate = Date()
    let toolbar = UIToolbar();
    toolbar.sizeToFit()
    let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));

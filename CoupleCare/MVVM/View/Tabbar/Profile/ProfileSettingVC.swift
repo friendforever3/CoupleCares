@@ -40,7 +40,7 @@ class ProfileSettingVC: UIViewController {
     
     func logout(){
         let app = UIApplication.shared.delegate as! AppDelegate
-        
+        UtilityManager.shared.removeUserdefault(["UserModel"])
         let vc = LoginVC.getVC(.Main)
         navigationController?.pushViewController(vc, animated: false)
         navigationController?.setNavigationBarHidden(true, animated: false)

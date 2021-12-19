@@ -42,7 +42,7 @@ class MobileNumVC: UIViewController {
     
     @IBAction func btnContinueAction(_ sender: Any) {
         if tfMobileNo.text?.isEmptyOrWhitespace() ?? false{
-            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgFullName, control: ["OK"], topController: self)
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgMobile, control: ["OK"], topController: self)
         }else{
             sendMobileOTP()
            // pushToOtp()
@@ -66,11 +66,11 @@ extension MobileNumVC{
     func sendMobileOTP(){
         UserVM.shared.sendMobileOTP(mobileNo: tfMobileNo.text ?? "", countryCode: self.countryCode) { [weak self] (success, msg) in
             if success{
-                UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
+//                UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
                     RegisterModel.shared.mobileNo = self?.tfMobileNo.text ?? ""
                     RegisterModel.shared.dailCode = self?.countryCode ?? ""
                     self?.pushToOtp()
-                }
+               // }
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.3)
   - CountryPickerSwift (1.8.2)
   - IQKeyboardManager (6.5.6)
+  - Kingfisher (6.3.1)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - CountryPickerSwift
   - IQKeyboardManager
+  - Kingfisher
   - NVActivityIndicatorView (~> 4.7.0)
   - OpalImagePicker
   - RangeSeekSlider
@@ -25,6 +27,7 @@ SPEC REPOS:
     - Alamofire
     - CountryPickerSwift
     - IQKeyboardManager
+    - Kingfisher
     - NVActivityIndicatorView
     - OpalImagePicker
     - RangeSeekSlider
@@ -35,12 +38,13 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: dff712880f1219b53f0c355b98ce8a4d67d3fc3f
+PODFILE CHECKSUM: ec59407861f3f48c746a46941560bc949e90c33b
 
 COCOAPODS: 1.11.2

@@ -16,6 +16,12 @@ class ProfileCell: UITableViewCell {
     
     @IBOutlet weak var lblProSetting: UILabel!
     
+    @IBOutlet weak var photosClcVw: UICollectionView!
+    
+    @IBOutlet weak var interestClcVw: UICollectionView!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

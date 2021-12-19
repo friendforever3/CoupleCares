@@ -14,6 +14,7 @@ pod 'RangeSeekSlider'
 pod 'OpalImagePicker'
 pod 'Alamofire'
 pod 'NVActivityIndicatorView' , '~> 4.7.0'
+pod 'Kingfisher'
 
 
   target 'CoupleCareTests' do

@@ -103,6 +103,7 @@ class OpalImagePickerManager: NSObject {
 
 extension OpalImagePickerManager: OpalImagePickerControllerDelegate {
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
+        
         selectAssets?(assets)
     }
     

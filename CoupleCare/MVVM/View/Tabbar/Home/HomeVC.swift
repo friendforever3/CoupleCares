@@ -14,6 +14,10 @@ import Shuffle_iOS
 class HomeVC: UIViewController {
 
     @IBOutlet weak var vwCard: SwipeCardStack!
+    @IBOutlet weak var interestClcVw: UICollectionView!
+    @IBOutlet weak var interestVwHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lbluserName: UILabel!
+    @IBOutlet weak var lblDistance: UILabel!
     
     let cardImages = [
           UIImage(named: "Rectangle 27"),
@@ -22,23 +26,33 @@ class HomeVC: UIViewController {
           UIImage(named: "Rectangle 28")
       ]
     
+    var cardIndex : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         vwCard.dataSource = self
         vwCard.delegate = self
+        getNearBy()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        
     }
     
+    @IBAction func btnDislikeAction(_ sender: Any) {
+       // vwCard.swipe(.left, animated: true)
+        userDislike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: cardIndex).id)
+    }
     
     @IBAction func btnLikeAction(_ sender: Any) {
-        let vc = MatchVC.getVC(.Home)
-        self.push(vc)
+        print("userlikeId;-",HomeVM.shared.getUserNameAge(indexPath: cardIndex).id)
+        
+        userLike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: cardIndex).id)
+
     }
     
     @IBAction func btnAddAction(_ sender: Any) {
@@ -46,21 +60,55 @@ class HomeVC: UIViewController {
         let vc = SubscriptionTypeVC.getVC(.Home)
         vc.delegate = self
         
-        vc.view.backgroundColor = .black.withAlphaComponent(0.5)
+        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen
-        nav.view.backgroundColor = .black.withAlphaComponent(0.5)
+        nav.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         nav.setNavigationBarHidden(true, animated: false)
         self.present(nav, animated: true, completion: nil)
     }
+
     
 }
 
 
 //MARK: Protocol Controller delegate
-extension HomeVC : ControllerDeleagte{
+extension HomeVC : ControllerDeleagte,didUpdateDelegate{
+    
+    func didUpdateHome() {
+        getNearBy()
+    }
+    
     func didCloseDelegate() {
         self.viewWillAppear(true)
+    }
+    
+    
+    
+}
+
+//MARK: CollectionView Datasource + Delegate
+extension HomeVC : UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return HomeVM.shared.getUserInterestCount(index: cardIndex)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! InterestClcCell
+        
+        cell.lblHomeInterest.text = HomeVM.shared.getUserInterestDetail(index: cardIndex, indexPath: indexPath)
+        interestVwHeightConstraint.constant = interestClcVw.contentSize.height
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "Craft hkh"
+        label.sizeToFit()
+        // return CGSize(width: (label.frame.width + 44), height: 48)
+        return CGSize(width: ((interestClcVw.frame.size.width) / 3) - 10, height: 40)
     }
     
 }
@@ -80,14 +128,38 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 //    let model = cardModels[index]
 //    card.content = TinderCardContentView(withImage: model.image)
 //    card.footer = TinderCardFooterView(withTitle: "\(model.name), \(model.age)", subtitle: model.occupation)
-
-      card.content = TinderCardContentView(withImage: cardImages[index])
+    
+      let url = URL(string: HomeVM.shared.getImageUrl(indexPath: index))
+      lbluserName.text = "\(HomeVM.shared.getUserNameAge(indexPath: index).name), \(HomeVM.shared.getUserNameAge(indexPath: index).age)"
       
+      lblDistance.text = "\((Double(HomeVM.shared.getUserDistance(index: index)) ?? 1.0).roundToDecimal(2)) Km"
+     // lblDistance.text = "\((Double(HomeVM.shared.getUserDistance(index: index)) ?? 1.0).roundToDecimal(2)) Km"
+     // print("distance","\(Double(HomeVM.shared.getUserDistance(index: index)))")
+      
+      
+      cardIndex = index
+    //  print("cardindex:-",cardIndex)
+      
+      if (HomeVM.shared.nearByCount() - 1) == index{
+          self.interestClcVw.reloadData()
+      }
+      
+      DispatchQueue.global().async {
+          let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+          DispatchQueue.main.async {
+              //imageView.image = UIImage(data: data!)
+              card.content = TinderCardContentView(withImage: UIImage(data: data ?? Data()))
+          }
+      }
+
+      
+     // card.content = TinderCardContentView(withImage: cardImages[index])
       return card
   }
 
   func numberOfCards(in cardStack: SwipeCardStack) -> Int {
-      return cardImages.count
+      return HomeVM.shared.nearByCount()
+     // return cardImages.count
   }
 
   func didSwipeAllCards(_ cardStack: SwipeCardStack) {
@@ -100,16 +172,41 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
      print("Undo \(direction)")
   }
 
-  func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
-    //print("Swiped \(direction) on \(cardModels[index].name)")
-      print("Swiped \(direction)")
-  }
+    func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
+        //print("Swiped \(direction) on \(cardModels[index].name)")
+        //      print("card index",index)
+        //      print("Swiped \(direction)")
+        
+        if HomeVM.shared.nearByCount() > index{
+            let indexx = (HomeVM.shared.nearByCount() - 1) - (index + 1)
+            if indexx >= 0{
+                print("bjj",cardIndex)
+                cardIndex = indexx
+                lbluserName.text = "\(HomeVM.shared.getUserNameAge(indexPath: indexx).name), \(HomeVM.shared.getUserNameAge(indexPath: indexx).age)"
+                lblDistance.text = "\((Double(HomeVM.shared.getUserDistance(index: indexx)) ?? 0.0).roundToDecimal(2)) Km"
+                self.interestClcVw.reloadData()
+            }
+            
+        }else{
+            print("all swiped")
+        }
+        
+    }
 
-  func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
-    print("Card tapped")
-      let vc = OtherProfileVC.getVC(.Home)
-      self.push(vc)
-  }
+    func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
+       
+        if HomeVM.shared.nearByCount() > index{
+            let indexx = (HomeVM.shared.nearByCount() - 1) - index
+            if indexx >= 0{
+                let vc = OtherProfileVC.getVC(.Home)
+                vc.userId = HomeVM.shared.getUserNameAge(indexPath: indexx).id
+                vc.delegate = self
+                self.push(vc)
+            }
+        }
+        
+        
+    }
 
 //  func didTapButton(button: TinderButton) {
 //    switch button.tag {
@@ -127,4 +224,40 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 //      break
 //    }
 //  }
+}
+
+//MARK: API
+extension HomeVC{
+    
+    func getNearBy(){
+        HomeVM.shared.getNearBy(userId: UtilityManager.shared.userDecodedDetail().id, page: "0", pageSize: "100") { [weak self] (success, msg) in
+            if success{
+                self?.vwCard.reloadData()
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+    
+    func userLike(likeUserId:String){
+        LikesVM.shared.likeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+            if success{
+                self?.vwCard.swipe(.right, animated: true)
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+    func userDislike(likeUserId:String){
+        LikesVM.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+            if success{
+                self?.vwCard.swipe(.left, animated: true)
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
 }

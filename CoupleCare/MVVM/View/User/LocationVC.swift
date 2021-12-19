@@ -21,6 +21,11 @@ class LocationVC: UIViewController{
     
     }
     
+    @IBAction func btnBackAction(_ sender: Any) {
+        self.popVc()
+    }
+    
+    
     @IBAction func btnContinueAction(_ sender: Any) {
         locManager.requestWhenInUseAuthorization()
         if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
@@ -36,7 +41,11 @@ class LocationVC: UIViewController{
         }
         
     }
-
+    
+    
+    @IBAction func btnSkipAction(_ sender: Any) {
+    }
+    
     func push(){
         register()
     }

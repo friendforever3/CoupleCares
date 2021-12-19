@@ -79,6 +79,15 @@
 		267A217D2721C2A60092A162 /* TinderCardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A21552721C2A60092A162 /* TinderCardOverlay.swift */; };
 		267A217E2721C2A60092A162 /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A21562721C2A60092A162 /* UtilityManager.swift */; };
 		267A217F2721C2A60092A162 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A21572721C2A60092A162 /* Extension.swift */; };
+		2682BB59276CF74500A14EEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB58276CF74500A14EEF /* UserModel.swift */; };
+		2682BB5B276CFFE400A14EEF /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB5A276CFFE400A14EEF /* HomeVM.swift */; };
+		2682BB5D276DEB2000A14EEF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB5C276DEB2000A14EEF /* HomeModel.swift */; };
+		268A8FB3276F126700824DE7 /* LikesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB2276F126700824DE7 /* LikesVM.swift */; };
+		268A8FB5276F1A7E00824DE7 /* LikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB4276F1A7E00824DE7 /* LikeModel.swift */; };
+		268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */; };
+		268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB9276F29AE00824DE7 /* ProfileVM.swift */; };
+		268A8FBC276F5FE400824DE7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBB276F5FE400824DE7 /* ImagePicker.swift */; };
+		268A8FBE276F65DD00824DE7 /* ProtocolMangr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */; };
 		26EC8FA6276902AB0014D012 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA5276902AB0014D012 /* UserVM.swift */; };
 		26EC8FA9276903800014D012 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA8276903800014D012 /* APIHandler.swift */; };
 		26EC8FAB276904960014D012 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FAA276904960014D012 /* Indicator.swift */; };
@@ -190,6 +199,15 @@
 		267A21552721C2A60092A162 /* TinderCardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardOverlay.swift; sourceTree = "<group>"; };
 		267A21562721C2A60092A162 /* UtilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
 		267A21572721C2A60092A162 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2682BB58276CF74500A14EEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2682BB5A276CFFE400A14EEF /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		2682BB5C276DEB2000A14EEF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		268A8FB2276F126700824DE7 /* LikesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVM.swift; sourceTree = "<group>"; };
+		268A8FB4276F1A7E00824DE7 /* LikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModel.swift; sourceTree = "<group>"; };
+		268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeClcCell.swift; sourceTree = "<group>"; };
+		268A8FB9276F29AE00824DE7 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		268A8FBB276F5FE400824DE7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMangr.swift; sourceTree = "<group>"; };
 		26EC8FA5276902AB0014D012 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		26EC8FA8276903800014D012 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		26EC8FAA276904960014D012 /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -318,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				267A20EE2721C2950092A162 /* LikesTopPickVC.swift */,
+				268A8FB6276F1E1C00824DE7 /* ClcCell */,
 			);
 			path = LikesTopPicks;
 			sourceTree = "<group>";
@@ -438,6 +457,7 @@
 				267A21562721C2A60092A162 /* UtilityManager.swift */,
 				267A21572721C2A60092A162 /* Extension.swift */,
 				26EC8FAA276904960014D012 /* Indicator.swift */,
+				268A8FBB276F5FE400824DE7 /* ImagePicker.swift */,
 				26702245276A4FEE001E1023 /* LocationManager.swift */,
 			);
 			path = Utility;
@@ -454,11 +474,22 @@
 			path = TinderCard;
 			sourceTree = "<group>";
 		};
+		268A8FB6276F1E1C00824DE7 /* ClcCell */ = {
+			isa = PBXGroup;
+			children = (
+				268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */,
+			);
+			path = ClcCell;
+			sourceTree = "<group>";
+		};
 		26EC8FA22769026A0014D012 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				26EC8FAE276914E40014D012 /* InterestModel.swift */,
 				26702243276A450E001E1023 /* RegisterModel.swift */,
+				2682BB58276CF74500A14EEF /* UserModel.swift */,
+				2682BB5C276DEB2000A14EEF /* HomeModel.swift */,
+				268A8FB4276F1A7E00824DE7 /* LikeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +498,9 @@
 			isa = PBXGroup;
 			children = (
 				26EC8FA5276902AB0014D012 /* UserVM.swift */,
+				2682BB5A276CFFE400A14EEF /* HomeVM.swift */,
+				268A8FB2276F126700824DE7 /* LikesVM.swift */,
+				268A8FB9276F29AE00824DE7 /* ProfileVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -476,6 +510,7 @@
 			children = (
 				26EC8FA8276903800014D012 /* APIHandler.swift */,
 				26EC8FAC276905410014D012 /* APIConstant.swift */,
+				268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -842,14 +877,18 @@
 				267A21162721C2950092A162 /* CreatePostVC.swift in Sources */,
 				267A21742721C2A60092A162 /* DownloadCircularProgessView.swift in Sources */,
 				267A217F2721C2A60092A162 /* Extension.swift in Sources */,
+				268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */,
 				267A21292721C2950092A162 /* NameVC.swift in Sources */,
+				268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */,
 				267A21142721C2950092A162 /* LikesTopPickVC.swift in Sources */,
 				26EC8FAF276914E40014D012 /* InterestModel.swift in Sources */,
 				26702246276A4FEE001E1023 /* LocationManager.swift in Sources */,
 				267A217D2721C2A60092A162 /* TinderCardOverlay.swift in Sources */,
 				263B198E27251C8C00D3B1C7 /* CommentVC.swift in Sources */,
+				2682BB5D276DEB2000A14EEF /* HomeModel.swift in Sources */,
 				6C302FEE2721AD1E009A37CB /* ViewController.swift in Sources */,
 				267A217B2721C2A60092A162 /* TinderCardModel.swift in Sources */,
+				268A8FB5276F1A7E00824DE7 /* LikeModel.swift in Sources */,
 				26EC8FA6276902AB0014D012 /* UserVM.swift in Sources */,
 				263B1995272533D300D3B1C7 /* SettingView.swift in Sources */,
 				267A21282721C2950092A162 /* BirthdayVC.swift in Sources */,
@@ -858,6 +897,7 @@
 				267A21752721C2A60092A162 /* TextFieldCustom.swift in Sources */,
 				26EC8FA9276903800014D012 /* APIHandler.swift in Sources */,
 				267A210E2721C2950092A162 /* HomeVC.swift in Sources */,
+				2682BB59276CF74500A14EEF /* UserModel.swift in Sources */,
 				267A210B2721C2950092A162 /* OtherProfileVC.swift in Sources */,
 				267A21732721C2A60092A162 /* LabelCustom.swift in Sources */,
 				267A211A2721C2950092A162 /* BlockedContactVC.swift in Sources */,
@@ -870,12 +910,14 @@
 				263B199127251D0E00D3B1C7 /* FeedTblCell.swift in Sources */,
 				267A217C2721C2A60092A162 /* TinderCardFooterView.swift in Sources */,
 				267A21262721C2950092A162 /* GenderVC.swift in Sources */,
+				268A8FB3276F126700824DE7 /* LikesVM.swift in Sources */,
 				267A21272721C2950092A162 /* MobileNumVC.swift in Sources */,
 				267A211B2721C2950092A162 /* EditProfileVC.swift in Sources */,
 				267A217E2721C2A60092A162 /* UtilityManager.swift in Sources */,
 				267A210C2721C2950092A162 /* MatchVC.swift in Sources */,
 				267A21712721C2A60092A162 /* ImageCustom.swift in Sources */,
 				267A21242721C2950092A162 /* InterestsVC.swift in Sources */,
+				268A8FBE276F65DD00824DE7 /* ProtocolMangr.swift in Sources */,
 				267A210F2721C2950092A162 /* PaymentVC.swift in Sources */,
 				267A21212721C2950092A162 /* OTPVC.swift in Sources */,
 				267A210A2721C2950092A162 /* PremiumPlanVC.swift in Sources */,
@@ -884,11 +926,13 @@
 				267A211E2721C2950092A162 /* ProfileSettingVC.swift in Sources */,
 				6C302FEC2721AD1E009A37CB /* SceneDelegate.swift in Sources */,
 				267A21172721C2950092A162 /* ProfileVC.swift in Sources */,
+				268A8FBC276F5FE400824DE7 /* ImagePicker.swift in Sources */,
 				267A21152721C2950092A162 /* FeedVC.swift in Sources */,
 				26EC8FAB276904960014D012 /* Indicator.swift in Sources */,
 				267A21232721C2950092A162 /* LocationVC.swift in Sources */,
 				267A21722721C2A60092A162 /* ViewCustom.swift in Sources */,
 				267A21132721C2950092A162 /* ChatVC.swift in Sources */,
+				2682BB5B276CFFE400A14EEF /* HomeVM.swift in Sources */,
 				267A21772721C2A60092A162 /* ButtonCustom.swift in Sources */,
 				26EC8FAD276905410014D012 /* APIConstant.swift in Sources */,
 				267A210D2721C2950092A162 /* FullImageVC.swift in Sources */,

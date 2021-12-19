@@ -15,6 +15,7 @@ class PhotoVC: UIViewController {
     @IBOutlet weak var photoClcVw: UICollectionView!
     
     var selectedPhots = [UIImage]()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,15 @@ class PhotoVC: UIViewController {
     }
     
     @IBAction func btnContinueAction(_ sender: Any) {
+        
         if RegisterModel.shared.images.count == 0{
             UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgImage, control: ["OK"], topController: self)
+        }else if RegisterModel.shared.images.count < 2{
+            UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgSelectImgCount, control: ["OK"], topController: self)
         }else{
             pushToLoc()
         }
+        
     }
     
     func pushToLoc(){
@@ -60,24 +65,33 @@ extension PhotoVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollec
                 cell.imgAddIcon.isHidden = true
                 cell.btnDeleteImg.isHidden = false
             }else{
+                cell.imgUser.image = UIImage(named: "imgBg")
                 cell.btnDeleteImg.isHidden = true
                 cell.imgAddIcon.isHidden = false
             }
         }
         
+        cell.imgDelete = { [weak self] btn in
+            
+            self?.selectedPhots.remove(at: indexPath.row)
+            self?.photoClcVw.reloadData()
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function)
-        
         let imagePicker = OpalImagePickerController()
         imagePicker.imagePickerDelegate = self
-        imagePicker.maximumSelectionsAllowed = 6
+        //imagePicker.maximumSelectionsAllowed = 6
+        let count = (6 - selectedPhots.count)
+        imagePicker.maximumSelectionsAllowed = count
         imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
         imagePicker.view.backgroundColor = .white
-        present(imagePicker, animated: true, completion: nil)
+        if selectedPhots.count < 6{
+           present(imagePicker, animated: true, completion: nil)
+        }
         
     }
     
@@ -97,16 +111,22 @@ extension PhotoVC: OpalImagePickerControllerDelegate {
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
         //Save Images, update UI
        
-        selectedPhots = UtilityManager.shared.getAssetThumbnail(assets: assets)
+        print("sdd",assets.count)
+        print("UtilityManager.shared.getAssetThumbnail(assets: assets):-",getAssetThumbnail(assets: assets).count)
         
-        for img in selectedPhots{
-            guard let data = img.jpegData(compressionQuality: 0.2)else {return}
-            RegisterModel.shared.images.append(data)
+        for img in getAssetThumbnail(assets: assets){
+            selectedPhots.append(img)
         }
         
+        //selectedPhots =
+        RegisterModel.shared.images.removeAll()
+        
+        for img in selectedPhots{
+            guard let data = img.jpegData(compressionQuality: 0.75)else {return}
+            RegisterModel.shared.images.append(data)
+        }
+        print("RegisterModel.shared.images:-",RegisterModel.shared.images.count)
         photoClcVw.reloadData()
-        print(assets.count)
-        //Dismiss Controller
         presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -121,6 +141,22 @@ extension PhotoVC: OpalImagePickerControllerDelegate {
     func imagePicker(_ picker: OpalImagePickerController, imageURLforExternalItemAtIndex index: Int) -> URL? {
         return URL(string: "https://placeimg.com/500/500/nature")
     }
+    
+    func getAssetThumbnail(assets: [PHAsset]) -> [UIImage] {
+         var arrayOfImages = [UIImage]()
+         for asset in assets {
+             let manager = PHImageManager.default()
+             let option = PHImageRequestOptions()
+             var image = UIImage()
+             option.isSynchronous = true
+             manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                 image = result!
+                 arrayOfImages.append(image)
+             })
+         }
+
+         return arrayOfImages
+     }
     
     
 }

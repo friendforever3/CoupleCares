@@ -16,7 +16,8 @@ func serverRequest(url:String,param:[String:Any]?,method:HTTPMethod,header:HTTPH
     Indicator.shared.start("")
     print("url:-",url)
     print("param:-",param)
-    AF.request(url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: param, headers: header).responseJSON { response in
+    print(header)
+    AF.request(url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: method, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { response in
         Indicator.shared.stop()
         
         if let data = response.data, let str = String(data: data, encoding: .utf8){
