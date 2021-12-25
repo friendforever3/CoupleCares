@@ -153,7 +153,7 @@ class HomeVM: NSObject {
         var interestedIn : String = ""
         if objUserDetailModel.gender == 1{
             gender = "Male"
-        }else if objUserDetailModel.gender == 1{
+        }else if objUserDetailModel.gender == 2{
             gender = "Female"
         }else{
             gender = "Other"
@@ -161,7 +161,7 @@ class HomeVM: NSObject {
         
         if objUserDetailModel.interestedIn == 1{
             interestedIn = "Men"
-        }else if objUserDetailModel.interestedIn == 1{
+        }else if objUserDetailModel.interestedIn == 2{
             interestedIn = "Women"
         }else{
             interestedIn = "All"
@@ -172,6 +172,22 @@ class HomeVM: NSObject {
         
         
         return (gender:gender,interestedIn:interestedIn,dob:dob)
+    }
+    
+    func getGenderString()->String{
+        return "\(objUserDetailModel.gender)"
+    }
+    
+    func getInterestedInString()->String{
+        return "\(objUserDetailModel.interestedIn)"
+    }
+    
+    func getUserAge()->String{
+        return "\(objUserDetailModel.age)"
+    }
+    
+    func getAllUserDetailSelectedInterests()->[InterestModel]{
+        return objUserDetailModel.interestArray
     }
     
     func getUserDetailInterestCount()->Int{

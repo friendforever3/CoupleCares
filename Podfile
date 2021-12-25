@@ -15,7 +15,10 @@ pod 'OpalImagePicker'
 pod 'Alamofire'
 pod 'NVActivityIndicatorView' , '~> 4.7.0'
 pod 'Kingfisher'
-
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'GoogleSignIn'
 
   target 'CoupleCareTests' do
     inherit! :search_paths

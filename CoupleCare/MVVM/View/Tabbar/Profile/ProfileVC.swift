@@ -18,16 +18,18 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        UtilityManager.shared.setImage(image: imgProfile, urlString: UtilityManager.shared.userDecodedDetail().profileImage)
-        lblUserNameAge.text = UtilityManager.shared.userDecodedDetail().fullName
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        
-        
-        
+        setUI()
+    }
+    
+    func setUI(){
+        UtilityManager.shared.setImage(image: imgProfile, urlString: UtilityManager.shared.userDecodedDetail().profileImage)
+        lblUserNameAge.text = UtilityManager.shared.userDecodedDetail().fullName
     }
     
     @IBAction func btnEditAction(_ sender: Any) {
@@ -63,7 +65,7 @@ extension ProfileVC{
         ProfileVM.shared.updateProfileImg(imgData: imgData ?? Data()) { [weak self] (success,msg) in
             
             if success{
-                
+                self?.setUI()
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }

@@ -97,10 +97,73 @@ class UserVM: NSObject {
         }
     }
     
+    func updateProfile(keyName:String,value:String,age:String?=nil,completion:@escaping completionHandler){
+        
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value]
+        
+        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func updateBirthDayProfile(keyName:String,value:String,ageKey:String,age:String,completion:@escaping completionHandler){
+        
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value,ageKey:age]
+        
+        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func updateInterestProfile(keyName:String,value:[String],completion:@escaping completionHandler){
+        
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value] as [String : Any]
+        
+        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func updateMutipleImages(selectedImages:[Data],completion:@escaping completionHandler){
+        
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id]
+        
+        uploadDataToServerHandler(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateimages, param: param, imgData: selectedImages, fileName: "images") { (response) in
+            
+            if response?["statusCode"] as? Int == 200{
+                completion(true,response?["message"] as? String ?? "")
+            }else{
+                completion(false,response?["message"] as? String ?? "")
+            }
+            
+        }
+        
+        
+    }
     
     
     
     //MARK: Get Interest List
+    func removeAllInterest(){
+        interestListArray.removeAll()
+    }
+    
+    func getAllInterest()->[InterestModel]{
+        return interestListArray
+    }
+    
     func getInterestCount()->Int{
         return interestListArray.count
     }

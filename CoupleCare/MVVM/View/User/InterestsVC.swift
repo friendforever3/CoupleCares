@@ -17,11 +17,13 @@ class InterestsVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        RegisterModel.shared.interests.removeAll()
+        getAllInterest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getAllInterest()
+        
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -80,11 +82,11 @@ extension InterestsVC : UICollectionViewDelegate,UICollectionViewDataSource,UICo
             let index = IndexPath(row: -1, section: 0)
             selectedIndexPath[indexPath.row] = index
         }else{
-            if RegisterModel.shared.interests.count < 5{
+           // if RegisterModel.shared.interests.count < 5{
                 let id = UserVM.shared.getInterestCellDetail(indexPath: indexPath).id
                 RegisterModel.shared.interests.append(id)
               selectedIndexPath[indexPath.row] = indexPath
-            }
+            //}
         }
         
         interestClcVw.reloadData()

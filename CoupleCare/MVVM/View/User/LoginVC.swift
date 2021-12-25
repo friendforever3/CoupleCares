@@ -21,5 +21,13 @@ class LoginVC: UIViewController {
         self.push(vc)
     }
     
-
+    @IBAction func btnFacebookLoginAction(_ sender: Any) {
+        SocialLoginMngr.shared.signinWithFacebook(controller: self)
+    }
+    
+    
+    @IBAction func btnGoogleSIgninAction(_ sender: Any) {
+        SocialLoginMngr.shared.siginWithGoogle(view: self.view, ViewController: self)
+    }
+    
 }

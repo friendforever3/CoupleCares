@@ -26,6 +26,8 @@ struct APIConstant{
     static let kDislike = kUser + "dislike"
     static let kRemoveImage  = kUser + "remove/image"
     static let kUpdateprofileimage = kUser + "updateprofileimage"
+    static let kUpdateprofile = kUser + "updateprofile"
+    static let kUpdateimages = kUser + "updateimages"
     
 }
 
@@ -35,6 +37,8 @@ struct AppConstant{
     static let kMsgMobile = "Please enter the mobile number"
     static let kMsgFullName = "Please enter the full name"
     static let kMsgDOB = "Please enter your birthday"
+    static let kBio = "Please enter the bio"
+    static let kJobTitle = "Please select the job title"
     static let kMsgGender = "Please select the gender"
     static let kMsgInterestedIn = "Please select the interested in"
     static let kMsgInterest = "Please select any interest"

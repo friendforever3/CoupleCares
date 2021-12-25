@@ -7,6 +7,11 @@
 
 import UIKit
 import IQKeyboardManager
+import GoogleSignIn
+import FacebookLogin
+import FacebookCore
+
+let signInConfig = GIDConfiguration.init(clientID: "97500273559-q117jr5hqk21fg4l2ho9paa5n2lv1ps4.apps.googleusercontent.com")
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared().isEnabled = true
+        
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+        -> Bool {
+            if(url.scheme!.isEqual("fb239160444286729")) {
+
+                return ApplicationDelegate.shared.application(application, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+                
+            }else{
+                return GIDSignIn.sharedInstance.handle(url)
+            }
+            
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -32,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
 
 }

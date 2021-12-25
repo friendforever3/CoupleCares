@@ -28,15 +28,22 @@ class GenderVC: UIViewController {
     @IBOutlet weak var vwAll: ViewCustom!
     @IBOutlet weak var imgAll: UIImageView!
     @IBOutlet weak var lblAll: UILabel!
+    @IBOutlet weak var lblHeaderInterest: UILabel!
+    @IBOutlet weak var vwProfileCompleteHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var vwInterestHeightConstraint: NSLayoutConstraint!
+    
     
     var genderSelected : String = ""
     var interestSelected : String = ""
+    var isComingfrom = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
+    
     
     @IBAction func btnBackAction(_ sender: Any) {
         self.popVc()
@@ -202,13 +209,9 @@ class GenderVC: UIViewController {
                     
                     
                 }
-                
             }
-            
         }
-        
-        
     }
     
-    
 }
+
