@@ -177,6 +177,13 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
         //      print("card index",index)
         //      print("Swiped \(direction)")
         
+        
+        if direction.rawValue == 1{
+            userLike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: index).id)
+        }else  if direction.rawValue == 0{
+            userDislike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: index).id)
+        }
+        
         if HomeVM.shared.nearByCount() > index{
             let indexx = (HomeVM.shared.nearByCount() - 1) - (index + 1)
             if indexx >= 0{
