@@ -18,6 +18,11 @@ class HomeVC: UIViewController {
     @IBOutlet weak var interestVwHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var lbluserName: UILabel!
     @IBOutlet weak var lblDistance: UILabel!
+    @IBOutlet weak var vwBgSwipe: UIView!
+    @IBOutlet weak var vwBgInterest: UIView!
+    @IBOutlet weak var vwBgUseDetail: UIView!
+    
+    
     
     let cardImages = [
           UIImage(named: "Rectangle 27"),
@@ -164,7 +169,9 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 
   func didSwipeAllCards(_ cardStack: SwipeCardStack) {
     print("Swiped all cards!")
-      
+      vwBgSwipe.isHidden = true
+      vwBgInterest.isHidden = true
+      vwBgUseDetail.isHidden = true
   }
 
   func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
@@ -240,6 +247,13 @@ extension HomeVC{
         HomeVM.shared.getNearBy(userId: UtilityManager.shared.userDecodedDetail().id, page: "0", pageSize: "100") { [weak self] (success, msg) in
             if success{
                 self?.vwCard.reloadData()
+                
+                if HomeVM.shared.nearByCount() != 0{
+                    self?.vwBgInterest.isHidden = false
+                    self?.vwBgUseDetail.isHidden = false
+                    self?.vwBgSwipe.isHidden = false
+                }
+                
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }

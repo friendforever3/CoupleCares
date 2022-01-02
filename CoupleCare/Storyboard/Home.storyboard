@@ -495,6 +495,9 @@
                         <outlet property="interestVwHeightConstraint" destination="Dpo-ne-b1G" id="0cs-wU-p83"/>
                         <outlet property="lblDistance" destination="aka-LO-kOz" id="Ie7-Ui-loW"/>
                         <outlet property="lbluserName" destination="9gm-HN-Ps6" id="c3k-Wx-KW1"/>
+                        <outlet property="vwBgInterest" destination="CSm-ob-5hk" id="FZG-en-DAa"/>
+                        <outlet property="vwBgSwipe" destination="Cxy-f9-Zri" id="jUK-Jn-5uY"/>
+                        <outlet property="vwBgUseDetail" destination="weU-IN-LyI" id="hfp-4y-M8u"/>
                         <outlet property="vwCard" destination="G3e-EO-pSX" id="fLZ-4U-YCW"/>
                     </connections>
                 </viewController>
