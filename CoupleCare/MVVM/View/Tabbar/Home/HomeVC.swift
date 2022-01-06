@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var vwBgSwipe: UIView!
     @IBOutlet weak var vwBgInterest: UIView!
     @IBOutlet weak var vwBgUseDetail: UIView!
+    @IBOutlet weak var vwEmpty: UIView!
     
     
     
@@ -172,6 +173,7 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
       vwBgSwipe.isHidden = true
       vwBgInterest.isHidden = true
       vwBgUseDetail.isHidden = true
+      vwEmpty.isHidden = false
   }
 
   func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
@@ -252,6 +254,13 @@ extension HomeVC{
                     self?.vwBgInterest.isHidden = false
                     self?.vwBgUseDetail.isHidden = false
                     self?.vwBgSwipe.isHidden = false
+                    self?.vwEmpty.isHidden = true
+                }else{
+                    self?.vwBgInterest.isHidden = true
+                    self?.vwBgUseDetail.isHidden = true
+                    self?.vwBgSwipe.isHidden = true
+                    self?.vwEmpty.isHidden = false
+                    
                 }
                 
             }else{

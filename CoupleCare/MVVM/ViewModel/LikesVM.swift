@@ -57,7 +57,7 @@ class LikesVM: NSObject {
     
     func disLikeUser(likeUserId:String,completion:@escaping completionHandler){
         
-        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"likeId":likeUserId]
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"dislikeId":likeUserId]
         serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kDislike, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { [weak self] (response, statusCode,errorMsg) in
             print(response)
             if response["statusCode"] as? Int == 200{
