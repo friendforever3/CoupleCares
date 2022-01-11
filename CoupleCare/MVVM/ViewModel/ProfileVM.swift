@@ -38,6 +38,8 @@ class ProfileVM: NSObject {
             
             print("respinse updateProfileImg:-",response)
             if response?["statusCode"] as? Int == 200{
+                
+                //UtilityManager.shared.userDataEncode(obj)
                 completion(true,response?["message"] as? String ?? "")
             }else{
                 completion(false,response?["message"] as? String ?? "")

@@ -90,6 +90,13 @@ class UserVM: NSObject {
             
             print("respinse Register:-",response)
             if response?["statusCode"] as? Int == 200{
+                
+                if let data = response?["data"] as? [String:Any]{
+                    let obj = UserModel()
+                    obj.setData(dict: data)
+                    UtilityManager.shared.userDataEncode(obj)
+                }
+                
                 completion(true,response?["message"] as? String ?? "")
             }else{
                 completion(false,response?["message"] as? String ?? "")
