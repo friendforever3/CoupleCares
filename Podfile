@@ -1,32 +1,20 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '14.4'
 
-target 'CoupleCare' do
-  # Comment the next line if you don't want to use dynamic frameworks
+target 'ShuffleExample' do
   use_frameworks!
+  inherit! :search_paths
 
-  # Pods for CoupleCare
-pod 'Shuffle-iOS'
-pod 'CountryPickerSwift'
-pod "ScalingCarousel"
-pod 'IQKeyboardManager'
-pod 'RangeSeekSlider'
-pod 'OpalImagePicker'
-pod 'Alamofire'
-pod 'NVActivityIndicatorView' , '~> 4.7.0'
-pod 'Kingfisher'
-pod 'FacebookCore'
-pod 'FacebookLogin'
-pod 'FacebookShare'
-pod 'GoogleSignIn'
+  pod 'PopBounceButton'
+  pod 'Shuffle-iOS', :path => '../'
 
-  target 'CoupleCareTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+end
 
-  target 'CoupleCareUITests' do
-    # Pods for testing
-  end
+target 'ShuffleTests' do
+  use_frameworks!
+  inherit! :search_paths
+
+  pod 'Nimble'
+  pod 'Quick'
+  pod 'Shuffle-iOS', :path => '../'
 
 end

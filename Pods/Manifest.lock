@@ -1,111 +1,35 @@
 PODS:
-  - Alamofire (5.4.3)
-  - AppAuth (1.4.0):
-    - AppAuth/Core (= 1.4.0)
-    - AppAuth/ExternalUserAgent (= 1.4.0)
-  - AppAuth/Core (1.4.0)
-  - AppAuth/ExternalUserAgent (1.4.0)
-  - CountryPickerSwift (1.8.2)
-  - FacebookCore (0.9.0):
-    - FBSDKCoreKit (~> 5.0)
-  - FacebookLogin (0.9.0):
-    - FacebookCore (~> 0.9.0)
-    - FBSDKCoreKit (~> 5.0)
-    - FBSDKLoginKit (~> 5.0)
-  - FacebookShare (0.9.0):
-    - FacebookCore (~> 0.9.0)
-    - FBSDKCoreKit (~> 5.0)
-    - FBSDKShareKit (~> 5.0)
-  - FBSDKCoreKit (5.15.1):
-    - FBSDKCoreKit/Basics (= 5.15.1)
-    - FBSDKCoreKit/Core (= 5.15.1)
-  - FBSDKCoreKit/Basics (5.15.1)
-  - FBSDKCoreKit/Core (5.15.1):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.15.1):
-    - FBSDKLoginKit/Login (= 5.15.1)
-  - FBSDKLoginKit/Login (5.15.1):
-    - FBSDKCoreKit (~> 5.0)
-  - FBSDKShareKit (5.15.1):
-    - FBSDKShareKit/Share (= 5.15.1)
-  - FBSDKShareKit/Share (5.15.1):
-    - FBSDKCoreKit (~> 5.0)
-  - GoogleSignIn (6.0.2):
-    - AppAuth (~> 1.4)
-    - GTMAppAuth (~> 1.0)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - GTMAppAuth (1.2.2):
-    - AppAuth/Core (~> 1.4)
-    - GTMSessionFetcher/Core (~> 1.5)
-  - GTMSessionFetcher/Core (1.7.0)
-  - IQKeyboardManager (6.5.6)
-  - Kingfisher (6.3.1)
-  - NVActivityIndicatorView (4.7.0):
-    - NVActivityIndicatorView/Presenter (= 4.7.0)
-  - NVActivityIndicatorView/Presenter (4.7.0)
-  - OpalImagePicker (3.0.0)
-  - RangeSeekSlider (1.8.0)
-  - ScalingCarousel (3.2.0)
+  - Nimble (9.2.1)
+  - pop (1.0.12)
+  - PopBounceButton (1.2.2):
+    - pop (~> 1.0)
+  - Quick (4.0.0)
   - Shuffle-iOS (0.5.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - CountryPickerSwift
-  - FacebookCore
-  - FacebookLogin
-  - FacebookShare
-  - GoogleSignIn
-  - IQKeyboardManager
-  - Kingfisher
-  - NVActivityIndicatorView (~> 4.7.0)
-  - OpalImagePicker
-  - RangeSeekSlider
-  - ScalingCarousel
-  - Shuffle-iOS
+  - Nimble
+  - PopBounceButton
+  - Quick
+  - Shuffle-iOS (from `../`)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AppAuth
-    - CountryPickerSwift
-    - FacebookCore
-    - FacebookLogin
-    - FacebookShare
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
-    - GoogleSignIn
-    - GTMAppAuth
-    - GTMSessionFetcher
-    - IQKeyboardManager
-    - Kingfisher
-    - NVActivityIndicatorView
-    - OpalImagePicker
-    - RangeSeekSlider
-    - ScalingCarousel
-    - Shuffle-iOS
+    - Nimble
+    - pop
+    - PopBounceButton
+    - Quick
+
+EXTERNAL SOURCES:
+  Shuffle-iOS:
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
-  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
-  FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
-  FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
-  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
-  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
-  FBSDKShareKit: 259737eab3cc807087374553abdf588b3096ba55
-  GoogleSignIn: fd381840dbe7c1137aa6dc30849a5c3e070c034a
-  GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
-  GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
-  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
-  OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
-  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
-  ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PopBounceButton: 34105a012678222f058f8d2621672724a3d5c9fb
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: fe1b2a7a4bd186917b620749f6e1f213c0e36ae8
+PODFILE CHECKSUM: f1c123b227b9b7503226150362bd2af781c1069d
 
 COCOAPODS: 1.11.2
