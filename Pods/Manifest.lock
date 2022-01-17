@@ -40,6 +40,7 @@ PODS:
   - GTMSessionFetcher/Core (1.7.0)
   - IQKeyboardManager (6.5.6)
   - Kingfisher (6.3.1)
+  - LocationPicker (1.4.2)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - IQKeyboardManager
   - Kingfisher
+  - LocationPicker
   - NVActivityIndicatorView (~> 4.7.0)
   - OpalImagePicker
   - RangeSeekSlider
@@ -79,6 +81,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManager
     - Kingfisher
+    - LocationPicker
     - NVActivityIndicatorView
     - OpalImagePicker
     - RangeSeekSlider
@@ -100,12 +103,13 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  LocationPicker: 9af49409ec3ca13fdf4bf6b39e1a3c7dec029f4a
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: fe1b2a7a4bd186917b620749f6e1f213c0e36ae8
+PODFILE CHECKSUM: 335e8411c05fcde71a130dede6d69059f9ee8fc1
 
 COCOAPODS: 1.11.2

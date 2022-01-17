@@ -117,9 +117,9 @@ class UserVM: NSObject {
         }
     }
     
-    func updateBirthDayProfile(keyName:String,value:String,ageKey:String,age:String,completion:@escaping completionHandler){
+    func updateProfile2(keyName:String,value:String,keyName2:String,value2:String,completion:@escaping completionHandler){
         
-        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value,ageKey:age]
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value,keyName2:value2]
         
         serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{

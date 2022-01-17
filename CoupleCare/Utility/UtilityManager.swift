@@ -11,6 +11,8 @@ import UIKit
 import Photos
 import Alamofire
 import Kingfisher
+import CoreLocation
+import MapKit
 
 
 //completion:@escaping(Bool)->()
@@ -179,27 +181,62 @@ class UtilityManager : NSObject{
     }
     
     
-     func setImage(image:UIImageView,urlString:String){
-           let url = URL(string: urlString)
-           image.kf.indicatorType = .activity
-           DispatchQueue.main.async {
-               image.kf.setImage(
-                          with: url,
-                          placeholder: UIImage(named: "matched"))
-                      {
-                          result in
-                          switch result {
-                          case .success(let value):
-                              
-                              break
-                            //  print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                          case .failure(let error): break
-                             // print("Job failed: \(error.localizedDescription)")
-                          }
-                      
-           }
-          }
-       }
+    func setImage(image:UIImageView,urlString:String){
+        let url = URL(string: urlString)
+        image.kf.indicatorType = .activity
+        DispatchQueue.main.async {
+            image.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "matched"))
+            {
+                result in
+                switch result {
+                case .success(let value):
+                    
+                    break
+                    //  print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error): break
+                    // print("Job failed: \(error.localizedDescription)")
+                }
+                
+            }
+        }
+    }
      
+    
+    func getLocationName(lat:Double,long:Double){
+        let location = CLLocation(latitude: lat, longitude: long)
+        location.geocode { placemark, error in
+            if let error = error as? CLError {
+                print("CLError:", error)
+                return
+            } else if let placemark = placemark?.first {
+                // you should always update your UI in the main thread
+                DispatchQueue.main.async {
+                    //  update UI here
+                    print("name:", placemark.name ?? "unknown")
+                    
+                    print("address1:", placemark.thoroughfare ?? "unknown")
+                    print("address2:", placemark.subThoroughfare ?? "unknown")
+                    print("neighborhood:", placemark.subLocality ?? "unknown")
+                    print("city:", placemark.locality ?? "unknown")
+                    
+                    print("state:", placemark.administrativeArea ?? "unknown")
+                    print("subAdministrativeArea:", placemark.subAdministrativeArea ?? "unknown")
+                    print("zip code:", placemark.postalCode ?? "unknown")
+                    print("country:", placemark.country ?? "unknown", terminator: "\n\n")
+                    
+                    print("isoCountryCode:", placemark.isoCountryCode ?? "unknown")
+                    print("region identifier:", placemark.region?.identifier ?? "unknown")
+            
+                    print("timezone:", placemark.timeZone ?? "unknown", terminator:"\n\n")
+
+                    // Mailind Address
+                    
+                    
+                }
+            }
+        }
+    }
 
 }

@@ -433,7 +433,7 @@ extension UpdateJobTitleVC : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tfjobTitle.text != ""{
+        if filterJobTitle.count != 0{
             tfjobTitle.text = filterJobTitle[indexPath.row]
         }else{
             tfjobTitle.text = jobTitleArray[indexPath.row]

@@ -97,7 +97,7 @@ extension UpdateBirthdayVC{
     
     func updateBirthdayProfile(){
         
-        UserVM.shared.updateBirthDayProfile(keyName: "dob", value: selectedDate, ageKey: "age", age: age) { [weak self] (success,msg) in
+        UserVM.shared.updateProfile2(keyName: "dob", value: selectedDate, keyName2: "age", value2: age) { [weak self] (success,msg) in
             
             if success{
                 self?.popVc()

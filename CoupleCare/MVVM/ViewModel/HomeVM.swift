@@ -148,7 +148,7 @@ class HomeVM: NSObject {
         return (profileImg:objUserDetailModel.profileImg,bio:objUserDetailModel.bio,job:objUserDetailModel.jobTitle,distance:"\(dist)",age:"\(objUserDetailModel.age)",fullName:objUserDetailModel.fullName)
     }
     
-    func getUserDetailData()->(gender:String,interestedIn:String,dob:String){
+    func getUserDetailData()->(gender:String,interestedIn:String,dob:String,lat:String,long:String){
         var gender : String = ""
         var interestedIn : String = ""
         if objUserDetailModel.gender == 1{
@@ -171,7 +171,9 @@ class HomeVM: NSObject {
         let dob = UtilityManager.shared.getDate(dateString: objUserDetailModel.dob, inputDateformat: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", outputDateFormate: "dd/MM/yyyy")
         
         
-        return (gender:gender,interestedIn:interestedIn,dob:dob)
+        
+        
+        return (gender:gender,interestedIn:interestedIn,dob:dob,lat:objUserDetailModel.coordinates.lat,long:objUserDetailModel.coordinates.long)
     }
     
     func getGenderString()->String{

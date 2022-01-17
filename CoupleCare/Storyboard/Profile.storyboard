@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-AD-Edj">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="648"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSq-jp-6DQ" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
                                                 <rect key="frame" x="139" y="22" width="136" height="136"/>
@@ -90,14 +90,14 @@
                                                     <action selector="btnProfileImgAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="exf-ZN-7fr"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paul Molive, 24 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-k1-aww">
-                                                <rect key="frame" x="10" y="170" width="394" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-k1-aww">
+                                                <rect key="frame" x="10" y="170" width="394" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="24"/>
                                                 <color key="textColor" name="txtColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyO-8A-nse">
-                                                <rect key="frame" x="113" y="226" width="188" height="62"/>
+                                                <rect key="frame" x="113" y="197" width="188" height="62"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="k6m-hQ-O0P">
                                                         <rect key="frame" x="0.0" y="0.0" width="188" height="62"/>
@@ -185,8 +185,20 @@
                                                     <constraint firstAttribute="trailing" secondItem="k6m-hQ-O0P" secondAttribute="trailing" id="dd3-YJ-bek"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSZ-Bb-Bbe">
+                                                <rect key="frame" x="100" y="271" width="88.5" height="22"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <color key="textColor" name="txtColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPo-W1-shw">
+                                                <rect key="frame" x="238" y="271" width="64.5" height="22"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                                <color key="textColor" name="txtColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-MA-ZAg" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="19" y="393" width="376" height="164"/>
+                                                <rect key="frame" x="19" y="364" width="376" height="164"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plans_logo" translatesAutoresizingMaskIntoConstraints="NO" id="1cI-14-zEZ">
                                                         <rect key="frame" x="31" y="18" width="314" height="34"/>
@@ -226,7 +238,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Awa-Pz-hsA" customClass="ViewCustom" customModule="CoupleCare" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="580" width="382" height="48"/>
+                                                <rect key="frame" x="16" y="551" width="382" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade to premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJx-ap-Zfo">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
@@ -270,7 +282,9 @@
                                             <constraint firstItem="f9E-n0-8XX" firstAttribute="trailing" secondItem="JSq-jp-6DQ" secondAttribute="trailing" id="0ji-HI-RGM"/>
                                             <constraint firstItem="JSq-jp-6DQ" firstAttribute="centerX" secondItem="CtO-AD-Edj" secondAttribute="centerX" id="10q-MW-LAC"/>
                                             <constraint firstItem="Awa-Pz-hsA" firstAttribute="top" secondItem="wSV-MA-ZAg" secondAttribute="bottom" constant="23" id="54X-b7-xa7"/>
+                                            <constraint firstItem="ZPo-W1-shw" firstAttribute="centerX" secondItem="Krp-ct-qIl" secondAttribute="centerX" id="6WE-wk-cyw"/>
                                             <constraint firstAttribute="trailing" secondItem="pB8-k1-aww" secondAttribute="trailing" constant="10" id="HiJ-jb-b2m"/>
+                                            <constraint firstItem="ZPo-W1-shw" firstAttribute="top" secondItem="Krp-ct-qIl" secondAttribute="bottom" constant="12" id="Hqt-Ft-4iQ"/>
                                             <constraint firstItem="pB8-k1-aww" firstAttribute="centerX" secondItem="JSq-jp-6DQ" secondAttribute="centerX" id="MQo-8V-4Ed"/>
                                             <constraint firstItem="eyO-8A-nse" firstAttribute="centerX" secondItem="CtO-AD-Edj" secondAttribute="centerX" id="Sz0-HC-0ty"/>
                                             <constraint firstItem="v8u-n9-wmq" firstAttribute="centerY" secondItem="JSq-jp-6DQ" secondAttribute="bottom" constant="-20" id="Tgi-XJ-fwL"/>
@@ -283,7 +297,9 @@
                                             <constraint firstItem="f9E-n0-8XX" firstAttribute="top" secondItem="JSq-jp-6DQ" secondAttribute="top" id="Z45-HC-hkL"/>
                                             <constraint firstItem="f9E-n0-8XX" firstAttribute="leading" secondItem="JSq-jp-6DQ" secondAttribute="leading" id="Z7Y-uT-Mp7"/>
                                             <constraint firstItem="pB8-k1-aww" firstAttribute="top" secondItem="JSq-jp-6DQ" secondAttribute="bottom" constant="12" id="ZQ3-sC-UNu"/>
+                                            <constraint firstItem="KSZ-Bb-Bbe" firstAttribute="centerX" secondItem="vS1-kv-5Bl" secondAttribute="centerX" id="cIt-8A-hvl"/>
                                             <constraint firstItem="f9E-n0-8XX" firstAttribute="bottom" secondItem="JSq-jp-6DQ" secondAttribute="bottom" id="cQq-fz-Puh"/>
+                                            <constraint firstItem="KSZ-Bb-Bbe" firstAttribute="top" secondItem="vS1-kv-5Bl" secondAttribute="bottom" constant="12" id="gpd-wI-q5w"/>
                                             <constraint firstAttribute="trailing" secondItem="Awa-Pz-hsA" secondAttribute="trailing" constant="16" id="hXd-1s-aKK"/>
                                             <constraint firstItem="Awa-Pz-hsA" firstAttribute="leading" secondItem="CtO-AD-Edj" secondAttribute="leading" constant="16" id="k9b-fX-Frf"/>
                                             <constraint firstAttribute="trailing" secondItem="wSV-MA-ZAg" secondAttribute="trailing" constant="19" id="vKB-lO-Fba"/>

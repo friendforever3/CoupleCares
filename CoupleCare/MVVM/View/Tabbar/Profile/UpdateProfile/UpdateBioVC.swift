@@ -40,16 +40,13 @@ class UpdateBioVC: UIViewController {
 extension UpdateBioVC{
     
     func UpdateBioVC(){
-        
         UserVM.shared.updateProfile(keyName: "bio", value: tfBio.text ?? "") { [weak self] (success,msg) in
             if success{
                 self?.popVc()
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }
-            
         }
-        
     }
     
 }

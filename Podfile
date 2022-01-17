@@ -19,6 +19,7 @@ pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'GoogleSignIn'
+pod 'LocationPicker'
 
   target 'CoupleCareTests' do
     inherit! :search_paths
