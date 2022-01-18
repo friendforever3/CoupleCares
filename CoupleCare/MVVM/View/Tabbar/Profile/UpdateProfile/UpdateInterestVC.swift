@@ -34,13 +34,11 @@ class UpdateInterestVC: UIViewController {
     }
     
     @IBAction func btnContinueAction(_ sender: Any) {
-        
         if RegisterModel.shared.interests.count == 0{
             UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: AppConstant.kMsgInterest, control: ["OK"], topController: self)
         }else{
            updateInterestProfile()
         }
-        
     }
 
 }

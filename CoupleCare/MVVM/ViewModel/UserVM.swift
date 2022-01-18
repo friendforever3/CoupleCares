@@ -117,7 +117,7 @@ class UserVM: NSObject {
         }
     }
     
-    func updateProfile2(keyName:String,value:String,keyName2:String,value2:String,completion:@escaping completionHandler){
+    func updateProfile2(keyName:String,value:String,keyName2:String,value2:String,keyName3:String?=nil,value3:String?=nil,completion:@escaping completionHandler){
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value,keyName2:value2]
         

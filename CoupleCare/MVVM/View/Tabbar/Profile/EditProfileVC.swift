@@ -160,7 +160,7 @@ extension EditProfileVC : UITableViewDelegate,UITableViewDataSource{
                 print("longitude origin:-",location?.coordinate.longitude)
                 print("name origin:-",location?.name)
                 
-                self.updateLocation(lat: "\(location?.coordinate.latitude ?? 0.0)", long: "\(location?.coordinate.longitude ?? 0.0)")
+                self.updateLocation(lat: "\(location?.coordinate.latitude ?? 0.0)", long: "\(location?.coordinate.longitude ?? 0.0)", locName: location?.name ?? "")
                 
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
@@ -351,8 +351,8 @@ extension EditProfileVC{
         
     }
     
-    func updateLocation(lat:String,long:String){
-        UserVM.shared.updateProfile2(keyName: "lat", value: lat, keyName2: "lng", value2: long) { [weak self] (success,msg) in
+    func updateLocation(lat:String,long:String,locName:String){
+        UserVM.shared.updateProfile2(keyName: "lat", value: lat, keyName2: "lng", value2: long,keyName3: "locationAddress",value3: locName) { [weak self] (success,msg) in
             if success{
                 self?.editProfile()
             }else{
