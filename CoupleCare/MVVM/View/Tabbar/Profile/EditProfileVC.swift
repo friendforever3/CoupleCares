@@ -18,17 +18,20 @@ class EditProfileVC: UIViewController {
     var objectArray = [["type":"clc","value":""],["type":"Bio","value":""],["type":"clc","value":""],["type":"Gender","value":""],["type":"Job Title","value":""],["type":"Your Location","value":""],["type":"Interested In","value":""],["type":"Birthday","value":""]]
     
     var selectedPhots = [Data]()
+    var selectedLocation: String = ""
+    var location = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        editProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        editProfile()
+        
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -42,6 +45,8 @@ class EditProfileVC: UIViewController {
         objectArray[4]["value"] = HomeVM.shared.getUserDetailData().job
         objectArray[6]["value"] = HomeVM.shared.getUserDetailData().interestedIn
         objectArray[7]["value"] = HomeVM.shared.getUserDetailData().dob
+        
+        //location = CLLocation(latitude: Double(HomeVM.shared.getUserDetailData().lat) ?? 0.0, longitude: Double(HomeVM.shared.getUserDetailData().long) ?? 0.0
         
         let location = CLLocation(latitude: Double(HomeVM.shared.getUserDetailData().lat) ?? 0.0, longitude: Double(HomeVM.shared.getUserDetailData().long) ?? 0.0)
         location.geocode { placemark, error in
@@ -72,6 +77,10 @@ class EditProfileVC: UIViewController {
                     // Mailind Address
                     
                     self.objectArray[5]["value"] = (placemark.name ?? "") + ", " + (placemark.locality ?? "") + ", " + (placemark.country ?? "")
+                    
+                    self.selectedLocation = self.objectArray[5]["value"] ?? ""
+                    
+                    
                     self.profileTblVw.reloadData()
                 }
             }
@@ -79,7 +88,7 @@ class EditProfileVC: UIViewController {
         
         
         
-        profileTblVw.reloadData()
+       // profileTblVw.reloadData()
         
         
         
@@ -144,6 +153,10 @@ extension EditProfileVC : UITableViewDelegate,UITableViewDataSource{
             
             // you can optionally set initial location
             //            locationPicker.location = location
+            let placemark = MKPlacemark(coordinate:location.coordinate)
+            let location = Location(name:self.selectedLocation, location: nil, placemark: placemark)
+            locationPicker.location = location
+            
             locationPicker.showCurrentLocationButton = false
             locationPicker.useCurrentLocationAsHint = false
             locationPicker.selectCurrentLocationInitially = false
@@ -274,7 +287,7 @@ extension EditProfileVC: OpalImagePickerControllerDelegate {
        
         print("sdd",assets.count)
         print("UtilityManager.shared.getAssetThumbnail(assets: assets):-",getAssetThumbnail(assets: assets).count)
-        
+        selectedPhots.removeAll()
         for img in getAssetThumbnail(assets: assets){
             selectedPhots.append(img.pngData() ?? Data())
         }
