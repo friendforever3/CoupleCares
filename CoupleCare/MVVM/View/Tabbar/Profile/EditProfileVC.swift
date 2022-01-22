@@ -261,7 +261,7 @@ extension EditProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
             imagePicker.maximumSelectionsAllowed = count
             imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
             imagePicker.view.backgroundColor = .white
-            if selectedPhots.count < 6{
+            if HomeVM.shared.getUserDetailPhotosCount() < 6{
                present(imagePicker, animated: true, completion: nil)
             }
         }
