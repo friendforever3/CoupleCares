@@ -48,6 +48,9 @@ PODS:
   - RangeSeekSlider (1.8.0)
   - ScalingCarousel (3.2.0)
   - Shuffle-iOS (0.5.0)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -64,6 +67,7 @@ DEPENDENCIES:
   - RangeSeekSlider
   - ScalingCarousel
   - Shuffle-iOS
+  - Socket.IO-Client-Swift
 
 SPEC REPOS:
   trunk:
@@ -87,6 +91,8 @@ SPEC REPOS:
     - RangeSeekSlider
     - ScalingCarousel
     - Shuffle-iOS
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -109,7 +115,9 @@ SPEC CHECKSUMS:
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   ScalingCarousel: d40f0ce438af5cfb2225e2f723f7161597961128
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 335e8411c05fcde71a130dede6d69059f9ee8fc1
+PODFILE CHECKSUM: 3d00dc9c071cfd08556f538de3e4ef8f4c7b1892
 
 COCOAPODS: 1.11.2

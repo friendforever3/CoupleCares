@@ -42,6 +42,7 @@ class HomeVC: UIViewController {
         vwCard.dataSource = self
         vwCard.delegate = self
         getNearBy()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

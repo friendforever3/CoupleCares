@@ -18,7 +18,7 @@ class ProfileVM: NSObject {
     func removeImg(imageId:String,completion:@escaping completionHandler){
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"imageId":imageId]
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kRemoveImage, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { [weak self] (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kRemoveImage, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { [weak self] (response, statusCode,errorMsg) in
             print(response)
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
@@ -34,7 +34,7 @@ class ProfileVM: NSObject {
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id]
         
-        uploadDataToServerHandler(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofileimage, param: param, imgData: [imgData], fileName: "profileImage") { (response) in
+        uploadDataToServerHandler(url: APIConstant.kBaseUrl + APIConstant.kUpdateprofileimage, param: param, imgData: [imgData], fileName: "profileImage") { (response) in
             
             print("respinse updateProfileImg:-",response)
             if response?["statusCode"] as? Int == 200{

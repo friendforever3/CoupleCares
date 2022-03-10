@@ -13,6 +13,7 @@ class OtherProfileVC: UIViewController {
     @IBOutlet weak var clcPhotosVw: UICollectionView!
     @IBOutlet weak var vwInterestHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var clcInterestVw: UICollectionView!
+    @IBOutlet weak var vwInitial: UIView!
     
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lblUserNameAge: UILabel!
@@ -23,12 +24,17 @@ class OtherProfileVC: UIViewController {
     
     var delegate : didUpdateDelegate?
     var userId : String = ""
+    var comingFrom : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        getUserDetail()
+        if comingFrom == "like"{
+            getLikeUserDetail()
+        }else{
+           getUserDetail()
+        }
     }
     
     
@@ -51,7 +57,7 @@ class OtherProfileVC: UIViewController {
         lblDistance.text = "\((Double(HomeVM.shared.getUserDetailData().distance) ?? 0.0).roundToDecimal(2))" + " " + "Miles"
         lblBio.text = HomeVM.shared.getUserDetailData().bio
         lblJob.text = HomeVM.shared.getUserDetailData().job
-        
+        self.vwInitial.isHidden = true
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -59,11 +65,18 @@ class OtherProfileVC: UIViewController {
     }
     
     @IBAction func btnLikeAction(_ sender: Any) {
-        userDislike(likeUserId: userId)
+        if comingFrom == "like"{
+            acceptUserProfile(likeUserId: userId)
+        }else{
+            userDislike(likeUserId: userId)
+        }
     }
     
     @IBAction func btnDislikeAction(_ sender: Any) {
-        userLike(likeUserId: userId)
+        if comingFrom == "like"{
+        }else{
+            userLike(likeUserId: userId)
+        }
     }
     
 }
@@ -131,6 +144,22 @@ extension OtherProfileVC {
         
     }
     
+    
+    func getLikeUserDetail(){
+        HomeVM.shared.likeProfile(likeId: userId) { [weak self] (success,msg) in
+            if success{
+                self?.setUI()
+                self?.clcPhotosVw.reloadData()
+                self?.clcInterestVw.reloadData()
+                
+                self?.getHeight()
+                
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
     func getHeight(){
         let count = HomeVM.shared.getUserDetailPhotosCount() % 2
         
@@ -186,6 +215,21 @@ extension OtherProfileVC{
         LikesVM.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 self?.delegate?.didUpdateHome()
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+    func acceptUserProfile(likeUserId:String){
+        LikesVM.shared.acceptLikeUser(likedUserId: likeUserId) { [weak self] (success,msg) in
+            if success{
+                let vc = ChatVC.getVC(.Message)
+                vc.otherUserId = likeUserId
+                vc.grpId = msg
+                vc.otherImgurl = HomeVM.shared.getUserDetailData().profileImg
+                vc.otherUserName = HomeVM.shared.getUserDetailData().fullName
+                self?.push(vc)
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }

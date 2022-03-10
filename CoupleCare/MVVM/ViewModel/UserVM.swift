@@ -18,7 +18,7 @@ class UserVM: NSObject {
     
     func sendMobileOTP(mobileNo:String,countryCode:String,completion:@escaping completionHandler){
         let param = ["mobileNumber": mobileNo,"countryCode": countryCode]
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kSendOTP, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kSendOTP, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 if let data = response["data"] as? [String:Any]{
                     UtilityManager.shared.userToken = data["token"] as? String ?? ""
@@ -34,7 +34,7 @@ class UserVM: NSObject {
         
         let param = ["mobileNumber": mobileNo,"countryCode": countryCode,"OTP":OTP]
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kVerifyotp, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kVerifyotp, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
             
             if response["statusCode"] as? Int == 200{
                 
@@ -55,7 +55,7 @@ class UserVM: NSObject {
     
     func resendOTP(mobileNo:String,countryCode:String,completion:@escaping completionHandler){
         let param = ["mobileNumber": mobileNo,"countryCode": countryCode]
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kResendotp, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kResendotp, param: param, method: .post, header: nil) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
@@ -66,7 +66,7 @@ class UserVM: NSObject {
     
     func getListInterest(completion:@escaping completionHandler){
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kInterestList, param: nil, method: .get, header: nil) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kInterestList, param: nil, method: .get, header: nil) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 self.interestListArray.removeAll()
                 if let data = response["data"] as? [[String:Any]]{
@@ -86,7 +86,7 @@ class UserVM: NSObject {
     func register(completion:@escaping completionHandler){
         let param = ["mobileNumber":RegisterModel.shared.mobileNo,"countryCode":RegisterModel.shared.dailCode,"fullName":RegisterModel.shared.fullName,"interestedIn":RegisterModel.shared.interestedIn,"gender":RegisterModel.shared.gender,"age":RegisterModel.shared.age,"dob":RegisterModel.shared.DOB,"interests":RegisterModel.shared.interests,"lat":RegisterModel.shared.lat,"lng":RegisterModel.shared.long] as [String : Any]
         
-        uploadDataToServerHandler(url: APIConstant.kSandvboxBaseUrl + APIConstant.kRegister, param: param, imgData: RegisterModel.shared.images, fileName: "images") { (response) in
+        uploadDataToServerHandler(url: APIConstant.kBaseUrl + APIConstant.kRegister, param: param, imgData: RegisterModel.shared.images, fileName: "images") { (response) in
             
             print("respinse Register:-",response)
             if response?["statusCode"] as? Int == 200{
@@ -108,7 +108,7 @@ class UserVM: NSObject {
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value]
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
@@ -121,7 +121,7 @@ class UserVM: NSObject {
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value,keyName2:value2]
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
@@ -134,7 +134,7 @@ class UserVM: NSObject {
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id,keyName:value] as [String : Any]
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kUpdateprofile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
@@ -147,7 +147,7 @@ class UserVM: NSObject {
         
         let param = ["userId":UtilityManager.shared.userDecodedDetail().id]
         
-        uploadDataToServerHandler(url: APIConstant.kSandvboxBaseUrl + APIConstant.kUpdateimages, param: param, imgData: selectedImages, fileName: "images") { (response) in
+        uploadDataToServerHandler(url: APIConstant.kBaseUrl + APIConstant.kUpdateimages, param: param, imgData: selectedImages, fileName: "images") { (response) in
             
             if response?["statusCode"] as? Int == 200{
                 completion(true,response?["message"] as? String ?? "")

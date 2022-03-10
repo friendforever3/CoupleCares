@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         if UtilityManager.shared.userDecodedDetail().token != ""{
+            editProfile()
             self.home()
         }
     }
@@ -60,5 +61,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+    func editProfile(){
+        HomeVM.shared.userDetail(userId: UtilityManager.shared.userDecodedDetail().id) { [weak self] (success,msg) in
+            if success{
+                //self?.setUI()
+            }else{
+               
+            }
+        }
+    }
+    
+    
 }
+
 

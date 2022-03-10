@@ -238,5 +238,10 @@ class UtilityManager : NSObject{
             }
         }
     }
+    
+    func getCurrentTimeZone() -> String{
+        return TimeZone.current.identifier
+    }
+
 
 }

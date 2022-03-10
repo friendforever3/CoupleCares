@@ -2150,15 +2150,23 @@
                                     <constraint firstItem="Nig-ma-Ydf" firstAttribute="leading" secondItem="QCV-aW-gZX" secondAttribute="leading" id="xNx-cM-OjS"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sa7-LE-gtg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SSp-fr-tGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d4d-kD-bIF" firstAttribute="leading" secondItem="SSp-fr-tGa" secondAttribute="leading" id="1QR-Vt-52A"/>
+                            <constraint firstAttribute="bottom" secondItem="Sa7-LE-gtg" secondAttribute="bottom" id="Iaz-ht-4RG"/>
                             <constraint firstItem="SSp-fr-tGa" firstAttribute="trailing" secondItem="d4d-kD-bIF" secondAttribute="trailing" id="MW6-zu-iUX"/>
+                            <constraint firstItem="Sa7-LE-gtg" firstAttribute="top" secondItem="KXh-9j-T42" secondAttribute="top" id="NyL-bT-n0g"/>
                             <constraint firstItem="SSp-fr-tGa" firstAttribute="bottom" secondItem="QCV-aW-gZX" secondAttribute="bottom" constant="15" id="Oef-ID-LLV"/>
                             <constraint firstItem="d4d-kD-bIF" firstAttribute="top" secondItem="KXh-9j-T42" secondAttribute="top" id="PLK-An-cn5"/>
                             <constraint firstItem="SSp-fr-tGa" firstAttribute="bottom" secondItem="d4d-kD-bIF" secondAttribute="bottom" id="Rju-Wh-fEP"/>
+                            <constraint firstItem="Sa7-LE-gtg" firstAttribute="leading" secondItem="SSp-fr-tGa" secondAttribute="leading" id="hOE-ML-GZe"/>
+                            <constraint firstItem="SSp-fr-tGa" firstAttribute="trailing" secondItem="Sa7-LE-gtg" secondAttribute="trailing" id="jFx-f5-se8"/>
                             <constraint firstItem="NL3-yf-sTb" firstAttribute="top" secondItem="SSp-fr-tGa" secondAttribute="top" constant="8" id="kQQ-4v-tdI"/>
                             <constraint firstItem="QCV-aW-gZX" firstAttribute="trailing" secondItem="SSp-fr-tGa" secondAttribute="trailing" constant="-53" id="qXK-kr-bV9"/>
                             <constraint firstItem="QCV-aW-gZX" firstAttribute="leading" secondItem="SSp-fr-tGa" secondAttribute="leading" constant="53" id="xSC-aW-Nwr"/>
@@ -2173,6 +2181,7 @@
                         <outlet property="lblJob" destination="OEV-yl-CU6" id="QWd-ae-3NW"/>
                         <outlet property="lblLocName" destination="50T-Ip-2jG" id="InN-Dt-pBI"/>
                         <outlet property="lblUserNameAge" destination="pbT-lp-m6A" id="XYw-an-ggl"/>
+                        <outlet property="vwInitial" destination="Sa7-LE-gtg" id="7ov-qb-t35"/>
                         <outlet property="vwInterestHeightConstraint" destination="wXJ-31-g8D" id="9he-A7-jOU"/>
                         <outlet property="vwPhotosHeightConstraint" destination="TaH-50-oR6" id="GA8-qA-vb4"/>
                     </connections>

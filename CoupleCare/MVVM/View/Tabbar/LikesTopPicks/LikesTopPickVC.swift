@@ -24,6 +24,7 @@ class LikesTopPickVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         getAllLikeUser()
     }
     
@@ -65,22 +66,35 @@ class LikesTopPickVC: UIViewController {
 extension LikesTopPickVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return LikesVM.shared.getAllUserLikedCount()
+        if collectionView == likeClcVw{
+            return LikesVM.shared.getAllUserLikedCount()
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LikeClcCell
-        
-        UtilityManager.shared.setImage(image: cell.imgLikeProfile, urlString: LikesVM.shared.getAllUserLikeCell(indexPath: indexPath).profileImgUrl)
-        
-        return cell
+        if collectionView == likeClcVw{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LikeClcCell
+            UtilityManager.shared.setImage(image: cell.imgLikeProfile, urlString: LikesVM.shared.getAllUserLikeCell(indexPath: indexPath).profileImgUrl)
+            
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = OtherProfileVC.getVC(.Home)
+        vc.userId = LikesVM.shared.getAllUserLikeCell(indexPath: indexPath).id
+        vc.comingFrom = "like"
+        self.push(vc)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == likeClcVw{
             return CGSize(width: ((collectionView.frame.size.width) / 2) - 10, height: 212)
         }
+        return CGSize(width: 0, height: 0)
+    }
     
 }
 

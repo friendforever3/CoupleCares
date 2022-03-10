@@ -15,12 +15,15 @@ class MessageListVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        getMessageList()
     }
+    
    
 }
 
@@ -46,17 +49,27 @@ extension MessageListVC : UICollectionViewDelegate,UICollectionViewDataSource,UI
 extension MessageListVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return MessageVM.shared.getMessageCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! MessageTblCell
+        UtilityManager.shared.setImage(image: cell.imgUser, urlString: MessageVM.shared.getMsgUserDetail(indexPath: indexPath).imgUrl)
+        
+        cell.lblMsg.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).msg
+        cell.lblUserName.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).name
+        cell.lblMsgTime.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).time
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         let vc = ChatVC.getVC(.Message)
+        vc.otherUserId = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).otherUserId
+        vc.otherImgurl = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).imgUrl
+        vc.grpId = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).groupId
+        vc.otherUserName = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).name
         self.push(vc)
     }
     
@@ -66,3 +79,17 @@ extension MessageListVC : UITableViewDelegate,UITableViewDataSource{
     
 }
 
+//MARK: API
+extension MessageListVC{
+    
+    func getMessageList(){
+        MessageVM.shared.getMessageList { [weak self] (success,msg) in
+            if success{
+                self?.msgTblVw.reloadData()
+            }else{
+                UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
+            }
+        }
+    }
+    
+}

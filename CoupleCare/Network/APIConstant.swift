@@ -10,7 +10,8 @@ import Foundation
 
 struct APIConstant{
  
-    static let kSandvboxBaseUrl = "http://3.13.194.181:5004/api/v1/"
+    static let kBaseUrl = "http://3.13.194.181:5004/api/v1/"
+    
     static let kUser = "user/"
     static let kAdmin = "admin/"
     
@@ -28,7 +29,12 @@ struct APIConstant{
     static let kUpdateprofileimage = kUser + "updateprofileimage"
     static let kUpdateprofile = kUser + "updateprofile"
     static let kUpdateimages = kUser + "updateimages"
-    
+    static let kAcceptProfile = kUser + "accept/profile"
+    static let kSuperLikeProfile = kUser + "super/like/profile"
+    static let kLikeProfile = kUser + "like/profile"
+    static let kChatGroup = kUser + "chat/group"
+    static let kChatHistory = kUser + "chat/history"
+
 }
 
 struct AppConstant{

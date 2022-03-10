@@ -161,7 +161,7 @@
                                                 <rect key="frame" x="18" y="56" width="378" height="582"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="msgCell" rowHeight="86" id="Kfm-Sm-WKz">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="msgCell" rowHeight="86" id="Kfm-Sm-WKz" customClass="MessageTblCell" customModule="CoupleCare" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.5" width="378" height="86"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kfm-Sm-WKz" id="Jb2-l2-38k">
@@ -196,7 +196,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit, consectetu..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-s2-SLL">
-                                                                            <rect key="frame" x="67" y="47" width="247.5" height="19"/>
+                                                                            <rect key="frame" x="67" y="47" width="304" height="19"/>
                                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                             <color key="textColor" name="msgColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -216,6 +216,7 @@
                                                                     <constraints>
                                                                         <constraint firstItem="kXP-C7-zU0" firstAttribute="centerY" secondItem="Dch-xg-8eI" secondAttribute="centerY" id="11k-b7-xZr"/>
                                                                         <constraint firstItem="AsZ-cj-mXG" firstAttribute="top" secondItem="kXP-C7-zU0" secondAttribute="top" id="BaK-18-dI6"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Cbd-s2-SLL" secondAttribute="trailing" constant="7" id="LRt-tM-KOk"/>
                                                                         <constraint firstAttribute="trailing" secondItem="45k-Vt-VO6" secondAttribute="trailing" constant="7" id="Moe-GY-zS9"/>
                                                                         <constraint firstItem="AsZ-cj-mXG" firstAttribute="leading" secondItem="kXP-C7-zU0" secondAttribute="trailing" constant="15" id="TdA-It-TkZ"/>
                                                                         <constraint firstAttribute="bottom" secondItem="0ik-Xi-aPJ" secondAttribute="bottom" id="XzB-Xx-wub"/>
@@ -236,6 +237,12 @@
                                                                 <constraint firstItem="Dch-xg-8eI" firstAttribute="leading" secondItem="Jb2-l2-38k" secondAttribute="leading" id="uh1-sx-Okr"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="imgUser" destination="kXP-C7-zU0" id="95z-L8-15k"/>
+                                                            <outlet property="lblMsg" destination="Cbd-s2-SLL" id="BEc-GS-oiS"/>
+                                                            <outlet property="lblMsgTime" destination="45k-Vt-VO6" id="29V-0e-bx2"/>
+                                                            <outlet property="lblUserName" destination="AsZ-cj-mXG" id="FB7-sv-qBB"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <connections>
@@ -442,7 +449,7 @@
                                 <rect key="frame" x="17" y="104" width="380" height="692"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="senderCell" rowHeight="86" id="PQ4-YE-WC5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="senderCell" rowHeight="86" id="PQ4-YE-WC5" customClass="ChatTblCell" customModule="CoupleCare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="380" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQ4-YE-WC5" id="PHa-Nw-S2u">
@@ -491,8 +498,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblSenderMsg" destination="hHM-ay-D5n" id="gCp-qv-sgO"/>
+                                            <outlet property="lblSenderTime" destination="UuS-jG-Sfd" id="tFI-fJ-JJk"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recieverCell" rowHeight="86" id="5JV-h2-Sbv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recieverCell" rowHeight="86" id="5JV-h2-Sbv" customClass="ChatTblCell" customModule="CoupleCare" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="130.5" width="380" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5JV-h2-Sbv" id="tGq-jx-oSA">
@@ -540,6 +551,10 @@
                                                 <constraint firstItem="sro-Xa-nXj" firstAttribute="leading" secondItem="tGq-jx-oSA" secondAttribute="leading" id="tww-1x-rZk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblRecieverMsg" destination="w56-HQ-7Rq" id="t6N-Qe-tWN"/>
+                                            <outlet property="lblRecieverTime" destination="sro-Xa-nXj" id="Mke-kU-fAS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -558,6 +573,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKn-O2-DhF">
                                                         <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="btnSendMsgAction:" destination="OM0-MY-MgX" eventType="touchUpInside" id="btz-w5-G43"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -805,7 +823,11 @@
                     </view>
                     <connections>
                         <outlet property="chatTblVw" destination="oNv-3r-u30" id="o4X-gC-3oB"/>
+                        <outlet property="imgNavUser" destination="fGo-LG-pQt" id="MDR-7A-EjI"/>
+                        <outlet property="lblNavUser" destination="Zj5-Wr-ndS" id="rdn-O4-b84"/>
+                        <outlet property="tfMsg" destination="QEH-OC-adZ" id="mmE-VY-1Cx"/>
                         <outlet property="vwBg" destination="6tP-WX-3Gd" id="sZk-YS-VMQ"/>
+                        <outlet property="vwChatBottomConstraint" destination="gw0-wL-I2Y" id="aVO-ne-C7C"/>
                         <outlet property="vwMenu" destination="2Lw-eH-6ff" id="zQC-nA-P6w"/>
                         <outlet property="vwMenuHeightConstraint" destination="dkZ-as-8TT" id="dsK-DH-gDt"/>
                     </connections>

@@ -11,9 +11,11 @@ import Alamofire
 typealias responseCompletion = ([String:Any],Int,String)
 typealias responseCompletionArray = ([[String:Any]],Int,String)
 
-func serverRequest(url:String,param:[String:Any]?,method:HTTPMethod,header:HTTPHeaders? ,completion:@escaping(responseCompletion)->()){
+func serverRequest(url:String,param:[String:Any]?,method:HTTPMethod,header:HTTPHeaders? ,loaderShow:Bool=true,completion:@escaping(responseCompletion)->()){
     
-    Indicator.shared.start("")
+    if loaderShow{
+        Indicator.shared.start("")
+    }
     print("url:-",url)
     print("param:-",param)
     print(header)

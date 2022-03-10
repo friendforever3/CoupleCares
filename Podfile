@@ -20,6 +20,8 @@ pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'GoogleSignIn'
 pod 'LocationPicker'
+pod 'Socket.IO-Client-Swift'
+
 
   target 'CoupleCareTests' do
     inherit! :search_paths

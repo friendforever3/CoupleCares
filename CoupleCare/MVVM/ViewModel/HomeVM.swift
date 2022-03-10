@@ -26,7 +26,7 @@ class HomeVM: NSObject {
         
         let param = ["userId":userId,"page":0,"pageSize":100] as [String : Any]
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kNearBy, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kNearBy, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             print("response nearby:-",response)
             
             if response["statusCode"] as? Int == 200{
@@ -49,10 +49,25 @@ class HomeVM: NSObject {
     }
     
     func userDetail(userId:String,completion:@escaping completionHandler){
-        
         let param = ["userId":userId]
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kDetail, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+            
+            if response["statusCode"] as? Int == 200{
+                if let data = response["data"] as? [String:Any]{
+                    self.objUserDetailModel.setData(dict: data)
+                }
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func likeProfile(likeId:String,completion:@escaping completionHandler){
         
-        serverRequest(url: APIConstant.kSandvboxBaseUrl + APIConstant.kDetail, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
+        let param = ["likeId":likeId]
+        
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kLikeProfile, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { (response, statusCode,errorMsg) in
             
             if response["statusCode"] as? Int == 200{
                 if let data = response["data"] as? [String:Any]{
