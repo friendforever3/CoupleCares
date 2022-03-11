@@ -64,9 +64,9 @@ class ChatVC: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
             
-//            if self.chatArray.count != 0{
+            if MessageVM.shared.getAllChatListCount() != 0{
                chatTblVw.scrollToBottom(isAnimated: false)
-//            }
+            }
             
             if UIDevice().userInterfaceIdiom == .phone {
                 switch UIScreen.main.nativeBounds.height {
@@ -135,7 +135,7 @@ class ChatVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-       // SocketConnectionManager.shared.off(listnerKey: grpId)
+        SocketConnectionManager.shared.off(listnerKey: grpId)
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = true
         SocketConnectionManager.shared.disconnectSocket()
@@ -177,7 +177,7 @@ class ChatVC: UIViewController {
                 "timezone":UtilityManager.shared.getCurrentTimeZone(),
                 "msg": tfMsg.text ?? ""
             ]
-           // let dict = ["listner":grpId,"data":emitData] as [String : Any]
+            //let dict = ["listener":grpId,"data":emitData] as [String : Any]
             SocketConnectionManager.shared.emit(emitterKey: "sendMessage", params: emitData)
             tfMsg.text = ""
         }
