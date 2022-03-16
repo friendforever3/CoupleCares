@@ -15,6 +15,12 @@ class NameVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
+    
     @IBAction func btnBackAction(_ sender: Any) {
         popVc()
     }

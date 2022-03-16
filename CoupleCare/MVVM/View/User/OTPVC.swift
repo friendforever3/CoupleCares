@@ -31,6 +31,7 @@ class OTPVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
         self.lblOtpMobile.text = "OTP send to \(dailCode)\(mobileNo)"
     }
     

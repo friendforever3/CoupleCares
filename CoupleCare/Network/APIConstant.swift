@@ -34,6 +34,8 @@ struct APIConstant{
     static let kLikeProfile = kUser + "like/profile"
     static let kChatGroup = kUser + "chat/group"
     static let kChatHistory = kUser + "chat/history"
+    
+    static let kTwillioVieoToken = kUser + "twillio/vieo/token"
 
 }
 

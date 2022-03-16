@@ -21,6 +21,7 @@ class FeedVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
         self.tabBarController?.tabBar.isHidden = false
     }
     

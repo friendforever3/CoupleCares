@@ -21,6 +21,7 @@ pod 'FacebookShare'
 pod 'GoogleSignIn'
 pod 'LocationPicker'
 pod 'Socket.IO-Client-Swift'
+pod 'TwilioVideo', '~> 3.8'
 
 
   target 'CoupleCareTests' do

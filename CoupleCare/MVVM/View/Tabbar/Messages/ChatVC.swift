@@ -24,6 +24,8 @@ class ChatVC: UIViewController {
     var otherImgurl : String = ""
     var otherUserName : String = ""
     
+    var isVideo : Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,10 +137,12 @@ class ChatVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        SocketConnectionManager.shared.off(listnerKey: grpId)
-        IQKeyboardManager.shared().isEnabled = true
-        IQKeyboardManager.shared().isEnableAutoToolbar = true
-        SocketConnectionManager.shared.disconnectSocket()
+        if !isVideo{
+            SocketConnectionManager.shared.off(listnerKey: grpId)
+            IQKeyboardManager.shared().isEnabled = true
+            IQKeyboardManager.shared().isEnableAutoToolbar = true
+            SocketConnectionManager.shared.disconnectSocket()
+        }
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -164,6 +168,12 @@ class ChatVC: UIViewController {
         } completion: { _ in
             
         }
+    }
+    @IBAction func btnVideoCallAction(_ sender: Any) {
+        isVideo = true
+        let vc = VideoCallVC.getVC(.Call)
+        vc.grpId = self.grpId
+        self.push(vc)
     }
     
     @IBAction func btnSendMsgAction(_ sender: Any) {

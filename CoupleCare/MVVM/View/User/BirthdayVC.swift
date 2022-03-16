@@ -20,6 +20,11 @@ class BirthdayVC: UIViewController {
         showDatePicker()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
+    
     @IBAction func btnBackAction(_ sender: Any) {
         self.popVc()
     }

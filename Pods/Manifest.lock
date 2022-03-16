@@ -51,6 +51,7 @@ PODS:
   - Socket.IO-Client-Swift (16.0.1):
     - Starscream (~> 4.0)
   - Starscream (4.0.4)
+  - TwilioVideo (3.8.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - ScalingCarousel
   - Shuffle-iOS
   - Socket.IO-Client-Swift
+  - TwilioVideo (~> 3.8)
 
 SPEC REPOS:
   trunk:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - Shuffle-iOS
     - Socket.IO-Client-Swift
     - Starscream
+    - TwilioVideo
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -117,7 +120,8 @@ SPEC CHECKSUMS:
   Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
   Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  TwilioVideo: c13a51ceca375e91620eb7578d2573c90cf53b46
 
-PODFILE CHECKSUM: 3d00dc9c071cfd08556f538de3e4ef8f4c7b1892
+PODFILE CHECKSUM: ba79556d80625d58061f465a7280602e7858a6f9
 
 COCOAPODS: 1.11.2

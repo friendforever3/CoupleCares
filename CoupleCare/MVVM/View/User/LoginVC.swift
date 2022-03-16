@@ -15,6 +15,11 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
+    
     @IBAction func btnLoginAction(_ sender: Any) {
        // let vc = CoupleCaresTabbar.getVC(.CoupleCares)
         let vc = MobileNumVC.getVC(.Main)

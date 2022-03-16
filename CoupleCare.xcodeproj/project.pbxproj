@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		04B394B9EE5D1ECC3D28EDE1 /* Pods_CoupleCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C57F1B68B3C8B9EA6FE400 /* Pods_CoupleCareTests.framework */; };
+		26180E0327E0EA5800096F49 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26180E0227E0EA5800096F49 /* Call.storyboard */; };
+		26180E0527E0ECE800096F49 /* VideoCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0427E0ECE800096F49 /* VideoCallVC.swift */; };
+		26180E0727E0EF4D00096F49 /* VideoCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */; };
+		26180E0927E0F5D800096F49 /* CallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0827E0F5D800096F49 /* CallModel.swift */; };
 		263B198E27251C8C00D3B1C7 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B198D27251C8C00D3B1C7 /* CommentVC.swift */; };
 		263B199127251D0E00D3B1C7 /* FeedTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B199027251D0E00D3B1C7 /* FeedTblCell.swift */; };
 		263B19932725249B00D3B1C7 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B19922725249B00D3B1C7 /* LikesVC.swift */; };
@@ -141,6 +145,10 @@
 
 /* Begin PBXFileReference section */
 		049138EEFBB76968A04695C5 /* Pods-CoupleCare-CoupleCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleCare-CoupleCareUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoupleCare-CoupleCareUITests/Pods-CoupleCare-CoupleCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		26180E0227E0EA5800096F49 /* Call.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Call.storyboard; sourceTree = "<group>"; };
+		26180E0427E0ECE800096F49 /* VideoCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallVC.swift; sourceTree = "<group>"; };
+		26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewModel.swift; sourceTree = "<group>"; };
+		26180E0827E0F5D800096F49 /* CallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallModel.swift; sourceTree = "<group>"; };
 		263B198D27251C8C00D3B1C7 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		263B199027251D0E00D3B1C7 /* FeedTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTblCell.swift; sourceTree = "<group>"; };
 		263B19922725249B00D3B1C7 /* LikesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
@@ -375,6 +383,7 @@
 			children = (
 				267A20EB2721C2950092A162 /* MessageListVC.swift */,
 				267A20EC2721C2950092A162 /* ChatVC.swift */,
+				26180E0427E0ECE800096F49 /* VideoCallVC.swift */,
 				26F5EA8B27D4BDBC0021E5CA /* TblCell */,
 				2675C1ED27CA19A0006880E4 /* SocketFile */,
 			);
@@ -542,6 +551,7 @@
 				2682BB5C276DEB2000A14EEF /* HomeModel.swift */,
 				268A8FB4276F1A7E00824DE7 /* LikeModel.swift */,
 				26F5EA8927D4BA7C0021E5CA /* MessageModel.swift */,
+				26180E0827E0F5D800096F49 /* CallModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -554,6 +564,7 @@
 				268A8FB2276F126700824DE7 /* LikesVM.swift */,
 				268A8FB9276F29AE00824DE7 /* ProfileVM.swift */,
 				26F5EA8727D4B1B80021E5CA /* MessageVM.swift */,
+				26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -660,6 +671,7 @@
 				6CB1BAD12726FC3F00064DB6 /* Profile.storyboard */,
 				6CB1BACC2726FC2D00064DB6 /* CoupleCareTabBar.storyboard */,
 				26775AAD2776FDE000E8FBE8 /* UpdateProfile.storyboard */,
+				26180E0227E0EA5800096F49 /* Call.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -804,6 +816,7 @@
 				267A21682721C2A60092A162 /* Lato-Medium.ttf in Resources */,
 				6CB1BACD2726FC2D00064DB6 /* CoupleCareTabBar.storyboard in Resources */,
 				6CB1BAD62726FC3F00064DB6 /* Profile.storyboard in Resources */,
+				26180E0327E0EA5800096F49 /* Call.storyboard in Resources */,
 				267A21602721C2A60092A162 /* Lato-Regular.ttf in Resources */,
 				267A21642721C2A60092A162 /* Lato-MediumItalic.ttf in Resources */,
 				267A21192721C2950092A162 /* SettingView.xib in Resources */,
@@ -941,6 +954,7 @@
 				267A21162721C2950092A162 /* CreatePostVC.swift in Sources */,
 				267A21742721C2A60092A162 /* DownloadCircularProgessView.swift in Sources */,
 				267A217F2721C2A60092A162 /* Extension.swift in Sources */,
+				26180E0727E0EF4D00096F49 /* VideoCallViewModel.swift in Sources */,
 				268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */,
 				267A21292721C2950092A162 /* NameVC.swift in Sources */,
 				268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */,
@@ -962,6 +976,7 @@
 				263B1995272533D300D3B1C7 /* SettingView.swift in Sources */,
 				267A21282721C2950092A162 /* BirthdayVC.swift in Sources */,
 				267A217A2721C2A60092A162 /* TinderCardContentView.swift in Sources */,
+				26180E0527E0ECE800096F49 /* VideoCallVC.swift in Sources */,
 				26702244276A450E001E1023 /* RegisterModel.swift in Sources */,
 				267A21752721C2A60092A162 /* TextFieldCustom.swift in Sources */,
 				26EC8FA9276903800014D012 /* APIHandler.swift in Sources */,
@@ -977,6 +992,7 @@
 				26775ABB277726AD00E8FBE8 /* UpdateJobTitleVC.swift in Sources */,
 				26F5EA8827D4B1B80021E5CA /* MessageVM.swift in Sources */,
 				267A21182721C2950092A162 /* ContactUsVC.swift in Sources */,
+				26180E0927E0F5D800096F49 /* CallModel.swift in Sources */,
 				267A21102721C2950092A162 /* SubscriptionTypeVC.swift in Sources */,
 				267A21122721C2950092A162 /* MessageListVC.swift in Sources */,
 				267A21112721C2950092A162 /* CoupleCaresTabbar.swift in Sources */,

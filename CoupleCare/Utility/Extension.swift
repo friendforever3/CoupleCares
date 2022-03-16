@@ -96,6 +96,7 @@ enum Storyboard: String {
     case Profile = "Profile"
     case Feed = "Feed"
     case UpdateProfile = "UpdateProfile"
+    case Call = "Call"
 }
 
 

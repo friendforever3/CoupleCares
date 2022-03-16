@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video CallVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="VideoCallVC" id="Y6W-OH-hqX" customClass="VideoCallVC" customModule="CoupleCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJd-O2-jsC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiS-un-A87">
+                                        <rect key="frame" x="25" y="531" width="153" height="215"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0y-mR-xN2">
+                                        <rect key="frame" x="167" y="766" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Itr-fT-8T8"/>
+                                            <constraint firstAttribute="width" secondItem="C0y-mR-xN2" secondAttribute="height" multiplier="1:1" id="uOx-HQ-ISc"/>
+                                        </constraints>
+                                        <state key="normal" image="callEnd"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                                <real key="value" value="23"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnEndCallAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hX6-3a-uxE"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-OS-4MN">
+                                        <rect key="frame" x="25" y="64" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BzB-8b-kEh"/>
+                                            <constraint firstAttribute="width" secondItem="fHn-OS-4MN" secondAttribute="height" multiplier="1:1" id="M04-h1-etQ"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="btnBackAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1uz-2X-swu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="C0y-mR-xN2" firstAttribute="top" secondItem="MiS-un-A87" secondAttribute="bottom" constant="20" id="4y0-Eh-xHl"/>
+                                    <constraint firstItem="C0y-mR-xN2" firstAttribute="centerX" secondItem="hJd-O2-jsC" secondAttribute="centerX" id="BVb-KB-Pid"/>
+                                    <constraint firstItem="MiS-un-A87" firstAttribute="width" secondItem="hJd-O2-jsC" secondAttribute="width" multiplier="0.37" id="Sp8-eu-tgL"/>
+                                    <constraint firstItem="fHn-OS-4MN" firstAttribute="leading" secondItem="hJd-O2-jsC" secondAttribute="leading" constant="25" id="gmR-HC-dfK"/>
+                                    <constraint firstItem="MiS-un-A87" firstAttribute="leading" secondItem="hJd-O2-jsC" secondAttribute="leading" constant="25" id="hMS-UM-b3X"/>
+                                    <constraint firstItem="MiS-un-A87" firstAttribute="height" secondItem="hJd-O2-jsC" secondAttribute="height" multiplier="0.24" id="jpm-En-4hU"/>
+                                    <constraint firstAttribute="bottom" secondItem="C0y-mR-xN2" secondAttribute="bottom" constant="50" id="t38-JF-4Cj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hJd-O2-jsC" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="5Yl-gJ-WiJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hJd-O2-jsC" secondAttribute="trailing" id="7NA-IY-OSA"/>
+                            <constraint firstAttribute="top" secondItem="hJd-O2-jsC" secondAttribute="top" id="YsK-Dz-xvh"/>
+                            <constraint firstItem="hJd-O2-jsC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="c4A-Wz-nbF"/>
+                            <constraint firstItem="fHn-OS-4MN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="owg-q6-eo7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="largeView" destination="hJd-O2-jsC" id="QT9-Sz-F6h"/>
+                        <outlet property="smallView" destination="MiS-un-A87" id="3SZ-rp-EZ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="24" height="24"/>
+        <image name="callEnd" width="88" height="88"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
