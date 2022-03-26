@@ -34,7 +34,7 @@ class ChatVC: UIViewController {
         chatTblVw.delegate = self
         chatTblVw.dataSource = self
         
-        chatTblVw.estimatedRowHeight = 86
+        chatTblVw.estimatedRowHeight = 50
         chatTblVw.rowHeight = UITableView.automaticDimension
       //  vwMenuHeightConstraint.constant = 0
         initliaseSocketConnection()
@@ -172,6 +172,13 @@ class ChatVC: UIViewController {
     @IBAction func btnVideoCallAction(_ sender: Any) {
         isVideo = true
         let vc = VideoCallVC.getVC(.Call)
+        vc.grpId = self.grpId
+        self.push(vc)
+    }
+    
+    @IBAction func btnAudioCallAction(_ sender: Any) {
+        isVideo = true
+        let vc = VoiceCallVC.getVC(.Call)
         vc.grpId = self.grpId
         self.push(vc)
     }

@@ -22,6 +22,7 @@ pod 'GoogleSignIn'
 pod 'LocationPicker'
 pod 'Socket.IO-Client-Swift'
 pod 'TwilioVideo', '~> 3.8'
+pod 'TwilioVoice'
 
 
   target 'CoupleCareTests' do

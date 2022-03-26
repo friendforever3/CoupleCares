@@ -10,7 +10,7 @@
 		04B394B9EE5D1ECC3D28EDE1 /* Pods_CoupleCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C57F1B68B3C8B9EA6FE400 /* Pods_CoupleCareTests.framework */; };
 		26180E0327E0EA5800096F49 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26180E0227E0EA5800096F49 /* Call.storyboard */; };
 		26180E0527E0ECE800096F49 /* VideoCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0427E0ECE800096F49 /* VideoCallVC.swift */; };
-		26180E0727E0EF4D00096F49 /* VideoCallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */; };
+		26180E0727E0EF4D00096F49 /* TwilioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */; };
 		26180E0927E0F5D800096F49 /* CallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0827E0F5D800096F49 /* CallModel.swift */; };
 		263B198E27251C8C00D3B1C7 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B198D27251C8C00D3B1C7 /* CommentVC.swift */; };
 		263B199127251D0E00D3B1C7 /* FeedTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B199027251D0E00D3B1C7 /* FeedTblCell.swift */; };
@@ -102,6 +102,7 @@
 		268A8FBC276F5FE400824DE7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBB276F5FE400824DE7 /* ImagePicker.swift */; };
 		268A8FBE276F65DD00824DE7 /* ProtocolMangr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */; };
 		268F030B27D7B24C00A74BD0 /* ChatTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F030A27D7B24C00A74BD0 /* ChatTblCell.swift */; };
+		26B5BC9327E2F37C008DC56B /* VoiceCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */; };
 		26EC8FA6276902AB0014D012 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA5276902AB0014D012 /* UserVM.swift */; };
 		26EC8FA9276903800014D012 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA8276903800014D012 /* APIHandler.swift */; };
 		26EC8FAB276904960014D012 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FAA276904960014D012 /* Indicator.swift */; };
@@ -147,7 +148,7 @@
 		049138EEFBB76968A04695C5 /* Pods-CoupleCare-CoupleCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleCare-CoupleCareUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoupleCare-CoupleCareUITests/Pods-CoupleCare-CoupleCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		26180E0227E0EA5800096F49 /* Call.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Call.storyboard; sourceTree = "<group>"; };
 		26180E0427E0ECE800096F49 /* VideoCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallVC.swift; sourceTree = "<group>"; };
-		26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewModel.swift; sourceTree = "<group>"; };
+		26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioViewModel.swift; sourceTree = "<group>"; };
 		26180E0827E0F5D800096F49 /* CallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallModel.swift; sourceTree = "<group>"; };
 		263B198D27251C8C00D3B1C7 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		263B199027251D0E00D3B1C7 /* FeedTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTblCell.swift; sourceTree = "<group>"; };
@@ -239,6 +240,7 @@
 		268A8FBB276F5FE400824DE7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMangr.swift; sourceTree = "<group>"; };
 		268F030A27D7B24C00A74BD0 /* ChatTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTblCell.swift; sourceTree = "<group>"; };
+		26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCallVC.swift; sourceTree = "<group>"; };
 		26EC8FA5276902AB0014D012 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		26EC8FA8276903800014D012 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		26EC8FAA276904960014D012 /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				267A20EB2721C2950092A162 /* MessageListVC.swift */,
 				267A20EC2721C2950092A162 /* ChatVC.swift */,
 				26180E0427E0ECE800096F49 /* VideoCallVC.swift */,
+				26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */,
 				26F5EA8B27D4BDBC0021E5CA /* TblCell */,
 				2675C1ED27CA19A0006880E4 /* SocketFile */,
 			);
@@ -564,7 +567,7 @@
 				268A8FB2276F126700824DE7 /* LikesVM.swift */,
 				268A8FB9276F29AE00824DE7 /* ProfileVM.swift */,
 				26F5EA8727D4B1B80021E5CA /* MessageVM.swift */,
-				26180E0627E0EF4D00096F49 /* VideoCallViewModel.swift */,
+				26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -954,7 +957,7 @@
 				267A21162721C2950092A162 /* CreatePostVC.swift in Sources */,
 				267A21742721C2A60092A162 /* DownloadCircularProgessView.swift in Sources */,
 				267A217F2721C2A60092A162 /* Extension.swift in Sources */,
-				26180E0727E0EF4D00096F49 /* VideoCallViewModel.swift in Sources */,
+				26180E0727E0EF4D00096F49 /* TwilioViewModel.swift in Sources */,
 				268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */,
 				267A21292721C2950092A162 /* NameVC.swift in Sources */,
 				268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */,
@@ -1014,6 +1017,7 @@
 				267A21762721C2A60092A162 /* CustomPageControlView.swift in Sources */,
 				6C302FEA2721AD1E009A37CB /* AppDelegate.swift in Sources */,
 				267A211E2721C2950092A162 /* ProfileSettingVC.swift in Sources */,
+				26B5BC9327E2F37C008DC56B /* VoiceCallVC.swift in Sources */,
 				6C302FEC2721AD1E009A37CB /* SceneDelegate.swift in Sources */,
 				267A21172721C2950092A162 /* ProfileVC.swift in Sources */,
 				268A8FBC276F5FE400824DE7 /* ImagePicker.swift in Sources */,

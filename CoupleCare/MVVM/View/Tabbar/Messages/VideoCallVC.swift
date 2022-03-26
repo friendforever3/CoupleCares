@@ -29,13 +29,18 @@ class VideoCallVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        VideoCallViewModel.shared.emptyVideoCallToken()
+        TwilioViewModel.shared.emptyVideoCallToken()
         getAccessToken(grpId: grpId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCameraPreview(on: smallView)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+      //  self.connectCall(with: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2ZjNzQ5MGNmMzQxNTUyNzdlYTc1YmYyY2ZjZTg0MWI4LTE2NDc3NTY1NzciLCJncmFudHMiOnsiaWRlbnRpdHkiOiI2MWRkYjU4MDMxMGZkZTcyN2YwNjQ4M2YiLCJ2aWRlbyI6eyJyb29tIjoiMzZiMGRjMjYtZjdkOS00ODZiLTliNzYtZGRkMjg4OTJhMjQzIn19LCJpYXQiOjE2NDc3NTY1NzcsImV4cCI6MTY0Nzc3MDk3NywiaXNzIjoiU0tmYzc0OTBjZjM0MTU1Mjc3ZWE3NWJmMmNmY2U4NDFiOCIsInN1YiI6IkFDOTFjMzU5ZTdjNjk5ZDYzZTFiNWZlYWE1MDQyZmI0YjIifQ.Pfs6_3JfNjsAH0YkMsNT67_PMFQXp6F1S1LB5eOFRks")
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -72,10 +77,12 @@ class VideoCallVC: UIViewController {
         }
     }
     
-    func connectCall(with token:String) {
+    func connectCall(with token:String, grantToken:String) {
         print("token:-",token)
+        
         let connectOptions = ConnectOptions(token: token) { (builder) in
-          //  builder.roomName = "606b336dba3a1a1c0f35f31f"//self.viewModel.queueInfo?.queId
+            //builder.roomName = grantToken
+            //  builder.roomName = "606b336dba3a1a1c0f35f31f"//self.viewModel.queueInfo?.queId
             
             //            builder.isAutomaticSubscriptionEnabled = false
             if let audioTrack = self.localAudioTrack {
@@ -229,9 +236,9 @@ extension VideoCallVC: VideoViewDelegate {
 extension VideoCallVC{
     
     func getAccessToken(grpId:String){
-        VideoCallViewModel.shared.getAccessToken(grpId: grpId) { [weak self] (success,msg) in
+        TwilioViewModel.shared.getAccessToken(type:"video" ,grpId: grpId) { [weak self] (success,msg) in
             if success{
-                self?.connectCall(with: VideoCallViewModel.shared.getVideoCallToken().token)
+                self?.connectCall(with: TwilioViewModel.shared.getTwilioCallToken().token, grantToken: TwilioViewModel.shared.getTwilioCallToken().videoGrant)
             }else{
                 UtilityManager.shared.displayAlertWithCompletion(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController()) { (_) in
                     self?.popVc()

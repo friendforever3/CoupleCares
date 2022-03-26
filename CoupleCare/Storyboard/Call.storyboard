@@ -88,12 +88,49 @@
             </objects>
             <point key="canvasLocation" x="19" y="68"/>
         </scene>
+        <!--Voice CallVC-->
+        <scene sceneID="NIM-Jq-j6H">
+            <objects>
+                <viewController storyboardIdentifier="VoiceCallVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Ta-wM-vuJ" customClass="VoiceCallVC" customModule="CoupleCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8h3-qI-L9F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okZ-jE-TgB">
+                                <rect key="frame" x="172" y="413" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="cdT-nY-L2R"/>
+                                    <constraint firstAttribute="height" constant="70" id="pVh-Pz-fjX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="btnCallEndAction:" destination="0Ta-wM-vuJ" eventType="touchUpInside" id="CtA-5M-Dp4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Krg-P6-S10"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="okZ-jE-TgB" firstAttribute="centerX" secondItem="8h3-qI-L9F" secondAttribute="centerX" id="DVJ-bh-fvJ"/>
+                            <constraint firstItem="okZ-jE-TgB" firstAttribute="centerY" secondItem="8h3-qI-L9F" secondAttribute="centerY" id="xwn-yd-Tvj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfQ-vd-er2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="741" y="68"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
         <image name="callEnd" width="88" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
