@@ -260,7 +260,6 @@ extension UITableView {
     }
 
     func scrollToTop(isAnimated:Bool = true) {
-
         DispatchQueue.main.async {
             let indexPath = IndexPath(row: 0, section: 0)
             if self.hasRowAtIndexPath(indexPath: indexPath) {

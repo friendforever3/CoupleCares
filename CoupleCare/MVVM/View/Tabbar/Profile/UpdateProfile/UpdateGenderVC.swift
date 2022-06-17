@@ -129,7 +129,7 @@ extension UpdateGenderVC{
     
     func updateGenderProfile(){
         
-        UserVM.shared.updateProfile(keyName: "gender", value: genderSelected) { [weak self] (success,msg) in
+        UserViewModel.shared.updateProfile(keyName: "gender", value: genderSelected) { [weak self] (success,msg) in
             
             if success{
                 self?.popVc()

@@ -67,7 +67,7 @@ extension LikesTopPickVC : UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == likeClcVw{
-            return LikesVM.shared.getAllUserLikedCount()
+            return LikesViewModel.shared.getAllUserLikedCount()
         }
         return 0
     }
@@ -75,7 +75,7 @@ extension LikesTopPickVC : UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == likeClcVw{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LikeClcCell
-            UtilityManager.shared.setImage(image: cell.imgLikeProfile, urlString: LikesVM.shared.getAllUserLikeCell(indexPath: indexPath).profileImgUrl)
+            UtilityManager.shared.setImage(image: cell.imgLikeProfile, urlString: LikesViewModel.shared.getAllUserLikeCell(indexPath: indexPath).profileImgUrl)
             
             return cell
         }
@@ -84,7 +84,7 @@ extension LikesTopPickVC : UICollectionViewDelegate,UICollectionViewDataSource,U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = OtherProfileVC.getVC(.Home)
-        vc.userId = LikesVM.shared.getAllUserLikeCell(indexPath: indexPath).id
+        vc.userId = LikesViewModel.shared.getAllUserLikeCell(indexPath: indexPath).id
         vc.comingFrom = "like"
         self.push(vc)
     }
@@ -104,7 +104,7 @@ extension LikesTopPickVC{
     
     func getAllLikeUser(){
         
-        LikesVM.shared.getAllLikesUser { [weak self] (success,msg) in
+        LikesViewModel.shared.getAllLikesUser { [weak self] (success,msg) in
             if success{
                 self?.likeClcVw.reloadData()
             }else{

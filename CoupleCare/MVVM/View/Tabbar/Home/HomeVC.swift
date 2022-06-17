@@ -53,13 +53,13 @@ class HomeVC: UIViewController {
     
     @IBAction func btnDislikeAction(_ sender: Any) {
        // vwCard.swipe(.left, animated: true)
-        userDislike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: cardIndex).id)
+        userDislike(likeUserId: HomeViewModel.shared.getUserNameAge(indexPath: cardIndex).id)
        
     }
     
     @IBAction func btnLikeAction(_ sender: Any) {
        
-        userLike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: cardIndex).id)
+        userLike(likeUserId: HomeViewModel.shared.getUserNameAge(indexPath: cardIndex).id)
 
     }
     
@@ -99,13 +99,13 @@ extension HomeVC : ControllerDeleagte,didUpdateDelegate{
 extension HomeVC : UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeVM.shared.getUserInterestCount(index: cardIndex)
+        return HomeViewModel.shared.getUserInterestCount(index: cardIndex)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! InterestClcCell
         
-        cell.lblHomeInterest.text = HomeVM.shared.getUserInterestDetail(index: cardIndex, indexPath: indexPath)
+        cell.lblHomeInterest.text = HomeViewModel.shared.getUserInterestDetail(index: cardIndex, indexPath: indexPath)
         interestVwHeightConstraint.constant = interestClcVw.contentSize.height
         
         return cell
@@ -134,14 +134,14 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     }
 
       
-      print("indexpath:-",index,"HomeVM.shared.getUserNameAge(indexPath: index).name","\(HomeVM.shared.getUserNameAge(indexPath: index).name), \(HomeVM.shared.getUserNameAge(indexPath: index).age)")
+      print("indexpath:-",index,"HomeVM.shared.getUserNameAge(indexPath: index).name","\(HomeViewModel.shared.getUserNameAge(indexPath: index).name), \(HomeViewModel.shared.getUserNameAge(indexPath: index).age)")
       
       
       
-      let url = URL(string: HomeVM.shared.getImageUrl(indexPath: index))
-      lbluserName.text = "\(HomeVM.shared.getUserNameAge(indexPath: indexVw).name), \(HomeVM.shared.getUserNameAge(indexPath: indexVw).age)"
+      let url = URL(string: HomeViewModel.shared.getImageUrl(indexPath: index))
+      lbluserName.text = "\(HomeViewModel.shared.getUserNameAge(indexPath: indexVw).name), \(HomeViewModel.shared.getUserNameAge(indexPath: indexVw).age)"
 
-      lblDistance.text = "\((Double(HomeVM.shared.getUserDistance(index: indexVw)) ?? 1.0).roundToDecimal(2)) Miles"
+      lblDistance.text = "\((Double(HomeViewModel.shared.getUserDistance(index: indexVw)) ?? 1.0).roundToDecimal(2)) Miles"
       
       
      // lbluserName.text = model.name + ", " + "\(model.age)"
@@ -150,7 +150,7 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
       cardIndex = indexVw
     
       
-      if (HomeVM.shared.nearByCount() - 1) == index{
+      if (HomeViewModel.shared.nearByCount() - 1) == index{
           self.interestClcVw.reloadData()
       }
       
@@ -168,7 +168,7 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
   }
 
   func numberOfCards(in cardStack: SwipeCardStack) -> Int {
-      return HomeVM.shared.nearByCount()
+      return HomeViewModel.shared.nearByCount()
      // return cardModels.count
   }
 
@@ -188,16 +188,16 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
        
         if direction.rawValue == 1{
-            userLike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: index).id)
+            userLike(likeUserId: HomeViewModel.shared.getUserNameAge(indexPath: index).id)
         }else  if direction.rawValue == 0{
-            userDislike(likeUserId: HomeVM.shared.getUserNameAge(indexPath: index).id)
+            userDislike(likeUserId: HomeViewModel.shared.getUserNameAge(indexPath: index).id)
         }
         
-        if (HomeVM.shared.nearByCount() - 1) > index{
+        if (HomeViewModel.shared.nearByCount() - 1) > index{
             indexVw = indexVw + 1
             cardIndex = indexVw
-            lbluserName.text = "\(HomeVM.shared.getUserNameAge(indexPath: indexVw).name), \(HomeVM.shared.getUserNameAge(indexPath: indexVw).age)"
-            lblDistance.text = "\((Double(HomeVM.shared.getUserDistance(index: indexVw)) ?? 0.0).roundToDecimal(2)) Miles"
+            lbluserName.text = "\(HomeViewModel.shared.getUserNameAge(indexPath: indexVw).name), \(HomeViewModel.shared.getUserNameAge(indexPath: indexVw).age)"
+            lblDistance.text = "\((Double(HomeViewModel.shared.getUserDistance(index: indexVw)) ?? 0.0).roundToDecimal(2)) Miles"
             self.interestClcVw.reloadData()
         }
         
@@ -205,12 +205,12 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 
     func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int) {
         
-        if HomeVM.shared.nearByCount() > index{
-            print("id:-",HomeVM.shared.getUserNameAge(indexPath: index).id)
-            print("indexpath:-",index,"HomeVM.shared.getUserNameAge(indexPath: index).name","\(HomeVM.shared.getUserNameAge(indexPath: index).name), \(HomeVM.shared.getUserNameAge(indexPath: index).age)")
+        if HomeViewModel.shared.nearByCount() > index{
+            print("id:-",HomeViewModel.shared.getUserNameAge(indexPath: index).id)
+            print("indexpath:-",index,"HomeVM.shared.getUserNameAge(indexPath: index).name","\(HomeViewModel.shared.getUserNameAge(indexPath: index).name), \(HomeViewModel.shared.getUserNameAge(indexPath: index).age)")
         
                 let vc = OtherProfileVC.getVC(.Home)
-                vc.userId = HomeVM.shared.getUserNameAge(indexPath: index).id
+                vc.userId = HomeViewModel.shared.getUserNameAge(indexPath: index).id
                 vc.delegate = self
                 self.push(vc)
             
@@ -242,11 +242,11 @@ extension HomeVC: SwipeCardStackDataSource, SwipeCardStackDelegate {
 extension HomeVC{
     
     func getNearBy(){
-        HomeVM.shared.getNearBy(userId: UtilityManager.shared.userDecodedDetail().id, page: "0", pageSize: "100") { [weak self] (success, msg) in
+        HomeViewModel.shared.getNearBy(userId: UtilityManager.shared.userDecodedDetail().id, page: "0", pageSize: "100") { [weak self] (success, msg) in
             if success{
                 
                 
-                if HomeVM.shared.nearByCount() != 0{
+                if HomeViewModel.shared.nearByCount() != 0{
                     self?.vwBgInterest.isHidden = false
                     self?.vwBgUseDetail.isHidden = false
                     self?.vwBgSwipe.isHidden = false
@@ -255,7 +255,7 @@ extension HomeVC{
                    // self?.vwCard.reloadData()
                     
                     
-                    for value in HomeVM.shared.nearByArray{
+                    for value in HomeViewModel.shared.nearByArray{
                         let tind = TinderCardModel(name: value.name, age: value.age, occupation: "", image: nil)
                         self?.cardModels.append(tind)
                     }
@@ -276,7 +276,7 @@ extension HomeVC{
     
     
     func userLike(likeUserId:String){
-        LikesVM.shared.likeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+        LikesViewModel.shared.likeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 self?.vwCard.swipe(.right, animated: true)
             }else{
@@ -286,7 +286,7 @@ extension HomeVC{
     }
     
     func userDislike(likeUserId:String){
-        LikesVM.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+        LikesViewModel.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 self?.vwCard.swipe(.left, animated: true)
             }else{

@@ -125,7 +125,7 @@ extension UpdateInterestedInVC{
     
     func updateInterestedInProfile(){
         
-        UserVM.shared.updateProfile(keyName: "interestedIn", value: interestSelected) { [weak self] (success,msg) in
+        UserViewModel.shared.updateProfile(keyName: "interestedIn", value: interestSelected) { [weak self] (success,msg) in
             
             if success{
                 self?.popVc()

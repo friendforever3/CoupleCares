@@ -124,7 +124,7 @@ extension OTPVC{
         
         let otp = (tfone.text ?? "") + (tfTwo.text ?? "") + (tfThird.text ?? "") + (tfForth.text ?? "")
         
-        UserVM.shared.verifyOTP(mobileNo: mobileNo, countryCode: dailCode, OTP: otp){ [weak self] (success, msg) in
+        UserViewModel.shared.verifyOTP(mobileNo: mobileNo, countryCode: dailCode, OTP: otp){ [weak self] (success, msg) in
             if success{
                 
                 if UtilityManager.shared.userDecodedDetail().isRegistered{
@@ -140,7 +140,7 @@ extension OTPVC{
     }
     
     func resendOTP(){
-        UserVM.shared.resendOTP(mobileNo: mobileNo, countryCode: dailCode) { [weak self] (success, msg) in
+        UserViewModel.shared.resendOTP(mobileNo: mobileNo, countryCode: dailCode) { [weak self] (success, msg) in
             if success{
                 UtilityManager.shared.displayAlertWithCompletion(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController()) { _ in
                 }

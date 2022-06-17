@@ -14,3 +14,7 @@ protocol didUpdateDelegate{
 protocol ControllerDeleagte{
     func didCloseDelegate()
 }
+
+protocol FeedRefreshDelegate{
+    func didRefreshFeed()
+}

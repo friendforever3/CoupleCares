@@ -23,6 +23,7 @@ pod 'LocationPicker'
 pod 'Socket.IO-Client-Swift'
 pod 'TwilioVideo', '~> 3.8'
 pod 'TwilioVoice'
+pod 'Firebase/Messaging'
 
 
   target 'CoupleCareTests' do

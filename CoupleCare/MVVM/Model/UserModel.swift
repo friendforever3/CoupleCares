@@ -14,6 +14,7 @@ class UserModel : Codable{
     var token : String = ""
     var profileImage : String = ""
     var fullName : String = ""
+    var name : String = ""
     var isRegistered : Bool = false
     
     func setData(dict:[String:Any]){
@@ -22,6 +23,7 @@ class UserModel : Codable{
         self.token = dict["token"] as? String ?? ""
         self.profileImage = dict["profileImage"] as? String ?? ""
         self.fullName = dict["fullName"] as? String ?? ""
+        self.name = dict["name"] as? String ?? ""
         self.isRegistered = dict["isRegistered"] as? Bool ?? false
         
     }

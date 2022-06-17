@@ -451,7 +451,7 @@ extension UpdateJobTitleVC{
     
     func UpdateJobTitleVC(){
         
-        UserVM.shared.updateProfile(keyName: "job", value: tfjobTitle.text ?? "") { [weak self] (success,msg) in
+        UserViewModel.shared.updateProfile(keyName: "job", value: tfjobTitle.text ?? "") { [weak self] (success,msg) in
             if success{
                 self?.tfjobTitle.text = ""
                 self?.popVc()

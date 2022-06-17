@@ -49,16 +49,16 @@ extension MessageListVC : UICollectionViewDelegate,UICollectionViewDataSource,UI
 extension MessageListVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MessageVM.shared.getMessageCount()
+        return MessageViewModel.shared.getMessageCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "msgCell", for: indexPath) as! MessageTblCell
-        UtilityManager.shared.setImage(image: cell.imgUser, urlString: MessageVM.shared.getMsgUserDetail(indexPath: indexPath).imgUrl)
+        UtilityManager.shared.setImage(image: cell.imgUser, urlString: MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).imgUrl)
         
-        cell.lblMsg.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).msg
-        cell.lblUserName.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).name
-        cell.lblMsgTime.text = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).time
+        cell.lblMsg.text = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).msg
+        cell.lblUserName.text = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).name
+        cell.lblMsgTime.text = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).time
         
         return cell
     }
@@ -66,10 +66,10 @@ extension MessageListVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function)
         let vc = ChatVC.getVC(.Message)
-        vc.otherUserId = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).otherUserId
-        vc.otherImgurl = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).imgUrl
-        vc.grpId = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).groupId
-        vc.otherUserName = MessageVM.shared.getMsgUserDetail(indexPath: indexPath).name
+        vc.otherUserId = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).otherUserId
+        vc.otherImgurl = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).imgUrl
+        vc.grpId = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).groupId
+        vc.otherUserName = MessageViewModel.shared.getMsgUserDetail(indexPath: indexPath).name
         self.push(vc)
     }
     
@@ -83,7 +83,7 @@ extension MessageListVC : UITableViewDelegate,UITableViewDataSource{
 extension MessageListVC{
     
     func getMessageList(){
-        MessageVM.shared.getMessageList { [weak self] (success,msg) in
+        MessageViewModel.shared.getMessageList { [weak self] (success,msg) in
             if success{
                 self?.msgTblVw.reloadData()
             }else{

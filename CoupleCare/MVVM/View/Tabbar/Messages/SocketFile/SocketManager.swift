@@ -57,7 +57,7 @@ class SocketConnectionManager {
         SocketConnectionManager.shared.socket.on(listnerKey.trimmingCharacters(in: .whitespacesAndNewlines)) { (response, emitter) in
             print("listerner:-",response)
             if response.count != 0{
-                MessageVM.shared.setAllChatDictionary(dict: response.first as? [String:Any] ?? [:])
+                MessageViewModel.shared.setAllChatDictionary(dict: response.first as? [String:Any] ?? [:])
                 completion()
             }
         }

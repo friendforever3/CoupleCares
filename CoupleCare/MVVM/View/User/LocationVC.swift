@@ -64,7 +64,7 @@ class LocationVC: UIViewController{
 extension LocationVC{
     
     func register(){
-        UserVM.shared.register { [weak self] (success, msg) in
+        UserViewModel.shared.register { [weak self] (success, msg) in
             if success{
                  let vc = CoupleCaresTabbar.getVC(.CoupleCares)
                  self?.push(vc)

@@ -25,7 +25,7 @@ class UpdateInterestVC: UIViewController {
         super.viewWillAppear(animated)
         selectedIndexPath.removeAll()
         RegisterModel.shared.interests.removeAll()
-        UserVM.shared.removeAllInterest()
+        UserViewModel.shared.removeAllInterest()
         getAllInterest()
     }
     
@@ -46,7 +46,7 @@ class UpdateInterestVC: UIViewController {
 extension UpdateInterestVC : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return UserVM.shared.getInterestCount()
+        return UserViewModel.shared.getInterestCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,14 +57,14 @@ extension UpdateInterestVC : UICollectionViewDelegate,UICollectionViewDataSource
             cell.layer.cornerRadius = 24
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor(named: "appOrange")?.cgColor
-            cell.lblInterest.text = UserVM.shared.getInterestCellDetail(indexPath: indexPath).name
+            cell.lblInterest.text = UserViewModel.shared.getInterestCellDetail(indexPath: indexPath).name
             cell.lblInterest.textColor = .white
         }else{
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 24
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor(named: "appOrange")?.cgColor
-            cell.lblInterest.text = UserVM.shared.getInterestCellDetail(indexPath: indexPath).name
+            cell.lblInterest.text = UserViewModel.shared.getInterestCellDetail(indexPath: indexPath).name
             cell.lblInterest.textColor = UIColor(named: "txtColor")
         }
         return cell
@@ -73,13 +73,13 @@ extension UpdateInterestVC : UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if selectedIndexPath[indexPath.row] == indexPath{
-            let id = UserVM.shared.getInterestCellDetail(indexPath: indexPath).id
+            let id = UserViewModel.shared.getInterestCellDetail(indexPath: indexPath).id
             RegisterModel.shared.interests.removeAll(where: {$0 == id})
             let index = IndexPath(row: -1, section: 0)
             selectedIndexPath[indexPath.row] = index
         }else{
            // if RegisterModel.shared.interests.count < 5{
-                let id = UserVM.shared.getInterestCellDetail(indexPath: indexPath).id
+                let id = UserViewModel.shared.getInterestCellDetail(indexPath: indexPath).id
                 RegisterModel.shared.interests.append(id)
               selectedIndexPath[indexPath.row] = indexPath
            // }
@@ -91,7 +91,7 @@ extension UpdateInterestVC : UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let label = UILabel(frame: CGRect.zero)
-        label.text = UserVM.shared.getInterestCellDetail(indexPath: indexPath).name
+        label.text = UserViewModel.shared.getInterestCellDetail(indexPath: indexPath).name
         label.sizeToFit()
         // return CGSize(width: (label.frame.width + 44), height: 48)
         return CGSize(width: ((interestClcVw.frame.size.width) / 3) - 10, height: 48)
@@ -104,11 +104,11 @@ extension UpdateInterestVC{
     
     func getAllInterest(){
         
-        UserVM.shared.getListInterest { [weak self] (success,msg) in
+        UserViewModel.shared.getListInterest { [weak self] (success,msg) in
             if success{
                 
                 
-                for _ in 0...UserVM.shared.getInterestCount(){
+                for _ in 0...UserViewModel.shared.getInterestCount(){
                     let index = IndexPath(row: -1, section: 0)
                     self?.selectedIndexPath.append(index)
                 }
@@ -123,7 +123,7 @@ extension UpdateInterestVC{
     
     func checkselected(){
         
-        for (index, value) in UserVM.shared.getAllInterest().enumerated(){
+        for (index, value) in UserViewModel.shared.getAllInterest().enumerated(){
             for (index1,value1) in self.selectedIds.enumerated(){
                 if value._id == value1._id{
                     let index2 = IndexPath(row: index, section: 0)
@@ -142,7 +142,7 @@ extension UpdateInterestVC{
     
     func updateInterestProfile(){
         
-        UserVM.shared.updateInterestProfile(keyName: "interests", value: RegisterModel.shared.interests) { [weak self] (success,msg) in
+        UserViewModel.shared.updateInterestProfile(keyName: "interests", value: RegisterModel.shared.interests) { [weak self] (success,msg) in
             
             if success{
                 self?.popVc()

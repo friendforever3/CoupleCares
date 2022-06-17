@@ -11,13 +11,15 @@
 		26180E0327E0EA5800096F49 /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26180E0227E0EA5800096F49 /* Call.storyboard */; };
 		26180E0527E0ECE800096F49 /* VideoCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0427E0ECE800096F49 /* VideoCallVC.swift */; };
 		26180E0727E0EF4D00096F49 /* TwilioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */; };
-		26180E0927E0F5D800096F49 /* CallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0827E0F5D800096F49 /* CallModel.swift */; };
+		26180E0927E0F5D800096F49 /* TwilioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26180E0827E0F5D800096F49 /* TwilioModel.swift */; };
 		263B198E27251C8C00D3B1C7 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B198D27251C8C00D3B1C7 /* CommentVC.swift */; };
 		263B199127251D0E00D3B1C7 /* FeedTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B199027251D0E00D3B1C7 /* FeedTblCell.swift */; };
 		263B19932725249B00D3B1C7 /* LikesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B19922725249B00D3B1C7 /* LikesVC.swift */; };
 		263B1995272533D300D3B1C7 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B1994272533D300D3B1C7 /* SettingView.swift */; };
 		26702244276A450E001E1023 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26702243276A450E001E1023 /* RegisterModel.swift */; };
 		26702246276A4FEE001E1023 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26702245276A4FEE001E1023 /* LocationManager.swift */; };
+		2671677E2850FEC70081203A /* LikeTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671677D2850FEC70081203A /* LikeTblCell.swift */; };
+		2671678028510B680081203A /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671677F28510B680081203A /* CommentModel.swift */; };
 		267335042772318F00EDA94C /* SocialLoginMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267335032772318F00EDA94C /* SocialLoginMngr.swift */; };
 		2675C1EF27CA19A0006880E4 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2675C1EE27CA19A0006880E4 /* SocketManager.swift */; };
 		26775AAE2776FDE000E8FBE8 /* UpdateProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26775AAD2776FDE000E8FBE8 /* UpdateProfile.storyboard */; };
@@ -93,24 +95,32 @@
 		267A217E2721C2A60092A162 /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A21562721C2A60092A162 /* UtilityManager.swift */; };
 		267A217F2721C2A60092A162 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267A21572721C2A60092A162 /* Extension.swift */; };
 		2682BB59276CF74500A14EEF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB58276CF74500A14EEF /* UserModel.swift */; };
-		2682BB5B276CFFE400A14EEF /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB5A276CFFE400A14EEF /* HomeVM.swift */; };
+		2682BB5B276CFFE400A14EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB5A276CFFE400A14EEF /* HomeViewModel.swift */; };
 		2682BB5D276DEB2000A14EEF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682BB5C276DEB2000A14EEF /* HomeModel.swift */; };
-		268A8FB3276F126700824DE7 /* LikesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB2276F126700824DE7 /* LikesVM.swift */; };
+		26890A4F285252E10075BFBC /* CommentMsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26890A4E285252E10075BFBC /* CommentMsgView.xib */; };
+		26890A51285252F40075BFBC /* CommentMsgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26890A50285252F40075BFBC /* CommentMsgView.swift */; };
+		268A8FB3276F126700824DE7 /* LikesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB2276F126700824DE7 /* LikesViewModel.swift */; };
 		268A8FB5276F1A7E00824DE7 /* LikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB4276F1A7E00824DE7 /* LikeModel.swift */; };
 		268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */; };
-		268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB9276F29AE00824DE7 /* ProfileVM.swift */; };
+		268A8FBA276F29AE00824DE7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FB9276F29AE00824DE7 /* ProfileViewModel.swift */; };
 		268A8FBC276F5FE400824DE7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBB276F5FE400824DE7 /* ImagePicker.swift */; };
 		268A8FBE276F65DD00824DE7 /* ProtocolMangr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */; };
 		268F030B27D7B24C00A74BD0 /* ChatTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F030A27D7B24C00A74BD0 /* ChatTblCell.swift */; };
+		26989BF827F366EA00355E0D /* CallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26989BF727F366EA00355E0D /* CallView.xib */; };
+		26989BFA27F366FA00355E0D /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26989BF927F366FA00355E0D /* CallView.swift */; };
+		26A1B9C4285C4FEE008A20FB /* ReplyTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1B9C3285C4FEE008A20FB /* ReplyTblCell.swift */; };
 		26B5BC9327E2F37C008DC56B /* VoiceCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */; };
-		26EC8FA6276902AB0014D012 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA5276902AB0014D012 /* UserVM.swift */; };
+		26EC8FA6276902AB0014D012 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA5276902AB0014D012 /* UserViewModel.swift */; };
 		26EC8FA9276903800014D012 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FA8276903800014D012 /* APIHandler.swift */; };
 		26EC8FAB276904960014D012 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FAA276904960014D012 /* Indicator.swift */; };
 		26EC8FAD276905410014D012 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FAC276905410014D012 /* APIConstant.swift */; };
 		26EC8FAF276914E40014D012 /* InterestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC8FAE276914E40014D012 /* InterestModel.swift */; };
-		26F5EA8827D4B1B80021E5CA /* MessageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5EA8727D4B1B80021E5CA /* MessageVM.swift */; };
+		26F5EA8827D4B1B80021E5CA /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5EA8727D4B1B80021E5CA /* MessageViewModel.swift */; };
 		26F5EA8A27D4BA7C0021E5CA /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5EA8927D4BA7C0021E5CA /* MessageModel.swift */; };
 		26F5EA8D27D4BDE30021E5CA /* MessageTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5EA8C27D4BDE30021E5CA /* MessageTblCell.swift */; };
+		26FE35CD2842231D0093EA9A /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FE35CC2842231C0093EA9A /* FeedViewModel.swift */; };
+		26FE35CF284237320093EA9A /* SKVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FE35CE284237320093EA9A /* SKVideoCompressor.swift */; };
+		26FE35D1284241A40093EA9A /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FE35D0284241A40093EA9A /* FeedModel.swift */; };
 		321E58D5FDD488656B864A71 /* Pods_CoupleCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C030ADE96CED2C6D346E7BA9 /* Pods_CoupleCare.framework */; };
 		6C302FEA2721AD1E009A37CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C302FE92721AD1E009A37CB /* AppDelegate.swift */; };
 		6C302FEC2721AD1E009A37CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C302FEB2721AD1E009A37CB /* SceneDelegate.swift */; };
@@ -149,13 +159,15 @@
 		26180E0227E0EA5800096F49 /* Call.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Call.storyboard; sourceTree = "<group>"; };
 		26180E0427E0ECE800096F49 /* VideoCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallVC.swift; sourceTree = "<group>"; };
 		26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioViewModel.swift; sourceTree = "<group>"; };
-		26180E0827E0F5D800096F49 /* CallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallModel.swift; sourceTree = "<group>"; };
+		26180E0827E0F5D800096F49 /* TwilioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilioModel.swift; sourceTree = "<group>"; };
 		263B198D27251C8C00D3B1C7 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		263B199027251D0E00D3B1C7 /* FeedTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTblCell.swift; sourceTree = "<group>"; };
 		263B19922725249B00D3B1C7 /* LikesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVC.swift; sourceTree = "<group>"; };
 		263B1994272533D300D3B1C7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		26702243276A450E001E1023 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		26702245276A4FEE001E1023 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2671677D2850FEC70081203A /* LikeTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTblCell.swift; sourceTree = "<group>"; };
+		2671677F28510B680081203A /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		267335032772318F00EDA94C /* SocialLoginMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginMngr.swift; sourceTree = "<group>"; };
 		2675C1EE27CA19A0006880E4 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		26775AAD2776FDE000E8FBE8 /* UpdateProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateProfile.storyboard; sourceTree = "<group>"; };
@@ -231,24 +243,32 @@
 		267A21562721C2A60092A162 /* UtilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
 		267A21572721C2A60092A162 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2682BB58276CF74500A14EEF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		2682BB5A276CFFE400A14EEF /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		2682BB5A276CFFE400A14EEF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2682BB5C276DEB2000A14EEF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		268A8FB2276F126700824DE7 /* LikesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesVM.swift; sourceTree = "<group>"; };
+		26890A4E285252E10075BFBC /* CommentMsgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentMsgView.xib; sourceTree = "<group>"; };
+		26890A50285252F40075BFBC /* CommentMsgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentMsgView.swift; sourceTree = "<group>"; };
+		268A8FB2276F126700824DE7 /* LikesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesViewModel.swift; sourceTree = "<group>"; };
 		268A8FB4276F1A7E00824DE7 /* LikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeModel.swift; sourceTree = "<group>"; };
 		268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeClcCell.swift; sourceTree = "<group>"; };
-		268A8FB9276F29AE00824DE7 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		268A8FB9276F29AE00824DE7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		268A8FBB276F5FE400824DE7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		268A8FBD276F65DD00824DE7 /* ProtocolMangr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMangr.swift; sourceTree = "<group>"; };
 		268F030A27D7B24C00A74BD0 /* ChatTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTblCell.swift; sourceTree = "<group>"; };
+		26989BF727F366EA00355E0D /* CallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallView.xib; sourceTree = "<group>"; };
+		26989BF927F366FA00355E0D /* CallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		26A1B9C3285C4FEE008A20FB /* ReplyTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTblCell.swift; sourceTree = "<group>"; };
 		26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCallVC.swift; sourceTree = "<group>"; };
-		26EC8FA5276902AB0014D012 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
+		26EC8FA5276902AB0014D012 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		26EC8FA8276903800014D012 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		26EC8FAA276904960014D012 /* Indicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		26EC8FAC276905410014D012 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		26EC8FAE276914E40014D012 /* InterestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestModel.swift; sourceTree = "<group>"; };
-		26F5EA8727D4B1B80021E5CA /* MessageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVM.swift; sourceTree = "<group>"; };
+		26F5EA8727D4B1B80021E5CA /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		26F5EA8927D4BA7C0021E5CA /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		26F5EA8C27D4BDE30021E5CA /* MessageTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTblCell.swift; sourceTree = "<group>"; };
+		26FE35CC2842231C0093EA9A /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		26FE35CE284237320093EA9A /* SKVideoCompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKVideoCompressor.swift; sourceTree = "<group>"; };
+		26FE35D0284241A40093EA9A /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		33C57F1B68B3C8B9EA6FE400 /* Pods_CoupleCareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoupleCareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4586BA67909F3B115C131C7E /* Pods-CoupleCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleCare.debug.xcconfig"; path = "Target Support Files/Pods-CoupleCare/Pods-CoupleCare.debug.xcconfig"; sourceTree = "<group>"; };
 		6880BAE13A5BB703730CD53D /* Pods-CoupleCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoupleCareTests.release.xcconfig"; path = "Target Support Files/Pods-CoupleCareTests/Pods-CoupleCareTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				263B199027251D0E00D3B1C7 /* FeedTblCell.swift */,
+				2671677D2850FEC70081203A /* LikeTblCell.swift */,
+				26A1B9C3285C4FEE008A20FB /* ReplyTblCell.swift */,
 			);
 			path = TblCell;
 			sourceTree = "<group>";
@@ -387,6 +409,7 @@
 				267A20EC2721C2950092A162 /* ChatVC.swift */,
 				26180E0427E0ECE800096F49 /* VideoCallVC.swift */,
 				26B5BC9227E2F37C008DC56B /* VoiceCallVC.swift */,
+				26989BF627F366C500355E0D /* XIB */,
 				26F5EA8B27D4BDBC0021E5CA /* TblCell */,
 				2675C1ED27CA19A0006880E4 /* SocketFile */,
 			);
@@ -409,6 +432,7 @@
 				267A20F12721C2950092A162 /* CreatePostVC.swift */,
 				263B198D27251C8C00D3B1C7 /* CommentVC.swift */,
 				263B19922725249B00D3B1C7 /* LikesVC.swift */,
+				26890A4D285252B30075BFBC /* XIB */,
 				263B198F27251CF700D3B1C7 /* TblCell */,
 			);
 			path = Feeds;
@@ -522,6 +546,7 @@
 				268A8FBB276F5FE400824DE7 /* ImagePicker.swift */,
 				26702245276A4FEE001E1023 /* LocationManager.swift */,
 				267335032772318F00EDA94C /* SocialLoginMngr.swift */,
+				26FE35CE284237320093EA9A /* SKVideoCompressor.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -537,12 +562,30 @@
 			path = TinderCard;
 			sourceTree = "<group>";
 		};
+		26890A4D285252B30075BFBC /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				26890A4E285252E10075BFBC /* CommentMsgView.xib */,
+				26890A50285252F40075BFBC /* CommentMsgView.swift */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
 		268A8FB6276F1E1C00824DE7 /* ClcCell */ = {
 			isa = PBXGroup;
 			children = (
 				268A8FB7276F1E3500824DE7 /* LikeClcCell.swift */,
 			);
 			path = ClcCell;
+			sourceTree = "<group>";
+		};
+		26989BF627F366C500355E0D /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				26989BF727F366EA00355E0D /* CallView.xib */,
+				26989BF927F366FA00355E0D /* CallView.swift */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		26EC8FA22769026A0014D012 /* Model */ = {
@@ -554,7 +597,9 @@
 				2682BB5C276DEB2000A14EEF /* HomeModel.swift */,
 				268A8FB4276F1A7E00824DE7 /* LikeModel.swift */,
 				26F5EA8927D4BA7C0021E5CA /* MessageModel.swift */,
-				26180E0827E0F5D800096F49 /* CallModel.swift */,
+				26180E0827E0F5D800096F49 /* TwilioModel.swift */,
+				26FE35D0284241A40093EA9A /* FeedModel.swift */,
+				2671677F28510B680081203A /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -562,12 +607,13 @@
 		26EC8FA32769027C0014D012 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				26EC8FA5276902AB0014D012 /* UserVM.swift */,
-				2682BB5A276CFFE400A14EEF /* HomeVM.swift */,
-				268A8FB2276F126700824DE7 /* LikesVM.swift */,
-				268A8FB9276F29AE00824DE7 /* ProfileVM.swift */,
-				26F5EA8727D4B1B80021E5CA /* MessageVM.swift */,
+				26EC8FA5276902AB0014D012 /* UserViewModel.swift */,
+				2682BB5A276CFFE400A14EEF /* HomeViewModel.swift */,
+				268A8FB2276F126700824DE7 /* LikesViewModel.swift */,
+				268A8FB9276F29AE00824DE7 /* ProfileViewModel.swift */,
+				26F5EA8727D4B1B80021E5CA /* MessageViewModel.swift */,
 				26180E0627E0EF4D00096F49 /* TwilioViewModel.swift */,
+				26FE35CC2842231C0093EA9A /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -821,6 +867,8 @@
 				6CB1BAD62726FC3F00064DB6 /* Profile.storyboard in Resources */,
 				26180E0327E0EA5800096F49 /* Call.storyboard in Resources */,
 				267A21602721C2A60092A162 /* Lato-Regular.ttf in Resources */,
+				26890A4F285252E10075BFBC /* CommentMsgView.xib in Resources */,
+				26989BF827F366EA00355E0D /* CallView.xib in Resources */,
 				267A21642721C2A60092A162 /* Lato-MediumItalic.ttf in Resources */,
 				267A21192721C2950092A162 /* SettingView.xib in Resources */,
 				267A21792721C2A60092A162 /* LaunchScreen.storyboard in Resources */,
@@ -955,12 +1003,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				267A21162721C2950092A162 /* CreatePostVC.swift in Sources */,
+				2671678028510B680081203A /* CommentModel.swift in Sources */,
+				26FE35D1284241A40093EA9A /* FeedModel.swift in Sources */,
 				267A21742721C2A60092A162 /* DownloadCircularProgessView.swift in Sources */,
 				267A217F2721C2A60092A162 /* Extension.swift in Sources */,
 				26180E0727E0EF4D00096F49 /* TwilioViewModel.swift in Sources */,
 				268A8FB8276F1E3500824DE7 /* LikeClcCell.swift in Sources */,
 				267A21292721C2950092A162 /* NameVC.swift in Sources */,
-				268A8FBA276F29AE00824DE7 /* ProfileVM.swift in Sources */,
+				268A8FBA276F29AE00824DE7 /* ProfileViewModel.swift in Sources */,
 				267A21142721C2950092A162 /* LikesTopPickVC.swift in Sources */,
 				26EC8FAF276914E40014D012 /* InterestModel.swift in Sources */,
 				26702246276A4FEE001E1023 /* LocationManager.swift in Sources */,
@@ -974,12 +1024,13 @@
 				26775AB3277705EF00E8FBE8 /* UpdateInterestedInVC.swift in Sources */,
 				267A217B2721C2A60092A162 /* TinderCardModel.swift in Sources */,
 				268A8FB5276F1A7E00824DE7 /* LikeModel.swift in Sources */,
-				26EC8FA6276902AB0014D012 /* UserVM.swift in Sources */,
+				26EC8FA6276902AB0014D012 /* UserViewModel.swift in Sources */,
 				2675C1EF27CA19A0006880E4 /* SocketManager.swift in Sources */,
 				263B1995272533D300D3B1C7 /* SettingView.swift in Sources */,
 				267A21282721C2950092A162 /* BirthdayVC.swift in Sources */,
 				267A217A2721C2A60092A162 /* TinderCardContentView.swift in Sources */,
 				26180E0527E0ECE800096F49 /* VideoCallVC.swift in Sources */,
+				2671677E2850FEC70081203A /* LikeTblCell.swift in Sources */,
 				26702244276A450E001E1023 /* RegisterModel.swift in Sources */,
 				267A21752721C2A60092A162 /* TextFieldCustom.swift in Sources */,
 				26EC8FA9276903800014D012 /* APIHandler.swift in Sources */,
@@ -989,20 +1040,22 @@
 				267A21732721C2A60092A162 /* LabelCustom.swift in Sources */,
 				26F5EA8A27D4BA7C0021E5CA /* MessageModel.swift in Sources */,
 				267A211A2721C2950092A162 /* BlockedContactVC.swift in Sources */,
+				26FE35CD2842231D0093EA9A /* FeedViewModel.swift in Sources */,
 				26F5EA8D27D4BDE30021E5CA /* MessageTblCell.swift in Sources */,
 				267A21252721C2950092A162 /* InterestClcCell.swift in Sources */,
 				267A211C2721C2950092A162 /* ProfileCell.swift in Sources */,
 				26775ABB277726AD00E8FBE8 /* UpdateJobTitleVC.swift in Sources */,
-				26F5EA8827D4B1B80021E5CA /* MessageVM.swift in Sources */,
+				26F5EA8827D4B1B80021E5CA /* MessageViewModel.swift in Sources */,
 				267A21182721C2950092A162 /* ContactUsVC.swift in Sources */,
-				26180E0927E0F5D800096F49 /* CallModel.swift in Sources */,
+				26180E0927E0F5D800096F49 /* TwilioModel.swift in Sources */,
 				267A21102721C2950092A162 /* SubscriptionTypeVC.swift in Sources */,
 				267A21122721C2950092A162 /* MessageListVC.swift in Sources */,
 				267A21112721C2950092A162 /* CoupleCaresTabbar.swift in Sources */,
 				263B199127251D0E00D3B1C7 /* FeedTblCell.swift in Sources */,
+				26A1B9C4285C4FEE008A20FB /* ReplyTblCell.swift in Sources */,
 				267A217C2721C2A60092A162 /* TinderCardFooterView.swift in Sources */,
 				267A21262721C2950092A162 /* GenderVC.swift in Sources */,
-				268A8FB3276F126700824DE7 /* LikesVM.swift in Sources */,
+				268A8FB3276F126700824DE7 /* LikesViewModel.swift in Sources */,
 				267A21272721C2950092A162 /* MobileNumVC.swift in Sources */,
 				267A211B2721C2950092A162 /* EditProfileVC.swift in Sources */,
 				267A217E2721C2A60092A162 /* UtilityManager.swift in Sources */,
@@ -1012,6 +1065,7 @@
 				267A21242721C2950092A162 /* InterestsVC.swift in Sources */,
 				268A8FBE276F65DD00824DE7 /* ProtocolMangr.swift in Sources */,
 				267A210F2721C2950092A162 /* PaymentVC.swift in Sources */,
+				26890A51285252F40075BFBC /* CommentMsgView.swift in Sources */,
 				267A21212721C2950092A162 /* OTPVC.swift in Sources */,
 				267A210A2721C2950092A162 /* PremiumPlanVC.swift in Sources */,
 				267A21762721C2A60092A162 /* CustomPageControlView.swift in Sources */,
@@ -1026,12 +1080,14 @@
 				267A21232721C2950092A162 /* LocationVC.swift in Sources */,
 				267A21722721C2A60092A162 /* ViewCustom.swift in Sources */,
 				267A21132721C2950092A162 /* ChatVC.swift in Sources */,
-				2682BB5B276CFFE400A14EEF /* HomeVM.swift in Sources */,
+				26989BFA27F366FA00355E0D /* CallView.swift in Sources */,
+				2682BB5B276CFFE400A14EEF /* HomeViewModel.swift in Sources */,
 				267A21772721C2A60092A162 /* ButtonCustom.swift in Sources */,
 				26EC8FAD276905410014D012 /* APIConstant.swift in Sources */,
 				267A210D2721C2950092A162 /* FullImageVC.swift in Sources */,
 				263B19932725249B00D3B1C7 /* LikesVC.swift in Sources */,
 				267A21222721C2950092A162 /* LoginVC.swift in Sources */,
+				26FE35CF284237320093EA9A /* SKVideoCompressor.swift in Sources */,
 				267335042772318F00EDA94C /* SocialLoginMngr.swift in Sources */,
 				267A211D2721C2950092A162 /* FullProfileVC.swift in Sources */,
 				267A21202721C2950092A162 /* PhotoVC.swift in Sources */,

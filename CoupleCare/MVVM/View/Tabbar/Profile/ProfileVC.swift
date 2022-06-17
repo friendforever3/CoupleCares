@@ -29,8 +29,8 @@ class ProfileVC: UIViewController {
     
     func setUI(){
         print("profileimga",UtilityManager.shared.userDecodedDetail().profileImage)
-        UtilityManager.shared.setImage(image: imgProfile, urlString: HomeVM.shared.getUserDetailData().profileImg)
-        lblUserNameAge.text = HomeVM.shared.getUserDetailData().fullName + ", " + HomeVM.shared.getUserDetailData().age
+        UtilityManager.shared.setImage(image: imgProfile, urlString: HomeViewModel.shared.getUserDetailData().profileImg)
+        lblUserNameAge.text = HomeViewModel.shared.getUserDetailData().fullName + ", " + HomeViewModel.shared.getUserDetailData().age
     }
     
     @IBAction func btnEditAction(_ sender: Any) {
@@ -62,7 +62,7 @@ class ProfileVC: UIViewController {
 extension ProfileVC{
     
     func updateProfileImg(){
-        ProfileVM.shared.updateProfileImg(imgData: imgData ?? Data()) { [weak self] (success,msg) in
+        ProfileViewModel.shared.updateProfileImg(imgData: imgData ?? Data()) { [weak self] (success,msg) in
             if success{
                 UtilityManager.shared.displayAlert(title: "", message: msg, control: ["OK"], topController: self ?? UIViewController())
                 self?.editProfile()
@@ -73,7 +73,7 @@ extension ProfileVC{
     }
     
     func editProfile(){
-        HomeVM.shared.userDetail(userId: UtilityManager.shared.userDecodedDetail().id) { [weak self] (success,msg) in
+        HomeViewModel.shared.userDetail(userId: UtilityManager.shared.userDecodedDetail().id) { [weak self] (success,msg) in
             if success{
                 self?.setUI()
             }else{

@@ -15,6 +15,8 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
     var viewController: UIViewController?
     var pickImageCallback : ((UIImage) -> ())?;
+    var pickVideoCallback : ((URL) -> ())?;
+    var videoOption : Bool = false
     
     override init(){
         super.init()
@@ -37,18 +39,31 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         alert.addAction(cancelAction)
     }
 
-    func pickImage(_ viewController: UIViewController, _ callback: @escaping ((UIImage) -> ())) {
+    func pickImage(_ viewController: UIViewController, videoAllow:Bool=false ,_ callback: @escaping ((UIImage) -> ())) {
         pickImageCallback = callback;
         self.viewController = viewController;
-
+        self.videoOption = videoAllow
         alert.popoverPresentationController?.sourceView = self.viewController!.view
 
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    func pickVideo(_ viewController: UIViewController, videoAllow:Bool=false ,_ callback: @escaping ((URL) -> ())) {
+        pickVideoCallback = callback;
+        self.viewController = viewController;
+        self.videoOption = videoAllow
+        alert.popoverPresentationController?.sourceView = self.viewController!.view
+
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
     func openCamera(){
         alert.dismiss(animated: true, completion: nil)
         if(UIImagePickerController .isSourceTypeAvailable(.camera)){
             picker.sourceType = .camera
+            if videoOption{
+                picker.mediaTypes = ["public.movie"]
+            }
             self.viewController!.present(picker, animated: true, completion: nil)
         } else {
             let alertController: UIAlertController = {
@@ -63,6 +78,9 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     func openGallery(){
         alert.dismiss(animated: true, completion: nil)
         picker.sourceType = .photoLibrary
+        if videoOption{
+            picker.mediaTypes = ["public.movie"]
+        }
         self.viewController!.present(picker, animated: true, completion: nil)
     }
 
@@ -80,10 +98,17 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     // For Swift 4.2+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        if videoOption{
+            if let url = info[.mediaURL] as? URL {
+                // Do something with the URL
+                pickVideoCallback?(url)
+            }
+        }else{
+            guard let image = info[.originalImage] as? UIImage else {
+                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            }
+            pickImageCallback?(image)
         }
-        pickImageCallback?(image)
     }
 
 

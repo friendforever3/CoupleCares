@@ -11,7 +11,6 @@ import AudioToolbox
 
 class VideoCallVC: UIViewController {
 
-    
     @IBOutlet weak var largeView: UIView!
     @IBOutlet weak var smallView: UIView!
     
@@ -24,6 +23,9 @@ class VideoCallVC: UIViewController {
     var camera: CameraSource?
     
     var grpId : String = ""
+    var otherUserId : String = ""
+    
+    var comingFrom : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,6 @@ class VideoCallVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-      //  self.connectCall(with: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2ZjNzQ5MGNmMzQxNTUyNzdlYTc1YmYyY2ZjZTg0MWI4LTE2NDc3NTY1NzciLCJncmFudHMiOnsiaWRlbnRpdHkiOiI2MWRkYjU4MDMxMGZkZTcyN2YwNjQ4M2YiLCJ2aWRlbyI6eyJyb29tIjoiMzZiMGRjMjYtZjdkOS00ODZiLTliNzYtZGRkMjg4OTJhMjQzIn19LCJpYXQiOjE2NDc3NTY1NzcsImV4cCI6MTY0Nzc3MDk3NywiaXNzIjoiU0tmYzc0OTBjZjM0MTU1Mjc3ZWE3NWJmMmNmY2U4NDFiOCIsInN1YiI6IkFDOTFjMzU5ZTdjNjk5ZDYzZTFiNWZlYWE1MDQyZmI0YjIifQ.Pfs6_3JfNjsAH0YkMsNT67_PMFQXp6F1S1LB5eOFRks")
     }
     
     @IBAction func btnBackAction(_ sender: Any) {
@@ -81,7 +82,7 @@ class VideoCallVC: UIViewController {
         print("token:-",token)
         
         let connectOptions = ConnectOptions(token: token) { (builder) in
-            //builder.roomName = grantToken
+            //builder.roomName = self.grpId
             //  builder.roomName = "606b336dba3a1a1c0f35f31f"//self.viewModel.queueInfo?.queId
             
             //            builder.isAutomaticSubscriptionEnabled = false
@@ -132,6 +133,18 @@ extension VideoCallVC: RoomDelegate {
         //        if viewModel.fromView != .incomingCall{
         //            //viewModel.sendCallNotification()
         //        }
+        if comingFrom != "Notification"{
+            TwilioViewModel.shared.sendCall(grpId: self.grpId, otherUserId: self.otherUserId) { [weak self] (succes,msg) in
+                if succes{
+                    
+                }else{
+                    UtilityManager.shared.displayAlertWithCompletion(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController()) { (_) in
+                        self?.popVc()
+                    }
+                }
+            }
+        }
+        
         // Connected participants already in the room
         print("Number of connected Participants \(room.remoteParticipants.count)")
         
@@ -245,5 +258,9 @@ extension VideoCallVC{
                 }
             }
         }
+    }
+    
+    func sendCall(grpId:String,otherId:String){
+        
     }
 }

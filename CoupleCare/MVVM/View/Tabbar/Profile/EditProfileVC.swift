@@ -41,15 +41,15 @@ class EditProfileVC: UIViewController {
     
     func setUI(){
         
-        objectArray[1]["value"] = HomeVM.shared.getUserDetailData().bio
-        objectArray[3]["value"] = HomeVM.shared.getUserDetailData().gender
-        objectArray[4]["value"] = HomeVM.shared.getUserDetailData().job
-        objectArray[6]["value"] = HomeVM.shared.getUserDetailData().interestedIn
-        objectArray[7]["value"] = HomeVM.shared.getUserDetailData().dob
+        objectArray[1]["value"] = HomeViewModel.shared.getUserDetailData().bio
+        objectArray[3]["value"] = HomeViewModel.shared.getUserDetailData().gender
+        objectArray[4]["value"] = HomeViewModel.shared.getUserDetailData().job
+        objectArray[6]["value"] = HomeViewModel.shared.getUserDetailData().interestedIn
+        objectArray[7]["value"] = HomeViewModel.shared.getUserDetailData().dob
         
         //location = CLLocation(latitude: Double(HomeVM.shared.getUserDetailData().lat) ?? 0.0, longitude: Double(HomeVM.shared.getUserDetailData().long) ?? 0.0
         
-        let location = CLLocation(latitude: Double(HomeVM.shared.getUserDetailData().lat) ?? 0.0, longitude: Double(HomeVM.shared.getUserDetailData().long) ?? 0.0)
+        let location = CLLocation(latitude: Double(HomeViewModel.shared.getUserDetailData().lat) ?? 0.0, longitude: Double(HomeViewModel.shared.getUserDetailData().long) ?? 0.0)
         location.geocode { placemark, error in
             if let error = error as? CLError {
                 print("CLError:", error)
@@ -127,24 +127,24 @@ extension EditProfileVC : UITableViewDelegate,UITableViewDataSource{
         
         if objectArray[indexPath.row]["type"] == "Gender"{
             let vc = UpdateGenderVC.getVC(.UpdateProfile)
-            vc.genderSelected = HomeVM.shared.getGenderString()
+            vc.genderSelected = HomeViewModel.shared.getGenderString()
             self.push(vc)
         }else if objectArray[indexPath.row]["type"] == "Interested In"{
             let vc = UpdateInterestedInVC.getVC(.UpdateProfile)
-            vc.interestSelected = HomeVM.shared.getInterestedInString()
+            vc.interestSelected = HomeViewModel.shared.getInterestedInString()
             self.push(vc)
         }else if objectArray[indexPath.row]["type"] == "Birthday"{
             let vc = UpdateBirthdayVC.getVC(.UpdateProfile)
-            vc.age = HomeVM.shared.getUserAge()
+            vc.age = HomeViewModel.shared.getUserAge()
             vc.dob = objectArray[indexPath.row]["value"] ?? ""
             self.push(vc)
         }else if objectArray[indexPath.row]["type"] == "clc"{
             let vc = UpdateInterestVC.getVC(.UpdateProfile)
-            vc.selectedIds = HomeVM.shared.getAllUserDetailSelectedInterests()
+            vc.selectedIds = HomeViewModel.shared.getAllUserDetailSelectedInterests()
             self.push(vc)
         }else if objectArray[indexPath.row]["type"] == "Bio"{
             let vc = UpdateBioVC.getVC(.UpdateProfile)
-            vc.bioTxt = HomeVM.shared.getUserDetailData().bio
+            vc.bioTxt = HomeViewModel.shared.getUserDetailData().bio
             self.push(vc)
         }else if objectArray[indexPath.row]["type"] == "Job Title"{
             let vc = UpdateJobTitleVC.getVC(.UpdateProfile)
@@ -189,9 +189,9 @@ extension EditProfileVC : UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0{
             return 300
         }else if indexPath.row == 2{
-            if HomeVM.shared.getUserDetailInterestCount() != 0{
-            let count = HomeVM.shared.getUserDetailInterestCount() % 3
-            let divide = HomeVM.shared.getUserDetailInterestCount() / 3
+            if HomeViewModel.shared.getUserDetailInterestCount() != 0{
+            let count = HomeViewModel.shared.getUserDetailInterestCount() % 3
+            let divide = HomeViewModel.shared.getUserDetailInterestCount() / 3
             var height : CGFloat = 0.0
             if count == 0{
                 let counttotl : CGFloat = CGFloat(divide)
@@ -219,7 +219,7 @@ extension EditProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
         if collectionView.tag == 1{
             return 6
         }
-        return HomeVM.shared.getUserDetailInterestCount()
+        return HomeViewModel.shared.getUserDetailInterestCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -227,9 +227,9 @@ extension EditProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
         
         if collectionView.tag == 1{
             if indexPath.row < 6{
-                if HomeVM.shared.getUserDetailPhotosCount() > indexPath.row{
+                if HomeViewModel.shared.getUserDetailPhotosCount() > indexPath.row{
                    // cell.imgProfileImages.image = selectedPhots[indexPath.row]
-                    UtilityManager.shared.setImage(image: cell.imgProfileImages, urlString: HomeVM.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl)
+                    UtilityManager.shared.setImage(image: cell.imgProfileImages, urlString: HomeViewModel.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl)
                     cell.imgProfileAddIcon.isHidden = true
                     cell.btnProfileDelete.isHidden = false
                 }else{
@@ -240,12 +240,12 @@ extension EditProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
             }
             
             cell.btnProfileDelt = { [weak self] btn in
-                self?.delteImg(imgId: HomeVM.shared.getUserDetailPhotoCell(indexPath: indexPath).imgId)
+                self?.delteImg(imgId: HomeViewModel.shared.getUserDetailPhotoCell(indexPath: indexPath).imgId)
             }
             
         }else{
             
-            cell.lblInterest.text = HomeVM.shared.getUserDetailInterestCell(indexPath: indexPath)
+            cell.lblInterest.text = HomeViewModel.shared.getUserDetailInterestCell(indexPath: indexPath)
             
         }
         
@@ -258,11 +258,11 @@ extension EditProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICo
             let imagePicker = OpalImagePickerController()
             imagePicker.imagePickerDelegate = self
             //imagePicker.maximumSelectionsAllowed = 6
-            let count = (6 - (HomeVM.shared.getUserDetailPhotosCount()))
+            let count = (6 - (HomeViewModel.shared.getUserDetailPhotosCount()))
             imagePicker.maximumSelectionsAllowed = count
             imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
             imagePicker.view.backgroundColor = .white
-            if HomeVM.shared.getUserDetailPhotosCount() < 6{
+            if HomeViewModel.shared.getUserDetailPhotosCount() < 6{
                present(imagePicker, animated: true, completion: nil)
             }
         }
@@ -326,6 +326,8 @@ extension EditProfileVC: OpalImagePickerControllerDelegate {
      }
     
     
+    
+    
 }
 
 
@@ -333,7 +335,7 @@ extension EditProfileVC: OpalImagePickerControllerDelegate {
 extension EditProfileVC{
     
     func editProfile(){
-        HomeVM.shared.userDetail(userId: UtilityManager.shared.userDecodedDetail().id) { [weak self] (success,msg) in
+        HomeViewModel.shared.userDetail(userId: UtilityManager.shared.userDecodedDetail().id) { [weak self] (success,msg) in
             if success{
                 self?.setUI()
             }else{
@@ -343,7 +345,7 @@ extension EditProfileVC{
     }
     
     func delteImg(imgId:String){
-        ProfileVM.shared.removeImg(imageId: imgId) { [weak self] (success,msg) in
+        ProfileViewModel.shared.removeImg(imageId: imgId) { [weak self] (success,msg) in
             if success{
                 self?.editProfile()
             }else{
@@ -354,7 +356,7 @@ extension EditProfileVC{
     
     func updateImages(){
         
-        UserVM.shared.updateMutipleImages(selectedImages: selectedPhots) { [weak self] (success,msg) in
+        UserViewModel.shared.updateMutipleImages(selectedImages: selectedPhots) { [weak self] (success,msg) in
             if success{
                 self?.editProfile()
             }else{
@@ -366,7 +368,7 @@ extension EditProfileVC{
     }
     
     func updateLocation(lat:String,long:String,locName:String){
-        UserVM.shared.updateProfile2(keyName: "lat", value: lat, keyName2: "lng", value2: long,keyName3: "locationAddress",value3: locName) { [weak self] (success,msg) in
+        UserViewModel.shared.updateProfile2(keyName: "lat", value: lat, keyName2: "lng", value2: long,keyName3: "locationAddress",value3: locName) { [weak self] (success,msg) in
             if success{
                 self?.editProfile()
             }else{

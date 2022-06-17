@@ -52,11 +52,11 @@ class OtherProfileVC: UIViewController {
     
     func setUI(){
         
-        UtilityManager.shared.setImage(image: self.imgProfile, urlString: HomeVM.shared.getUserDetailData().profileImg)
-        lblUserNameAge.text = "\(HomeVM.shared.getUserDetailData().fullName), \(HomeVM.shared.getUserDetailData().age)"
-        lblDistance.text = "\((Double(HomeVM.shared.getUserDetailData().distance) ?? 0.0).roundToDecimal(2))" + " " + "Miles"
-        lblBio.text = HomeVM.shared.getUserDetailData().bio
-        lblJob.text = HomeVM.shared.getUserDetailData().job
+        UtilityManager.shared.setImage(image: self.imgProfile, urlString: HomeViewModel.shared.getUserDetailData().profileImg)
+        lblUserNameAge.text = "\(HomeViewModel.shared.getUserDetailData().fullName), \(HomeViewModel.shared.getUserDetailData().age)"
+        lblDistance.text = "\((Double(HomeViewModel.shared.getUserDetailData().distance) ?? 0.0).roundToDecimal(2))" + " " + "Miles"
+        lblBio.text = HomeViewModel.shared.getUserDetailData().bio
+        lblJob.text = HomeViewModel.shared.getUserDetailData().job
         self.vwInitial.isHidden = true
     }
     
@@ -87,18 +87,18 @@ extension OtherProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == clcPhotosVw{
-            return HomeVM.shared.getUserDetailPhotosCount()
+            return HomeViewModel.shared.getUserDetailPhotosCount()
         }
-        return HomeVM.shared.getUserDetailInterestCount()
+        return HomeViewModel.shared.getUserDetailInterestCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InterestClcCell
         
         if collectionView == clcPhotosVw{
-            UtilityManager.shared.setImage(image: cell.lblUserDetailPhoto, urlString: HomeVM.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl)
+            UtilityManager.shared.setImage(image: cell.lblUserDetailPhoto, urlString: HomeViewModel.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl)
         }else{
-            cell.lblInterest.text = HomeVM.shared.getUserDetailInterestCell(indexPath: indexPath)
+            cell.lblInterest.text = HomeViewModel.shared.getUserDetailInterestCell(indexPath: indexPath)
         }
         
         
@@ -108,7 +108,7 @@ extension OtherProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == clcPhotosVw{
             let vc = FullImageVC.getVC(.Home)
-            vc.imgUrl = HomeVM.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl
+            vc.imgUrl = HomeViewModel.shared.getUserDetailPhotoCell(indexPath: indexPath).imgUrl
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
@@ -129,7 +129,7 @@ extension OtherProfileVC {
     
     func getUserDetail(){
         
-        HomeVM.shared.userDetail(userId: userId) { [weak self] (success,msg) in
+        HomeViewModel.shared.userDetail(userId: userId) { [weak self] (success,msg) in
             if success{
                 self?.setUI()
                 self?.clcPhotosVw.reloadData()
@@ -146,7 +146,7 @@ extension OtherProfileVC {
     
     
     func getLikeUserDetail(){
-        HomeVM.shared.likeProfile(likeId: userId) { [weak self] (success,msg) in
+        HomeViewModel.shared.likeProfile(likeId: userId) { [weak self] (success,msg) in
             if success{
                 self?.setUI()
                 self?.clcPhotosVw.reloadData()
@@ -161,9 +161,9 @@ extension OtherProfileVC {
     }
     
     func getHeight(){
-        let count = HomeVM.shared.getUserDetailPhotosCount() % 2
+        let count = HomeViewModel.shared.getUserDetailPhotosCount() % 2
         
-        let divide = HomeVM.shared.getUserDetailPhotosCount() / 2
+        let divide = HomeViewModel.shared.getUserDetailPhotosCount() / 2
         
         if count == 0{
             let counttotl : CGFloat = CGFloat(divide)
@@ -179,9 +179,9 @@ extension OtherProfileVC {
     
     func getInterestHeight(){
         
-        let count = HomeVM.shared.getUserDetailInterestCount() % 3
+        let count = HomeViewModel.shared.getUserDetailInterestCount() % 3
         
-        let divide = HomeVM.shared.getUserDetailInterestCount() / 3
+        let divide = HomeViewModel.shared.getUserDetailInterestCount() / 3
         print("divide:-",divide)
         print("countL-",count)
         if count == 0{
@@ -202,7 +202,7 @@ extension OtherProfileVC {
 extension OtherProfileVC{
     
     func userLike(likeUserId:String){
-        LikesVM.shared.likeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+        LikesViewModel.shared.likeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 self?.delegate?.didUpdateHome()
             }else{
@@ -212,7 +212,7 @@ extension OtherProfileVC{
     }
     
     func userDislike(likeUserId:String){
-        LikesVM.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
+        LikesViewModel.shared.disLikeUser(likeUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 self?.delegate?.didUpdateHome()
             }else{
@@ -222,13 +222,13 @@ extension OtherProfileVC{
     }
     
     func acceptUserProfile(likeUserId:String){
-        LikesVM.shared.acceptLikeUser(likedUserId: likeUserId) { [weak self] (success,msg) in
+        LikesViewModel.shared.acceptLikeUser(likedUserId: likeUserId) { [weak self] (success,msg) in
             if success{
                 let vc = ChatVC.getVC(.Message)
                 vc.otherUserId = likeUserId
                 vc.grpId = msg
-                vc.otherImgurl = HomeVM.shared.getUserDetailData().profileImg
-                vc.otherUserName = HomeVM.shared.getUserDetailData().fullName
+                vc.otherImgurl = HomeViewModel.shared.getUserDetailData().profileImg
+                vc.otherUserName = HomeViewModel.shared.getUserDetailData().fullName
                 self?.push(vc)
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())

@@ -11,7 +11,7 @@ class TwilioViewModel: NSObject {
     
     public static let shared = TwilioViewModel()
     
-    var objCallModel = CallModel()
+    var objTwilioModel = TwilioModel()
     
     private override init() {}
     
@@ -30,7 +30,50 @@ class TwilioViewModel: NSObject {
         
         serverRequest(url: url, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: false) { [weak self] (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
-                self?.objCallModel.setData(dict: response)
+                self?.objTwilioModel.setData(dict: response)
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    //MARK: Send Video Call API
+    func sendCall(grpId:String,otherUserId:String,completion:@escaping completionHandler){
+        
+        let url = APIConstant.kBaseUrl + APIConstant.kTwillioCall
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"groupId":grpId,"otherId":otherUserId]
+        
+        serverRequest(url: url, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: false) { [weak self] (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
+                
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func acceptCall(grpId:String,otherUserId:String,completion:@escaping completionHandler){
+        let url = APIConstant.kBaseUrl + APIConstant.kTwillioCallAccept
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"groupId":grpId,"otherId":otherUserId]
+        
+        serverRequest(url: url, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: false) { [weak self] (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
+                
+                completion(true,response["message"] as? String ?? "")
+            }else{
+                completion(false,response["message"] as? String ?? "")
+            }
+        }
+    }
+    
+    func rejectCall(grpId:String,otherUserId:String,completion:@escaping completionHandler){
+        let url = APIConstant.kBaseUrl + APIConstant.kTwillioCallReject
+        let param = ["userId":UtilityManager.shared.userDecodedDetail().id,"groupId":grpId,"otherId":otherUserId]
+        
+        serverRequest(url: url, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: false) { [weak self] (response, statusCode,errorMsg) in
+            if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
                 completion(false,response["message"] as? String ?? "")
@@ -41,12 +84,12 @@ class TwilioViewModel: NSObject {
     
     //MARK: Get Video Call Token
     func emptyVideoCallToken(){
-        objCallModel.videoGrant = ""
-        objCallModel.token = ""
+        objTwilioModel.videoGrant = ""
+        objTwilioModel.token = ""
     }
     
     func getTwilioCallToken()->(token:String,videoGrant:String){
-        return (token:objCallModel.token,videoGrant:objCallModel.videoGrant)
+        return (token:objTwilioModel.token,videoGrant:objTwilioModel.videoGrant)
     }
 
 }

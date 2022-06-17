@@ -66,7 +66,7 @@ class ChatVC: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
             
-            if MessageVM.shared.getAllChatListCount() != 0{
+            if MessageViewModel.shared.getAllChatListCount() != 0{
                chatTblVw.scrollToBottom(isAnimated: false)
             }
             
@@ -128,7 +128,7 @@ class ChatVC: UIViewController {
         SocketConnectionManager.shared.listen(listnerKey: grpId) {
             self.chatTblVw.reloadData()
 
-            if MessageVM.shared.getAllChatListCount() != 0{
+            if MessageViewModel.shared.getAllChatListCount() != 0{
               self.chatTblVw.scrollToBottom(isAnimated: true)
             }
         }
@@ -173,6 +173,7 @@ class ChatVC: UIViewController {
         isVideo = true
         let vc = VideoCallVC.getVC(.Call)
         vc.grpId = self.grpId
+        vc.otherUserId = self.otherUserId
         self.push(vc)
     }
     
@@ -189,8 +190,8 @@ class ChatVC: UIViewController {
                 "groupId": grpId,
                 "receiverId": otherUserId,
                 "senderId": UtilityManager.shared.userDecodedDetail().id,
-                "username": HomeVM.shared.getUserDetailData().fullName,
-                "profileImage": HomeVM.shared.getUserDetailData().profileImg,
+                "username": HomeViewModel.shared.getUserDetailData().fullName,
+                "profileImage": HomeViewModel.shared.getUserDetailData().profileImg,
                 "timezone":UtilityManager.shared.getCurrentTimeZone(),
                 "msg": tfMsg.text ?? ""
             ]
@@ -207,19 +208,19 @@ class ChatVC: UIViewController {
 extension ChatVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MessageVM.shared.getAllChatListCount()
+        return MessageViewModel.shared.getAllChatListCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if UtilityManager.shared.userDecodedDetail().id == MessageVM.shared.getChatDetailCell(indexPath: indexPath).senderId{
+        if UtilityManager.shared.userDecodedDetail().id == MessageViewModel.shared.getChatDetailCell(indexPath: indexPath).senderId{
         let cell = tableView.dequeueReusableCell(withIdentifier: "senderCell", for: indexPath) as! ChatTblCell
-            cell.lblSenderTime.text = MessageVM.shared.getChatDetailCell(indexPath: indexPath).time
-            cell.lblSenderMsg.text = MessageVM.shared.getChatDetailCell(indexPath: indexPath).msg
+            cell.lblSenderTime.text = MessageViewModel.shared.getChatDetailCell(indexPath: indexPath).time
+            cell.lblSenderMsg.text = MessageViewModel.shared.getChatDetailCell(indexPath: indexPath).msg
         return cell
         }
         let recieverCell = tableView.dequeueReusableCell(withIdentifier: "recieverCell", for: indexPath) as! ChatTblCell
-        recieverCell.lblRecieverMsg.text = MessageVM.shared.getChatDetailCell(indexPath: indexPath).msg
-        recieverCell.lblRecieverTime.text = MessageVM.shared.getChatDetailCell(indexPath: indexPath).time
+        recieverCell.lblRecieverMsg.text = MessageViewModel.shared.getChatDetailCell(indexPath: indexPath).msg
+        recieverCell.lblRecieverTime.text = MessageViewModel.shared.getChatDetailCell(indexPath: indexPath).time
         return recieverCell
     }
     
@@ -238,11 +239,11 @@ extension ChatVC{
     
     func getChatHistory(grpId:String,page:Int,size:Int){
         
-        MessageVM.shared.getChatHistory(grpId: grpId, page: page, size: size) { [weak self] (success,msg) in
+        MessageViewModel.shared.getChatHistory(grpId: grpId, page: page, size: size) { [weak self] (success,msg) in
             
             if success{
                 self?.chatTblVw.reloadData()
-                if MessageVM.shared.getAllChatListCount() != 0{
+                if MessageViewModel.shared.getAllChatListCount() != 0{
                   self?.chatTblVw.scrollToBottom(isAnimated: false)
                 }
                 
