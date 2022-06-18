@@ -204,6 +204,7 @@ extension CommentVC{
             if success{
                 self?.tblVw.reloadData()
                 self?.perform(#selector(self?.heightTbl), with: nil, afterDelay: 0.15)
+                
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }
@@ -213,7 +214,11 @@ extension CommentVC{
     func postComment(txt:String){
         FeedViewModel.shared.postComment(postId: postId, commentBy: UtilityManager.shared.userDecodedDetail().id, commentTo: commentTo, comment: txt) { [weak self] (success,msg) in
             if success{
-                self?.getCommentList(page: 1)
+                self?.tfPost.text = ""
+                //self?.perform(#selector(self?.call), with: nil, afterDelay: 1.4)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.4) {
+                    self?.getCommentList(page: 1)
+                }
             }else{
                 UtilityManager.shared.displayAlert(title: AppConstant.KOops, message: msg, control: ["OK"], topController: self ?? UIViewController())
             }
@@ -242,6 +247,10 @@ extension CommentVC{
     
     
     @objc func heightTbl(){
-        constraintHeightVwComment.constant = tblVw.contentSize.height + 60
+        //constraintHeightVwComment.constant = tblVw.contentSize.height + 100
+    }
+    
+    @objc func call(){
+        getCommentList(page: 1)
     }
 }

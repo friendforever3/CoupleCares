@@ -153,14 +153,20 @@ extension FeedVC : UITableViewDelegate,UITableViewDataSource{
         }
         
         cell.btnPostLike = { [weak self] btn in
+            var type : String = ""
             if feed.isPostLiked == true{
                 FeedViewModel.shared.setLike(indexPath: indexPath, isLike: false)
-                self?.likeUnLikeApi(postId: feed.postId, likeTo: user.userId, type: "unlike")
+                type = "unlike"
             }else{
                 FeedViewModel.shared.setLike(indexPath: indexPath, isLike: true)
-                self?.likeUnLikeApi(postId: feed.postId, likeTo: user.userId, type: "like")
+                type = "like"
             }
             
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                self?.likeUnLikeApi(postId: feed.postId, likeTo: user.userId, type: type)
+            }
+            
+            self?.feedTblVw.reloadData()
         }
         
         

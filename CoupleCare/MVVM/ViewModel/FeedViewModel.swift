@@ -94,9 +94,10 @@ class FeedViewModel: NSObject {
     //MARK: GET COMMENT LIST
     func getCommentList(postId:String,page:Int,completion:@escaping completionHandler){
         let param = ["postId":postId,"page":page,"size":100] as [String : Any]
-        page == 1 ? commentarray.removeAll() : nil
+        
         serverRequest(url: APIConstant.kBaseUrl + APIConstant.kCommentList, param: param, method: .post, header: UtilityManager.shared.getHeaderToken()) { [weak self] (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
+                page == 1 ? self?.commentarray.removeAll() : nil
                 if let data = response["data"] as? [[String:Any]]{
                     data.forEach { [weak self] (dataObj) in
                         let obj = CommentModel()
@@ -116,7 +117,7 @@ class FeedViewModel: NSObject {
     //MARK: POST COMMENT
     func postComment(postId:String,commentBy:String,commentTo:String,comment:String,completion:@escaping completionHandler){
         let param = ["postId":postId,"commentBy":commentBy,"commentTo":commentTo,"comment":comment]
-        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kCommentAdd, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: false) { [weak self] (response, statusCode,errorMsg) in
+        serverRequest(url: APIConstant.kBaseUrl + APIConstant.kCommentAdd, param: param, method: .post, header: UtilityManager.shared.getHeaderToken(),loaderShow: true) { [weak self] (response, statusCode,errorMsg) in
             if response["statusCode"] as? Int == 200{
                 completion(true,response["message"] as? String ?? "")
             }else{
@@ -194,6 +195,7 @@ class FeedViewModel: NSObject {
             }
         }
         feedArray[indexPath.row].isLike = isLike
+        
     }
     
     
